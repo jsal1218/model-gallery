@@ -74,3 +74,6 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
   .outfits{flex-wrap:wrap}
 }
 @media (prefers-reduced-motion:reduce){.pill[aria-pressed="true"] svg{animation:none}}
+
+/* Jordan: hide controls row, angle buttons, header and hint text */
+.controls,.quick,header.top,#hint{display:none!important}
