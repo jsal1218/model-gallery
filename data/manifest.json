@@ -1,0 +1,141 @@
+{
+  "title": "Atelier 360",
+  "canvas": {
+    "hi": [
+      1200,
+      2048
+    ],
+    "lo": [
+      600,
+      1024
+    ]
+  },
+  "models": [
+    {
+      "id": "model-1",
+      "name": "Model 1",
+      "descriptor": "Strawberry blonde \u00b7 fair \u00b7 curvy",
+      "outfits": [
+        {
+          "id": "base",
+          "name": "Base",
+          "subtitle": "Grey crop set",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/model-1/base/lo/000.webp",
+              "hi": "assets/model-1/base/hi/000.webp",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/model-1/base/lo/045.webp",
+              "hi": "assets/model-1/base/hi/045.webp",
+              "source": "generated"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/model-1/base/lo/090.webp",
+              "hi": "assets/model-1/base/hi/090.webp",
+              "source": "generated"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/model-1/base/lo/135.webp",
+              "hi": "assets/model-1/base/hi/135.webp",
+              "source": "generated"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/model-1/base/lo/180.webp",
+              "hi": "assets/model-1/base/hi/180.webp",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/model-1/base/lo/225.webp",
+              "hi": "assets/model-1/base/hi/225.webp",
+              "source": "generated"
+            },
+            {
+              "angle": 270,
+              "lo": "assets/model-1/base/lo/270.webp",
+              "hi": "assets/model-1/base/hi/270.webp",
+              "source": "generated"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/model-1/base/lo/315.webp",
+              "hi": "assets/model-1/base/hi/315.webp",
+              "source": "generated"
+            }
+          ]
+        }
+      ],
+      "thumb": "assets/model-1/thumb.webp"
+    },
+    {
+      "id": "model-2",
+      "name": "Model 2",
+      "descriptor": "Dark curls \u00b7 tan \u00b7 athletic-curvy",
+      "outfits": [
+        {
+          "id": "base",
+          "name": "Base",
+          "subtitle": "Grey crop set",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/model-2/base/lo/000.webp",
+              "hi": "assets/model-2/base/hi/000.webp",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/model-2/base/lo/045.webp",
+              "hi": "assets/model-2/base/hi/045.webp",
+              "source": "generated"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/model-2/base/lo/090.webp",
+              "hi": "assets/model-2/base/hi/090.webp",
+              "source": "generated"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/model-2/base/lo/135.webp",
+              "hi": "assets/model-2/base/hi/135.webp",
+              "source": "generated"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/model-2/base/lo/180.webp",
+              "hi": "assets/model-2/base/hi/180.webp",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/model-2/base/lo/225.webp",
+              "hi": "assets/model-2/base/hi/225.webp",
+              "source": "generated"
+            },
+            {
+              "angle": 270,
+              "lo": "assets/model-2/base/lo/270.webp",
+              "hi": "assets/model-2/base/hi/270.webp",
+              "source": "generated"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/model-2/base/lo/315.webp",
+              "hi": "assets/model-2/base/hi/315.webp",
+              "source": "generated"
+            }
+          ]
+        }
+      ],
+      "thumb": "assets/model-2/thumb.webp"
+    }
+  ]
+}
