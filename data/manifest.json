@@ -23,56 +23,59 @@
           "frames": [
             {
               "angle": 0,
-              "lo": "assets/model-1/base/lo/000.webp",
-              "hi": "assets/model-1/base/hi/000.webp",
+              "lo": "assets/model-1/base/lo/000.webp?v=202610171801",
+              "hi": "assets/model-1/base/hi/000.webp?v=202610171801",
               "source": "reference"
             },
             {
               "angle": 45,
-              "lo": "assets/model-1/base/lo/045.webp",
-              "hi": "assets/model-1/base/hi/045.webp",
-              "source": "generated"
+              "lo": "assets/model-1/base/lo/045.webp?v=202610171801",
+              "hi": "assets/model-1/base/hi/045.webp?v=202610171801",
+              "source": "reference"
             },
             {
               "angle": 90,
-              "lo": "assets/model-1/base/lo/090.webp",
-              "hi": "assets/model-1/base/hi/090.webp",
-              "source": "generated"
+              "lo": "assets/model-1/base/lo/090.webp?v=202610171801",
+              "hi": "assets/model-1/base/hi/090.webp?v=202610171801",
+              "source": "reference"
             },
             {
               "angle": 135,
-              "lo": "assets/model-1/base/lo/135.webp",
-              "hi": "assets/model-1/base/hi/135.webp",
-              "source": "generated"
+              "lo": "assets/model-1/base/lo/135.webp?v=202610171801",
+              "hi": "assets/model-1/base/hi/135.webp?v=202610171801",
+              "source": "reference"
             },
             {
               "angle": 180,
-              "lo": "assets/model-1/base/lo/180.webp",
-              "hi": "assets/model-1/base/hi/180.webp",
+              "lo": "assets/model-1/base/lo/180.webp?v=202610171801",
+              "hi": "assets/model-1/base/hi/180.webp?v=202610171801",
               "source": "reference"
             },
             {
               "angle": 225,
-              "lo": "assets/model-1/base/lo/225.webp",
-              "hi": "assets/model-1/base/hi/225.webp",
-              "source": "generated"
+              "lo": "assets/model-1/base/lo/225.webp?v=202610171801",
+              "hi": "assets/model-1/base/hi/225.webp?v=202610171801",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
             },
             {
               "angle": 270,
-              "lo": "assets/model-1/base/lo/270.webp",
-              "hi": "assets/model-1/base/hi/270.webp",
-              "source": "generated"
+              "lo": "assets/model-1/base/lo/270.webp?v=202610171801",
+              "hi": "assets/model-1/base/hi/270.webp?v=202610171801",
+              "source": "reference"
             },
             {
               "angle": 315,
-              "lo": "assets/model-1/base/lo/315.webp",
-              "hi": "assets/model-1/base/hi/315.webp",
-              "source": "generated"
+              "lo": "assets/model-1/base/lo/315.webp?v=202610171801",
+              "hi": "assets/model-1/base/hi/315.webp?v=202610171801",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
             }
-          ]
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround pixels (reference/model-1-turnaround-6.jpg), no AI generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         }
       ],
-      "thumb": "assets/model-1/thumb.webp"
+      "thumb": "assets/model-1/thumb.webp?v=202610171801"
     },
     {
       "id": "model-2",
