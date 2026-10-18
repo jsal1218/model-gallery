@@ -615,6 +615,341 @@
       "thumb": "assets/exact-17/thumb.webp?v=202610180638"
     },
     {
+      "id": "exact-18",
+      "name": "Model 10",
+      "group": "exact",
+      "descriptor": "Long curly red hair \u00b7 fair \u00b7 slim",
+      "outfits": [
+        {
+          "id": "base",
+          "name": "Base",
+          "subtitle": "Grey crop set",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-18/base/lo/000.webp?v=202610181342",
+              "hi": "assets/exact-18/base/hi/000.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-18/base/lo/045.webp?v=202610181342",
+              "hi": "assets/exact-18/base/hi/045.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-18/base/lo/090.webp?v=202610181342",
+              "hi": "assets/exact-18/base/hi/090.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-18/base/lo/135.webp?v=202610181342",
+              "hi": "assets/exact-18/base/hi/135.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-18/base/lo/180.webp?v=202610181342",
+              "hi": "assets/exact-18/base/hi/180.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-18/base/lo/225.webp?v=202610181342",
+              "hi": "assets/exact-18/base/hi/225.webp?v=202610181342",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-18/base/lo/270.webp?v=202610181342",
+              "hi": "assets/exact-18/base/hi/270.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-18/base/lo/315.webp?v=202610181342",
+              "hi": "assets/exact-18/base/hi/315.webp?v=202610181342",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-18-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        }
+      ],
+      "thumb": "assets/exact-18/thumb.webp?v=202610181342"
+    },
+    {
+      "id": "exact-19",
+      "name": "Model 11",
+      "group": "exact",
+      "descriptor": "Long copper hair \u00b7 half-cyborg \u00b7 curvy",
+      "outfits": [
+        {
+          "id": "base",
+          "name": "Base",
+          "subtitle": "Black top \u00b7 flared pants",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-19/base/lo/000.webp?v=202610181342",
+              "hi": "assets/exact-19/base/hi/000.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-19/base/lo/045.webp?v=202610181342",
+              "hi": "assets/exact-19/base/hi/045.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-19/base/lo/090.webp?v=202610181342",
+              "hi": "assets/exact-19/base/hi/090.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-19/base/lo/135.webp?v=202610181342",
+              "hi": "assets/exact-19/base/hi/135.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-19/base/lo/180.webp?v=202610181342",
+              "hi": "assets/exact-19/base/hi/180.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-19/base/lo/225.webp?v=202610181342",
+              "hi": "assets/exact-19/base/hi/225.webp?v=202610181342",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-19/base/lo/270.webp?v=202610181342",
+              "hi": "assets/exact-19/base/hi/270.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-19/base/lo/315.webp?v=202610181342",
+              "hi": "assets/exact-19/base/hi/315.webp?v=202610181342",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-19-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        }
+      ],
+      "thumb": "assets/exact-19/thumb.webp?v=202610181342"
+    },
+    {
+      "id": "exact-20",
+      "name": "Model 12",
+      "group": "exact",
+      "descriptor": "Blonde bob \u00b7 half-cyborg \u00b7 curvy",
+      "outfits": [
+        {
+          "id": "base",
+          "name": "Base",
+          "subtitle": "Black top \u00b7 flared pants",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-20/base/lo/000.webp?v=202610181342",
+              "hi": "assets/exact-20/base/hi/000.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-20/base/lo/045.webp?v=202610181342",
+              "hi": "assets/exact-20/base/hi/045.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-20/base/lo/090.webp?v=202610181342",
+              "hi": "assets/exact-20/base/hi/090.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-20/base/lo/135.webp?v=202610181342",
+              "hi": "assets/exact-20/base/hi/135.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-20/base/lo/180.webp?v=202610181342",
+              "hi": "assets/exact-20/base/hi/180.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-20/base/lo/225.webp?v=202610181342",
+              "hi": "assets/exact-20/base/hi/225.webp?v=202610181342",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-20/base/lo/270.webp?v=202610181342",
+              "hi": "assets/exact-20/base/hi/270.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-20/base/lo/315.webp?v=202610181342",
+              "hi": "assets/exact-20/base/hi/315.webp?v=202610181342",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-20-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        }
+      ],
+      "thumb": "assets/exact-20/thumb.webp?v=202610181342"
+    },
+    {
+      "id": "exact-21",
+      "name": "Model 13",
+      "group": "exact",
+      "descriptor": "Long wavy brown hair \u00b7 fair \u00b7 slim",
+      "outfits": [
+        {
+          "id": "base",
+          "name": "Base",
+          "subtitle": "Grey crop set",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-21/base/lo/000.webp?v=202610181342",
+              "hi": "assets/exact-21/base/hi/000.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-21/base/lo/045.webp?v=202610181342",
+              "hi": "assets/exact-21/base/hi/045.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-21/base/lo/090.webp?v=202610181342",
+              "hi": "assets/exact-21/base/hi/090.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-21/base/lo/135.webp?v=202610181342",
+              "hi": "assets/exact-21/base/hi/135.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-21/base/lo/180.webp?v=202610181342",
+              "hi": "assets/exact-21/base/hi/180.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-21/base/lo/225.webp?v=202610181342",
+              "hi": "assets/exact-21/base/hi/225.webp?v=202610181342",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-21/base/lo/270.webp?v=202610181342",
+              "hi": "assets/exact-21/base/hi/270.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-21/base/lo/315.webp?v=202610181342",
+              "hi": "assets/exact-21/base/hi/315.webp?v=202610181342",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-21-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        }
+      ],
+      "thumb": "assets/exact-21/thumb.webp?v=202610181342"
+    },
+    {
+      "id": "exact-22",
+      "name": "Model 14",
+      "group": "exact",
+      "descriptor": "Brown cap \u00b7 white tee",
+      "outfits": [
+        {
+          "id": "base",
+          "name": "Base",
+          "subtitle": "White graphic tee \u00b7 black shorts",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-22/base/lo/000.webp?v=202610181342",
+              "hi": "assets/exact-22/base/hi/000.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-22/base/lo/045.webp?v=202610181342",
+              "hi": "assets/exact-22/base/hi/045.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-22/base/lo/090.webp?v=202610181342",
+              "hi": "assets/exact-22/base/hi/090.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-22/base/lo/135.webp?v=202610181342",
+              "hi": "assets/exact-22/base/hi/135.webp?v=202610181342",
+              "source": "reference-mirrored",
+              "mirrorOf": 225
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-22/base/lo/180.webp?v=202610181342",
+              "hi": "assets/exact-22/base/hi/180.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-22/base/lo/225.webp?v=202610181342",
+              "hi": "assets/exact-22/base/hi/225.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-22/base/lo/270.webp?v=202610181342",
+              "hi": "assets/exact-22/base/hi/270.webp?v=202610181342",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-22/base/lo/315.webp?v=202610181342",
+              "hi": "assets/exact-22/base/hi/315.webp?v=202610181342",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-22-turnaround-6.jpg) pixels, no further generation. 135 and 315 are horizontal mirrors of 225 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        }
+      ],
+      "thumb": "assets/exact-22/thumb.webp?v=202610181342"
+    },
+    {
       "id": "photoreal-1",
       "name": "Photoreal 1",
       "group": "photoreal",
