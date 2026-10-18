@@ -37,21 +37,22 @@
     requestAnimationFrame(tick);
   }
 
-  // main row = exact-reference models; models with group "photoreal" go in the separate Photorealistic row below
+  // main row = exact-reference models; group "photoreal" goes in the Photorealistic row, group "generated" in the Generated row below it
   function renderModels() {
-    const box = $('models'), pbox = $('photoreal'); box.innerHTML = ''; pbox.innerHTML = '';
-    const photo = S.manifest.models.filter(m => m.group === 'photoreal');
-    pbox.hidden = $('photorealH').hidden = !photo.length;
+    const box = $('models'), pbox = $('photoreal'), gbox = $('generated'); box.innerHTML = ''; pbox.innerHTML = ''; gbox.innerHTML = '';
+    const has = (g) => S.manifest.models.some(m => m.group === g);
+    pbox.hidden = $('photorealH').hidden = !has('photoreal');
+    gbox.hidden = $('generatedH').hidden = !has('generated');
     S.manifest.models.forEach(m => {
       const b = document.createElement('button');
       b.className = 'model'; b.type = 'button'; b.role = 'tab'; b.dataset.id = m.id;
       b.innerHTML = `<img src="${m.thumb}" alt=""><span><b>${m.name}</b><small>${m.descriptor}</small></span>`;
       b.addEventListener('click', () => selectModel(m.id));
-      (m.group === 'photoreal' ? pbox : box).appendChild(b);
+      (m.group === 'photoreal' ? pbox : m.group === 'generated' ? gbox : box).appendChild(b);
     });
     const n = box.children.length, h = box.previousElementSibling; box.classList.toggle('many', n > 8);   // "Model · 10" so it is clear the row scrolls
     if (h && h.tagName === 'H2') h.innerHTML = `Model${n > 1 ? `<span class="count">· ${n}</span>` : ''}`;
-    [box, pbox].forEach(x => { if (!x.dataset.fade) { x.dataset.fade = 1; x.addEventListener('scroll', () => edgeFade(x), { passive: true }); } });
+    [box, pbox, gbox].forEach(x => { if (!x.dataset.fade) { x.dataset.fade = 1; x.addEventListener('scroll', () => edgeFade(x), { passive: true }); } });
     edgeFades();
   }
   // soft edge fades on a scrolling row show there are more models off-screen (mobile only; desktop is a grid)
@@ -59,7 +60,7 @@
     const sc = x.scrollWidth > x.clientWidth + 1;
     x.classList.toggle('fade-l', sc && x.scrollLeft > 4); x.classList.toggle('fade-r', sc && x.scrollLeft + x.clientWidth < x.scrollWidth - 4);
   }
-  function edgeFades() { ['models', 'photoreal'].forEach(id => edgeFade($(id))); }
+  function edgeFades() { ['models', 'photoreal', 'generated'].forEach(id => edgeFade($(id))); }
 
   // mobile switcher is a horizontal scroll row: bring the selected model into view (horizontal only, never scrolls the page)
   function revealModel(id) {
@@ -69,13 +70,18 @@
     if (br.left < xr.left + padL || br.right > xr.right - padL) box.scrollTo({ left: box.scrollLeft + br.left - xr.left - padL, behavior: 'smooth' });
   }
 
+  // outfit chips sit on the viewer itself (small swatch + name) and only appear for models with more than one outfit;
+  // switching keeps the current angle (and auto-rotate), so you can change outfits and keep spinning
   function renderOutfits() {
-    const box = $('outfits'); box.innerHTML = '';
-    S.model.outfits.forEach(o => {
-      const b = document.createElement('button');
-      b.className = 'outfit'; b.type = 'button'; b.dataset.id = o.id;
-      b.innerHTML = `<div class="ph" style="background-image:url('${o.frames[0].lo}')"></div><b>${o.name}</b><small>${o.subtitle} · ${o.frames.length} angles</small>`;
-      b.addEventListener('click', () => selectOutfit(o.id, S.angle));
+    const box = $('ochips'), list = S.model.outfits; box.innerHTML = '';
+    box.hidden = list.length < 2;
+    if (list.length < 2) return;
+    list.forEach(o => {
+      const b = document.createElement('button'), front = o.frames.find(f => f.angle === 0) || o.frames[0];
+      b.className = 'ochip'; b.type = 'button'; b.role = 'radio'; b.dataset.id = o.id; b.title = `${o.name} · ${o.subtitle}`;
+      b.innerHTML = `<i style="background-image:url('${front.lo}')"></i><span>${o.name}</span>`;
+      b.addEventListener('pointerdown', (e) => e.stopPropagation());
+      b.addEventListener('click', (e) => { e.stopPropagation(); if (S.outfit && S.outfit.id !== o.id) selectOutfit(o.id, S.angle); });
       box.appendChild(b);
     });
   }
@@ -91,7 +97,7 @@
   async function selectOutfit(id, angle) {
     S.outfit = S.model.outfits.find(o => o.id === id);
     S.frames = [...S.outfit.frames].sort((a, b) => a.angle - b.angle);
-    document.querySelectorAll('.outfit').forEach(b => b.setAttribute('aria-current', b.dataset.id === id));
+    document.querySelectorAll('.ochip').forEach(b => b.setAttribute('aria-checked', b.dataset.id === id));
     resetZoom(true);
     S.angle = mod(angle || 0); S.vel = 0; S.snapTo = null;
     $('metaLine').textContent = `${S.model.name} · ${S.outfit.name} · ${S.frames.length} angles`;
@@ -174,7 +180,7 @@
     const n = S.frames.length, refs = S.frames.filter(f => f.source === 'reference').length;
     $('note').textContent = n < 8
       ? `Preview set: ${n} photographed angles${refs ? ' (front & back reference)' : ''}. In-between angles show the nearest photographed view until the full turnaround frames are added.`
-      : `${n}-angle turnaround${refs ? `, ${refs} from original reference photos` : ''}. Zoom swaps in ${S.manifest.canvas.hi[1]}px frames.`;
+      : `${n}-angle turnaround${refs ? `, ${refs} from ${S.model.source === 'generated' ? 'her generated 6-view sheet' : 'original reference photos'}` : ''}${S.model.outfits.length > 1 ? ` · ${S.model.outfits.length} outfits` : ''}. Zoom swaps in ${S.manifest.canvas.hi[1]}px frames.`;
   }
 
   /* ---------- motion loop ---------- */
