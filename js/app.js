@@ -27,12 +27,9 @@
       const res = await fetch('data/manifest.json', { cache: 'no-cache' });
       S.manifest = await res.json();
     } catch (e) { $('loaderText').textContent = 'Could not load manifest'; console.error(e); return; }
-    // models marked "hidden": true stay in the manifest (and their assets stay on disk) but are not shown anywhere;
-    // a hash pointing at a hidden model falls back to the first visible one (Model 1)
-    S.hiddenModels = S.manifest.models.filter(m => m.hidden);
-    S.manifest.models = S.manifest.models.filter(m => !m.hidden);
-    const [hm, ho, ha] = location.hash.replace('#', '').split('/');
-    const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];
+    const [h0, ho, ha] = location.hash.replace('#', '').split('/');
+    const hm = (S.manifest.aliases || {})[h0] || h0;   // retired ids (#model-2 … #model-6) map to their renumbered model
+    const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];  // unknown ids (e.g. deleted old Model 5) → Model 1
     renderModels();
     await selectModel(model.id, ho, ha !== undefined ? +ha : 0);
     // warm the cache for the other models in the background
@@ -40,20 +37,23 @@
     requestAnimationFrame(tick);
   }
 
+  // main row = exact-reference models; models with group "photoreal" go in the separate Photorealistic row below
   function renderModels() {
-    const box = $('models'); box.innerHTML = '';
+    const box = $('models'), pbox = $('photoreal'); box.innerHTML = ''; pbox.innerHTML = '';
+    const photo = S.manifest.models.filter(m => m.group === 'photoreal');
+    pbox.hidden = $('photorealH').hidden = !photo.length;
     S.manifest.models.forEach(m => {
       const b = document.createElement('button');
       b.className = 'model'; b.type = 'button'; b.role = 'tab'; b.dataset.id = m.id;
       b.innerHTML = `<img src="${m.thumb}" alt=""><span><b>${m.name}</b><small>${m.descriptor}</small></span>`;
       b.addEventListener('click', () => selectModel(m.id));
-      box.appendChild(b);
+      (m.group === 'photoreal' ? pbox : box).appendChild(b);
     });
   }
 
   // mobile switcher is a horizontal scroll row: bring the selected model into view (horizontal only, never scrolls the page)
   function revealModel(id) {
-    const box = $('models'), b = box.querySelector(`.model[data-id="${id}"]`);
+    const b = document.querySelector(`.model[data-id="${id}"]`), box = b && b.parentElement;
     if (!b || box.scrollWidth <= box.clientWidth + 1) return;
     const br = b.getBoundingClientRect(), xr = box.getBoundingClientRect(), padL = 14;
     if (br.left < xr.left + padL || br.right > xr.right - padL) box.scrollTo({ left: box.scrollLeft + br.left - xr.left - padL, behavior: 'smooth' });
