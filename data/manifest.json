@@ -276,6 +276,8 @@
       "id": "model-5",
       "name": "Model 5",
       "descriptor": "Wavy black hair \u00b7 deep tan \u00b7 curvy",
+      "hidden": true,
+      "hiddenReason": "Reference sheet lacks a real back three-quarter view; hidden until fixed. Remove \"hidden\" to restore.",
       "outfits": [
         {
           "id": "base",

@@ -27,6 +27,10 @@
       const res = await fetch('data/manifest.json', { cache: 'no-cache' });
       S.manifest = await res.json();
     } catch (e) { $('loaderText').textContent = 'Could not load manifest'; console.error(e); return; }
+    // models marked "hidden": true stay in the manifest (and their assets stay on disk) but are not shown anywhere;
+    // a hash pointing at a hidden model falls back to the first visible one (Model 1)
+    S.hiddenModels = S.manifest.models.filter(m => m.hidden);
+    S.manifest.models = S.manifest.models.filter(m => !m.hidden);
     const [hm, ho, ha] = location.hash.replace('#', '').split('/');
     const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];
     renderModels();
