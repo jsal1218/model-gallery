@@ -49,7 +49,17 @@
       b.addEventListener('click', () => selectModel(m.id));
       (m.group === 'photoreal' ? pbox : box).appendChild(b);
     });
+    const n = box.children.length, h = box.previousElementSibling; box.classList.toggle('many', n > 8);   // "Model · 10" so it is clear the row scrolls
+    if (h && h.tagName === 'H2') h.innerHTML = `Model${n > 1 ? `<span class="count">· ${n}</span>` : ''}`;
+    [box, pbox].forEach(x => { if (!x.dataset.fade) { x.dataset.fade = 1; x.addEventListener('scroll', () => edgeFade(x), { passive: true }); } });
+    edgeFades();
   }
+  // soft edge fades on a scrolling row show there are more models off-screen (mobile only; desktop is a grid)
+  function edgeFade(x) {
+    const sc = x.scrollWidth > x.clientWidth + 1;
+    x.classList.toggle('fade-l', sc && x.scrollLeft > 4); x.classList.toggle('fade-r', sc && x.scrollLeft + x.clientWidth < x.scrollWidth - 4);
+  }
+  function edgeFades() { ['models', 'photoreal'].forEach(id => edgeFade($(id))); }
 
   // mobile switcher is a horizontal scroll row: bring the selected model into view (horizontal only, never scrolls the page)
   function revealModel(id) {
@@ -321,7 +331,7 @@
   $('autoBtn').addEventListener('click', () => toggleAuto());
   $('zoomReset').addEventListener('click', (e) => { e.stopPropagation(); resetZoom(); });
   $('zoomReset').addEventListener('pointerdown', (e) => e.stopPropagation());
-  window.addEventListener('resize', () => applyZoom());
+  window.addEventListener('resize', () => { applyZoom(); edgeFades(); });
 
   let hintTimer = setTimeout(hideHint, 6000);
   function hideHint() { $('hint').classList.add('gone'); clearTimeout(hintTimer); }

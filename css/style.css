@@ -50,11 +50,23 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 .quick button.on{color:var(--ink);border-color:var(--ink)}
 .panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:14px}
 .panel h2{margin:4px 2px 10px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
-/* mobile: one horizontally scrolling row (snap, edge peek) so 6+ models stay compact; desktop: list (below) */
-.models{display:flex;gap:10px;margin:0 -14px 16px;padding:2px 14px 4px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 14px;
+/* mobile: a horizontally scrolling row (snap, edge peek, edge fades); more than 8 models switch to compact stacked chips (.many, ~4 visible) so ~15 stay quick to scan; desktop: 2-column grid (below) */
+.models{display:flex;gap:8px;margin:0 -14px 16px;padding:2px 14px 4px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 14px;
   scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
 .models::-webkit-scrollbar{display:none}
-.models .model{flex:0 0 auto;width:min(46%,190px);scroll-snap-align:start;min-width:0}
+.models.fade-r{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent)}
+.models.fade-l{-webkit-mask-image:linear-gradient(90deg,transparent,#000 36px);mask-image:linear-gradient(90deg,transparent,#000 36px)}
+.models.fade-l.fade-r{-webkit-mask-image:linear-gradient(90deg,transparent,#000 36px,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(90deg,transparent,#000 36px,#000 calc(100% - 36px),transparent)}
+.models .model{flex:0 0 auto;width:min(38%,156px);scroll-snap-align:start;min-width:0;gap:8px;padding:7px}
+.models .model img{width:44px;height:44px}
+.models .model b{font-size:16.5px;white-space:nowrap}
+.models.many{scroll-snap-type:x proximity}
+.models.many .model{width:88px;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:7px 4px 8px}
+.models.many .model img{width:50px;height:50px}
+.models.many .model span{width:100%}
+.models.many .model b{font-size:15px;line-height:1.15}
+.models.many .model small{font-size:9.5px;line-height:1.2;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+.panel h2 .count{margin-left:6px;letter-spacing:.08em;font-weight:500;opacity:.75}
 .model span{min-width:0}
 .model{display:flex;align-items:center;gap:10px;padding:8px;border-radius:14px;border:1px solid var(--line);background:#fff;text-align:left}
 .model img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#f0ede7;flex:none}
@@ -75,7 +87,12 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
   .layout{flex-direction:row;align-items:flex-start;padding:0 32px 28px;gap:24px}
   .viewer-wrap{flex:1}.viewer{height:calc(100vh - 190px);min-height:560px}
   .panel{width:330px;position:sticky;top:20px}
-  .models{display:grid;grid-template-columns:1fr;margin:0 0 16px;padding:0;overflow:visible}
+  .models{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 16px;padding:0;overflow:visible}
+  .models .model,.models.many .model{width:auto;flex-direction:row;align-items:center;text-align:left;gap:8px;padding:7px}
+  .models .model img,.models.many .model img{width:40px;height:40px}
+  .models.many .model b{font-size:16px}
+  .models .model small{font-size:10px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+  .models.fade-l,.models.fade-r{-webkit-mask-image:none;mask-image:none}
   .models .model{width:auto}
   .outfits{flex-wrap:wrap}
 }
