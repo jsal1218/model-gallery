@@ -1,0 +1,18 @@
+#!/bin/sh
+# Auto-stamps a fresh version on every commit so each push triggers a service-worker update on installed copies.
+# Reads the current VERSION from sw.js and replaces that exact string in every tracked text file
+# (sw.js, js/update.js, and anywhere else it appears). Enable once per clone:  git config core.hooksPath .githooks
+set -e
+cd "$(git rev-parse --show-toplevel)"
+OLD=$(sed -n "s/^const VERSION = '\([^']*\)';.*/\1/p" sw.js | head -n 1)
+if [ -z "$OLD" ]; then echo "pre-commit: no VERSION found in sw.js" >&2; exit 1; fi
+NEW="$(date -u +%Y.%m.%d-%H%M%S)-$(git rev-parse --short HEAD 2>/dev/null || echo init)"
+[ "$OLD" = "$NEW" ] && exit 0
+FILES=$(git grep -l -I -F "'$OLD'" -- . ':!screenshots' ':!*.png' ':!*.webp' ':!*.jpg' || true)
+for f in $FILES; do
+  if ! git diff --quiet -- "$f"; then echo "pre-commit: note: $f has unstaged changes; they will be included in this commit" >&2; fi
+  OLD_RE=$(printf '%s' "$OLD" | sed 's/[.[\*^$/]/\\&/g')
+  sed -i.bak "s/'$OLD_RE'/'$NEW'/g" "$f" && rm -f "$f.bak"
+  git add -- "$f"
+done
+echo "Stamped version $NEW ($(echo $FILES | tr '\n' ' '))"
