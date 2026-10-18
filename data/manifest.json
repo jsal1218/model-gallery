@@ -950,6 +950,73 @@
       "thumb": "assets/exact-14/thumb.webp?v=202610180304"
     },
     {
+      "id": "exact-15",
+      "name": "Model 15",
+      "group": "exact",
+      "descriptor": "Braided updo \u00b7 bronze tan \u00b7 gold bikini",
+      "outfits": [
+        {
+          "id": "base",
+          "name": "Base",
+          "subtitle": "Gold bikini",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-15/base/lo/000.webp?v=202610180414",
+              "hi": "assets/exact-15/base/hi/000.webp?v=202610180414",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-15/base/lo/045.webp?v=202610180414",
+              "hi": "assets/exact-15/base/hi/045.webp?v=202610180414",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-15/base/lo/090.webp?v=202610180414",
+              "hi": "assets/exact-15/base/hi/090.webp?v=202610180414",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-15/base/lo/135.webp?v=202610180414",
+              "hi": "assets/exact-15/base/hi/135.webp?v=202610180414",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-15/base/lo/180.webp?v=202610180414",
+              "hi": "assets/exact-15/base/hi/180.webp?v=202610180414",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-15/base/lo/225.webp?v=202610180414",
+              "hi": "assets/exact-15/base/hi/225.webp?v=202610180414",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-15/base/lo/270.webp?v=202610180414",
+              "hi": "assets/exact-15/base/hi/270.webp?v=202610180414",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-15/base/lo/315.webp?v=202610180414",
+              "hi": "assets/exact-15/base/hi/315.webp?v=202610180414",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround pixels (reference/exact-15-turnaround-6.jpg), no AI generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        }
+      ],
+      "thumb": "assets/exact-15/thumb.webp?v=202610180414"
+    },
+    {
       "id": "photoreal-1",
       "name": "Photoreal 1",
       "group": "photoreal",
