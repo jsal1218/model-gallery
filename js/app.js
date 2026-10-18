@@ -47,6 +47,14 @@
     });
   }
 
+  // mobile switcher is a horizontal scroll row: bring the selected model into view (horizontal only, never scrolls the page)
+  function revealModel(id) {
+    const box = $('models'), b = box.querySelector(`.model[data-id="${id}"]`);
+    if (!b || box.scrollWidth <= box.clientWidth + 1) return;
+    const br = b.getBoundingClientRect(), xr = box.getBoundingClientRect(), padL = 14;
+    if (br.left < xr.left + padL || br.right > xr.right - padL) box.scrollTo({ left: box.scrollLeft + br.left - xr.left - padL, behavior: 'smooth' });
+  }
+
   function renderOutfits() {
     const box = $('outfits'); box.innerHTML = '';
     S.model.outfits.forEach(o => {
@@ -61,6 +69,7 @@
   async function selectModel(id, outfitId, angle) {
     S.model = S.manifest.models.find(m => m.id === id);
     document.querySelectorAll('.model').forEach(b => b.setAttribute('aria-selected', b.dataset.id === id));
+    revealModel(id);
     renderOutfits();
     await selectOutfit((S.model.outfits.find(o => o.id === outfitId) || S.model.outfits[0]).id, angle ?? S.angle);
   }

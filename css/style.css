@@ -50,7 +50,12 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 .quick button.on{color:var(--ink);border-color:var(--ink)}
 .panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:14px}
 .panel h2{margin:4px 2px 10px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.models{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+/* mobile: one horizontally scrolling row (snap, edge peek) so 6+ models stay compact; desktop: list (below) */
+.models{display:flex;gap:10px;margin:0 -14px 16px;padding:2px 14px 4px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 14px;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.models::-webkit-scrollbar{display:none}
+.models .model{flex:0 0 auto;width:min(46%,190px);scroll-snap-align:start;min-width:0}
+.model span{min-width:0}
 .model{display:flex;align-items:center;gap:10px;padding:8px;border-radius:14px;border:1px solid var(--line);background:#fff;text-align:left}
 .model img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:#f0ede7;flex:none}
 .model b{display:block;font-family:var(--serif);font-weight:500;font-size:18px}
@@ -70,7 +75,8 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
   .layout{flex-direction:row;align-items:flex-start;padding:0 32px 28px;gap:24px}
   .viewer-wrap{flex:1}.viewer{height:calc(100vh - 190px);min-height:560px}
   .panel{width:330px;position:sticky;top:20px}
-  .models{grid-template-columns:1fr}
+  .models{display:grid;grid-template-columns:1fr;margin:0 0 16px;padding:0;overflow:visible}
+  .models .model{width:auto}
   .outfits{flex-wrap:wrap}
 }
 @media (prefers-reduced-motion:reduce){.pill[aria-pressed="true"] svg{animation:none}}
