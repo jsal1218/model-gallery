@@ -28,8 +28,8 @@
       S.manifest = await res.json();
     } catch (e) { $('loaderText').textContent = 'Could not load manifest'; console.error(e); return; }
     const [h0, ho, ha] = location.hash.replace('#', '').split('/');
-    const hm = (S.manifest.aliases || {})[h0] || h0;   // retired ids (#model-2 … #model-6) map to their renumbered model
-    const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];  // unknown ids (e.g. deleted old Model 5) → Model 1
+    const hm = (S.manifest.aliases || {})[h0] || h0;   // retired ids (#model-2) map to their renumbered model
+    const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];  // unknown or removed ids (old Model 5; exact-1..4, 8, 11, 15, 16) → the first model
     renderModels();
     await selectModel(model.id, ho, ha !== undefined ? +ha : 0);
     // warm the cache for the other models in the background
