@@ -1017,6 +1017,73 @@
       "thumb": "assets/exact-15/thumb.webp?v=202610180414"
     },
     {
+      "id": "exact-16",
+      "name": "Model 16",
+      "group": "exact",
+      "descriptor": "Messy bun \u00b7 brunette",
+      "outfits": [
+        {
+          "id": "base",
+          "name": "Base",
+          "subtitle": "Grey crop set",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-16/base/lo/000.webp?v=202610180533",
+              "hi": "assets/exact-16/base/hi/000.webp?v=202610180533",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-16/base/lo/045.webp?v=202610180533",
+              "hi": "assets/exact-16/base/hi/045.webp?v=202610180533",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-16/base/lo/090.webp?v=202610180533",
+              "hi": "assets/exact-16/base/hi/090.webp?v=202610180533",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-16/base/lo/135.webp?v=202610180533",
+              "hi": "assets/exact-16/base/hi/135.webp?v=202610180533",
+              "source": "reference-mirrored",
+              "mirrorOf": 225
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-16/base/lo/180.webp?v=202610180533",
+              "hi": "assets/exact-16/base/hi/180.webp?v=202610180533",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-16/base/lo/225.webp?v=202610180533",
+              "hi": "assets/exact-16/base/hi/225.webp?v=202610180533",
+              "source": "reference"
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-16/base/lo/270.webp?v=202610180533",
+              "hi": "assets/exact-16/base/hi/270.webp?v=202610180533",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-16/base/lo/315.webp?v=202610180533",
+              "hi": "assets/exact-16/base/hi/315.webp?v=202610180533",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-16-turnaround-6.jpg) pixels, no further generation. 135 and 315 are horizontal mirrors of 225 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        }
+      ],
+      "thumb": "assets/exact-16/thumb.webp?v=202610180533"
+    },
+    {
       "id": "photoreal-1",
       "name": "Photoreal 1",
       "group": "photoreal",
