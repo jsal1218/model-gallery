@@ -74,6 +74,64 @@
             }
           ],
           "note": "All 8 frames are Jordan's exact reference turnaround pixels (reference/exact-5-turnaround-6.jpg), no AI generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "tank-shorts",
+          "name": "Tank & shorts",
+          "subtitle": "Black tank \u00b7 shorts \u00b7 sneakers",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-5/tank-shorts/lo/000.webp?v=202610190130",
+              "hi": "assets/exact-5/tank-shorts/hi/000.webp?v=202610190130",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-5/tank-shorts/lo/045.webp?v=202610190130",
+              "hi": "assets/exact-5/tank-shorts/hi/045.webp?v=202610190130",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-5/tank-shorts/lo/090.webp?v=202610190130",
+              "hi": "assets/exact-5/tank-shorts/hi/090.webp?v=202610190130",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-5/tank-shorts/lo/135.webp?v=202610190130",
+              "hi": "assets/exact-5/tank-shorts/hi/135.webp?v=202610190130",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-5/tank-shorts/lo/180.webp?v=202610190130",
+              "hi": "assets/exact-5/tank-shorts/hi/180.webp?v=202610190130",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-5/tank-shorts/lo/225.webp?v=202610190130",
+              "hi": "assets/exact-5/tank-shorts/hi/225.webp?v=202610190130",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-5/tank-shorts/lo/270.webp?v=202610190130",
+              "hi": "assets/exact-5/tank-shorts/hi/270.webp?v=202610190130",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-5/tank-shorts/lo/315.webp?v=202610190130",
+              "hi": "assets/exact-5/tank-shorts/hi/315.webp?v=202610190130",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/exact-5-tank-shorts-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         }
       ],
       "thumb": "assets/exact-5/thumb.webp?v=202610180215"
@@ -950,313 +1008,6 @@
       "thumb": "assets/exact-22/thumb.webp?v=202610181342"
     },
     {
-      "id": "photoreal-1",
-      "name": "Photoreal 1",
-      "group": "photoreal",
-      "descriptor": "Dark curls \u00b7 tan \u00b7 athletic-curvy",
-      "outfits": [
-        {
-          "id": "base",
-          "name": "Base",
-          "subtitle": "Grey crop set",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/photoreal-1/base/lo/000.webp?v=202610180210",
-              "hi": "assets/photoreal-1/base/hi/000.webp?v=202610180210",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/photoreal-1/base/lo/045.webp?v=202610180210",
-              "hi": "assets/photoreal-1/base/hi/045.webp?v=202610180210",
-              "source": "generated"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/photoreal-1/base/lo/090.webp?v=202610180210",
-              "hi": "assets/photoreal-1/base/hi/090.webp?v=202610180210",
-              "source": "generated"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/photoreal-1/base/lo/135.webp?v=202610180210",
-              "hi": "assets/photoreal-1/base/hi/135.webp?v=202610180210",
-              "source": "generated"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/photoreal-1/base/lo/180.webp?v=202610180210",
-              "hi": "assets/photoreal-1/base/hi/180.webp?v=202610180210",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/photoreal-1/base/lo/225.webp?v=202610180210",
-              "hi": "assets/photoreal-1/base/hi/225.webp?v=202610180210",
-              "source": "generated"
-            },
-            {
-              "angle": 270,
-              "lo": "assets/photoreal-1/base/lo/270.webp?v=202610180210",
-              "hi": "assets/photoreal-1/base/hi/270.webp?v=202610180210",
-              "source": "generated"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/photoreal-1/base/lo/315.webp?v=202610180210",
-              "hi": "assets/photoreal-1/base/hi/315.webp?v=202610180210",
-              "source": "generated"
-            }
-          ]
-        }
-      ],
-      "thumb": "assets/photoreal-1/thumb.webp?v=202610180210"
-    },
-    {
-      "id": "photoreal-2",
-      "name": "Photoreal 2",
-      "group": "photoreal",
-      "source": "generated",
-      "descriptor": "Pink hair \u00b7 all black",
-      "outfits": [
-        {
-          "id": "base",
-          "name": "Base",
-          "subtitle": "Grey crop set",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/generated-3/base/lo/000.webp?v=202610190001",
-              "hi": "assets/generated-3/base/hi/000.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/generated-3/base/lo/045.webp?v=202610190001",
-              "hi": "assets/generated-3/base/hi/045.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/generated-3/base/lo/090.webp?v=202610190001",
-              "hi": "assets/generated-3/base/hi/090.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/generated-3/base/lo/135.webp?v=202610190001",
-              "hi": "assets/generated-3/base/hi/135.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/generated-3/base/lo/180.webp?v=202610190001",
-              "hi": "assets/generated-3/base/hi/180.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/generated-3/base/lo/225.webp?v=202610190001",
-              "hi": "assets/generated-3/base/hi/225.webp?v=202610190001",
-              "source": "reference-mirrored",
-              "mirrorOf": 135
-            },
-            {
-              "angle": 270,
-              "lo": "assets/generated-3/base/lo/270.webp?v=202610190001",
-              "hi": "assets/generated-3/base/hi/270.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/generated-3/base/lo/315.webp?v=202610190001",
-              "hi": "assets/generated-3/base/hi/315.webp?v=202610190001",
-              "source": "reference-mirrored",
-              "mirrorOf": 45
-            }
-          ],
-          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/generated-3-base-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        },
-        {
-          "id": "turtleneck",
-          "name": "Turtleneck",
-          "subtitle": "Black turtleneck \u00b7 trousers",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/generated-3/turtleneck/lo/000.webp?v=202610190001",
-              "hi": "assets/generated-3/turtleneck/hi/000.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/generated-3/turtleneck/lo/045.webp?v=202610190001",
-              "hi": "assets/generated-3/turtleneck/hi/045.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/generated-3/turtleneck/lo/090.webp?v=202610190001",
-              "hi": "assets/generated-3/turtleneck/hi/090.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/generated-3/turtleneck/lo/135.webp?v=202610190001",
-              "hi": "assets/generated-3/turtleneck/hi/135.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/generated-3/turtleneck/lo/180.webp?v=202610190001",
-              "hi": "assets/generated-3/turtleneck/hi/180.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/generated-3/turtleneck/lo/225.webp?v=202610190001",
-              "hi": "assets/generated-3/turtleneck/hi/225.webp?v=202610190001",
-              "source": "reference-mirrored",
-              "mirrorOf": 135
-            },
-            {
-              "angle": 270,
-              "lo": "assets/generated-3/turtleneck/lo/270.webp?v=202610190001",
-              "hi": "assets/generated-3/turtleneck/hi/270.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/generated-3/turtleneck/lo/315.webp?v=202610190001",
-              "hi": "assets/generated-3/turtleneck/hi/315.webp?v=202610190001",
-              "source": "reference-mirrored",
-              "mirrorOf": 45
-            }
-          ],
-          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/generated-3-turtleneck-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        },
-        {
-          "id": "slip-dress",
-          "name": "Slip dress",
-          "subtitle": "Black slip dress \u00b7 sandals",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/generated-3/slip-dress/lo/000.webp?v=202610190001",
-              "hi": "assets/generated-3/slip-dress/hi/000.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/generated-3/slip-dress/lo/045.webp?v=202610190001",
-              "hi": "assets/generated-3/slip-dress/hi/045.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/generated-3/slip-dress/lo/090.webp?v=202610190001",
-              "hi": "assets/generated-3/slip-dress/hi/090.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/generated-3/slip-dress/lo/135.webp?v=202610190001",
-              "hi": "assets/generated-3/slip-dress/hi/135.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/generated-3/slip-dress/lo/180.webp?v=202610190001",
-              "hi": "assets/generated-3/slip-dress/hi/180.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/generated-3/slip-dress/lo/225.webp?v=202610190001",
-              "hi": "assets/generated-3/slip-dress/hi/225.webp?v=202610190001",
-              "source": "reference-mirrored",
-              "mirrorOf": 135
-            },
-            {
-              "angle": 270,
-              "lo": "assets/generated-3/slip-dress/lo/270.webp?v=202610190001",
-              "hi": "assets/generated-3/slip-dress/hi/270.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/generated-3/slip-dress/lo/315.webp?v=202610190001",
-              "hi": "assets/generated-3/slip-dress/hi/315.webp?v=202610190001",
-              "source": "reference-mirrored",
-              "mirrorOf": 45
-            }
-          ],
-          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/generated-3-slip-dress-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        },
-        {
-          "id": "tank-shorts",
-          "name": "Tank & shorts",
-          "subtitle": "Black tank \u00b7 shorts \u00b7 sneakers",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/generated-3/tank-shorts/lo/000.webp?v=202610190001",
-              "hi": "assets/generated-3/tank-shorts/hi/000.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/generated-3/tank-shorts/lo/045.webp?v=202610190001",
-              "hi": "assets/generated-3/tank-shorts/hi/045.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/generated-3/tank-shorts/lo/090.webp?v=202610190001",
-              "hi": "assets/generated-3/tank-shorts/hi/090.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/generated-3/tank-shorts/lo/135.webp?v=202610190001",
-              "hi": "assets/generated-3/tank-shorts/hi/135.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/generated-3/tank-shorts/lo/180.webp?v=202610190001",
-              "hi": "assets/generated-3/tank-shorts/hi/180.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/generated-3/tank-shorts/lo/225.webp?v=202610190001",
-              "hi": "assets/generated-3/tank-shorts/hi/225.webp?v=202610190001",
-              "source": "reference-mirrored",
-              "mirrorOf": 135
-            },
-            {
-              "angle": 270,
-              "lo": "assets/generated-3/tank-shorts/lo/270.webp?v=202610190001",
-              "hi": "assets/generated-3/tank-shorts/hi/270.webp?v=202610190001",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/generated-3/tank-shorts/lo/315.webp?v=202610190001",
-              "hi": "assets/generated-3/tank-shorts/hi/315.webp?v=202610190001",
-              "source": "reference-mirrored",
-              "mirrorOf": 45
-            }
-          ],
-          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/generated-3-tank-shorts-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        }
-      ],
-      "thumb": "assets/generated-3/thumb.webp?v=202610190001",
-      "aliasOf": "generated-3"
-    },
-    {
       "id": "generated-1",
       "name": "Generated 1",
       "group": "generated",
@@ -1871,15 +1622,9 @@
     {
       "id": "exact",
       "name": "Models"
-    },
-    {
-      "id": "photoreal",
-      "name": "Photorealistic",
-      "note": "AI-generated photoreal angles"
     }
   ],
   "aliases": {
-    "_note": "retired ids from before the first 2026-10-18 renumbering -> current ids. Removed models (old model-5; exact-1..4, 8, 11, 15, 16) have no alias and fall back to the first model. Ids are stable: the second renumbering (old Model 5, 6, 7, 9, 10, 12, 13, 14 -> Model 1-8) only changed names.",
-    "model-2": "photoreal-1"
+    "_note": "retired ids from before the first 2026-10-18 renumbering -> current ids. Removed models (old model-5; exact-1..4, 8, 11, 15, 16) have no alias and fall back to the first model. Ids are stable: the second renumbering (old Model 5, 6, 7, 9, 10, 12, 13, 14 -> Model 1-8) only changed names. The Photorealistic section (photoreal-1 = old model-2, photoreal-2) was removed on 2026-10-19; those ids and #model-2 now fall back to the first model."
   }
 }

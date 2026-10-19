@@ -29,7 +29,7 @@
     } catch (e) { $('loaderText').textContent = 'Could not load manifest'; console.error(e); return; }
     const [h0, ho, ha] = location.hash.replace('#', '').split('/');
     const hm = (S.manifest.aliases || {})[h0] || h0;   // retired ids (#model-2) map to their renumbered model
-    const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];  // unknown or removed ids (old Model 5; exact-1..4, 8, 11, 15, 16) → the first model
+    const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];  // unknown or removed ids (old Model 5; exact-1..4, 8, 11, 15, 16; photoreal-1/2 and #model-2 since the Photorealistic section was removed) → the first model
     renderModels();
     await selectModel(model.id, ho, ha !== undefined ? +ha : 0);
     // warm the cache for the other models in the background
@@ -37,22 +37,21 @@
     requestAnimationFrame(tick);
   }
 
-  // main row = exact-reference models; group "photoreal" goes in the Photorealistic row, group "generated" in the Generated row below it
+  // main row = exact-reference models; group "generated" goes in the Generated row below it (the Photorealistic section was removed 2026-10-19)
   function renderModels() {
-    const box = $('models'), pbox = $('photoreal'), gbox = $('generated'); box.innerHTML = ''; pbox.innerHTML = ''; gbox.innerHTML = '';
+    const box = $('models'), gbox = $('generated'); box.innerHTML = ''; gbox.innerHTML = '';
     const has = (g) => S.manifest.models.some(m => m.group === g);
-    pbox.hidden = $('photorealH').hidden = !has('photoreal');
     gbox.hidden = $('generatedH').hidden = !has('generated');
     S.manifest.models.forEach(m => {
       const b = document.createElement('button');
       b.className = 'model'; b.type = 'button'; b.role = 'tab'; b.dataset.id = m.id;
       b.innerHTML = `<img src="${m.thumb}" alt=""><span><b>${m.name}</b><small>${m.descriptor}</small></span>`;
       b.addEventListener('click', () => selectModel(m.id));
-      (m.group === 'photoreal' ? pbox : m.group === 'generated' ? gbox : box).appendChild(b);
+      (m.group === 'generated' ? gbox : box).appendChild(b);
     });
     const n = box.children.length, h = box.previousElementSibling; box.classList.toggle('many', n > 8);   // "Model · 10" so it is clear the row scrolls
     if (h && h.tagName === 'H2') h.innerHTML = `Model${n > 1 ? `<span class="count">· ${n}</span>` : ''}`;
-    [box, pbox, gbox].forEach(x => { if (!x.dataset.fade) { x.dataset.fade = 1; x.addEventListener('scroll', () => edgeFade(x), { passive: true }); } });
+    [box, gbox].forEach(x => { if (!x.dataset.fade) { x.dataset.fade = 1; x.addEventListener('scroll', () => edgeFade(x), { passive: true }); } });
     edgeFades();
   }
   // soft edge fades on a scrolling row show there are more models off-screen (mobile only; desktop is a grid)
@@ -60,7 +59,7 @@
     const sc = x.scrollWidth > x.clientWidth + 1;
     x.classList.toggle('fade-l', sc && x.scrollLeft > 4); x.classList.toggle('fade-r', sc && x.scrollLeft + x.clientWidth < x.scrollWidth - 4);
   }
-  function edgeFades() { ['models', 'photoreal', 'generated'].forEach(id => edgeFade($(id))); }
+  function edgeFades() { ['models', 'generated'].forEach(id => edgeFade($(id))); }
 
   // mobile switcher is a horizontal scroll row: bring the selected model into view (horizontal only, never scrolls the page)
   function revealModel(id) {
