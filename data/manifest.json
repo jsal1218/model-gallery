@@ -1110,6 +1110,64 @@
             }
           ],
           "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-21-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "beige-linen",
+          "name": "Beige Linen",
+          "subtitle": "Belted linen shirt dress",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-21/beige-linen/lo/000.webp?v=202610200208",
+              "hi": "assets/exact-21/beige-linen/hi/000.webp?v=202610200208",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-21/beige-linen/lo/045.webp?v=202610200208",
+              "hi": "assets/exact-21/beige-linen/hi/045.webp?v=202610200208",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-21/beige-linen/lo/090.webp?v=202610200208",
+              "hi": "assets/exact-21/beige-linen/hi/090.webp?v=202610200208",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-21/beige-linen/lo/135.webp?v=202610200208",
+              "hi": "assets/exact-21/beige-linen/hi/135.webp?v=202610200208",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-21/beige-linen/lo/180.webp?v=202610200208",
+              "hi": "assets/exact-21/beige-linen/hi/180.webp?v=202610200208",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-21/beige-linen/lo/225.webp?v=202610200208",
+              "hi": "assets/exact-21/beige-linen/hi/225.webp?v=202610200208",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-21/beige-linen/lo/270.webp?v=202610200208",
+              "hi": "assets/exact-21/beige-linen/hi/270.webp?v=202610200208",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-21/beige-linen/lo/315.webp?v=202610200208",
+              "hi": "assets/exact-21/beige-linen/hi/315.webp?v=202610200208",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-21-beige-linen-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         }
       ],
       "thumb": "assets/exact-21/thumb.webp?v=202610181342"
@@ -1436,6 +1494,122 @@
             }
           ],
           "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/exact-25-red-dress-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "leather-catsuit",
+          "name": "Leather catsuit",
+          "subtitle": "Black leather \u00b7 laced open back",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-25/leather-catsuit/lo/000.webp?v=202610200154",
+              "hi": "assets/exact-25/leather-catsuit/hi/000.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-25/leather-catsuit/lo/045.webp?v=202610200154",
+              "hi": "assets/exact-25/leather-catsuit/hi/045.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-25/leather-catsuit/lo/090.webp?v=202610200154",
+              "hi": "assets/exact-25/leather-catsuit/hi/090.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-25/leather-catsuit/lo/135.webp?v=202610200154",
+              "hi": "assets/exact-25/leather-catsuit/hi/135.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-25/leather-catsuit/lo/180.webp?v=202610200154",
+              "hi": "assets/exact-25/leather-catsuit/hi/180.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-25/leather-catsuit/lo/225.webp?v=202610200154",
+              "hi": "assets/exact-25/leather-catsuit/hi/225.webp?v=202610200154",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-25/leather-catsuit/lo/270.webp?v=202610200154",
+              "hi": "assets/exact-25/leather-catsuit/hi/270.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-25/leather-catsuit/lo/315.webp?v=202610200154",
+              "hi": "assets/exact-25/leather-catsuit/hi/315.webp?v=202610200154",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/exact-25-leather-catsuit-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "tech-suit",
+          "name": "Tech suit",
+          "subtitle": "Black armor \u00b7 blue core",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-25/tech-suit/lo/000.webp?v=202610200154",
+              "hi": "assets/exact-25/tech-suit/hi/000.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-25/tech-suit/lo/045.webp?v=202610200154",
+              "hi": "assets/exact-25/tech-suit/hi/045.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-25/tech-suit/lo/090.webp?v=202610200154",
+              "hi": "assets/exact-25/tech-suit/hi/090.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-25/tech-suit/lo/135.webp?v=202610200154",
+              "hi": "assets/exact-25/tech-suit/hi/135.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-25/tech-suit/lo/180.webp?v=202610200154",
+              "hi": "assets/exact-25/tech-suit/hi/180.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-25/tech-suit/lo/225.webp?v=202610200154",
+              "hi": "assets/exact-25/tech-suit/hi/225.webp?v=202610200154",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-25/tech-suit/lo/270.webp?v=202610200154",
+              "hi": "assets/exact-25/tech-suit/hi/270.webp?v=202610200154",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-25/tech-suit/lo/315.webp?v=202610200154",
+              "hi": "assets/exact-25/tech-suit/hi/315.webp?v=202610200154",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/exact-25-tech-suit-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         }
       ],
       "thumb": "assets/exact-25/thumb.webp?v=202610200112"
