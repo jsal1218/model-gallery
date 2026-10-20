@@ -1168,6 +1168,64 @@
             }
           ],
           "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-21-beige-linen-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "a",
+          "name": "A",
+          "subtitle": "Beige crop tank \u00b7 baggy jeans \u00b7 sneakers",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-21/a/lo/000.webp?v=202610200232",
+              "hi": "assets/exact-21/a/hi/000.webp?v=202610200232",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-21/a/lo/045.webp?v=202610200232",
+              "hi": "assets/exact-21/a/hi/045.webp?v=202610200232",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-21/a/lo/090.webp?v=202610200232",
+              "hi": "assets/exact-21/a/hi/090.webp?v=202610200232",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-21/a/lo/135.webp?v=202610200232",
+              "hi": "assets/exact-21/a/hi/135.webp?v=202610200232",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-21/a/lo/180.webp?v=202610200232",
+              "hi": "assets/exact-21/a/hi/180.webp?v=202610200232",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-21/a/lo/225.webp?v=202610200232",
+              "hi": "assets/exact-21/a/hi/225.webp?v=202610200232",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-21/a/lo/270.webp?v=202610200232",
+              "hi": "assets/exact-21/a/hi/270.webp?v=202610200232",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-21/a/lo/315.webp?v=202610200232",
+              "hi": "assets/exact-21/a/hi/315.webp?v=202610200232",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-21-a-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         }
       ],
       "thumb": "assets/exact-21/thumb.webp?v=202610181342"
