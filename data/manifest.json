@@ -1316,6 +1316,131 @@
       "thumb": "assets/exact-24/thumb.webp?v=202610190302"
     },
     {
+      "id": "exact-25",
+      "name": "Model 17",
+      "group": "exact",
+      "descriptor": "Platinum straight hair \u00b7 fair \u00b7 curvy",
+      "outfits": [
+        {
+          "id": "base",
+          "name": "Base",
+          "subtitle": "Grey crop set",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-25/base/lo/000.webp?v=202610200112",
+              "hi": "assets/exact-25/base/hi/000.webp?v=202610200112",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-25/base/lo/045.webp?v=202610200112",
+              "hi": "assets/exact-25/base/hi/045.webp?v=202610200112",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-25/base/lo/090.webp?v=202610200112",
+              "hi": "assets/exact-25/base/hi/090.webp?v=202610200112",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-25/base/lo/135.webp?v=202610200112",
+              "hi": "assets/exact-25/base/hi/135.webp?v=202610200112",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-25/base/lo/180.webp?v=202610200112",
+              "hi": "assets/exact-25/base/hi/180.webp?v=202610200112",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-25/base/lo/225.webp?v=202610200112",
+              "hi": "assets/exact-25/base/hi/225.webp?v=202610200112",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-25/base/lo/270.webp?v=202610200112",
+              "hi": "assets/exact-25/base/hi/270.webp?v=202610200112",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-25/base/lo/315.webp?v=202610200112",
+              "hi": "assets/exact-25/base/hi/315.webp?v=202610200112",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-25-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "red-dress",
+          "name": "Red dress",
+          "subtitle": "Red V-neck mini dress",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-25/red-dress/lo/000.webp?v=202610200114",
+              "hi": "assets/exact-25/red-dress/hi/000.webp?v=202610200114",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-25/red-dress/lo/045.webp?v=202610200114",
+              "hi": "assets/exact-25/red-dress/hi/045.webp?v=202610200114",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-25/red-dress/lo/090.webp?v=202610200114",
+              "hi": "assets/exact-25/red-dress/hi/090.webp?v=202610200114",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-25/red-dress/lo/135.webp?v=202610200114",
+              "hi": "assets/exact-25/red-dress/hi/135.webp?v=202610200114",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-25/red-dress/lo/180.webp?v=202610200114",
+              "hi": "assets/exact-25/red-dress/hi/180.webp?v=202610200114",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-25/red-dress/lo/225.webp?v=202610200114",
+              "hi": "assets/exact-25/red-dress/hi/225.webp?v=202610200114",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-25/red-dress/lo/270.webp?v=202610200114",
+              "hi": "assets/exact-25/red-dress/hi/270.webp?v=202610200114",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-25/red-dress/lo/315.webp?v=202610200114",
+              "hi": "assets/exact-25/red-dress/hi/315.webp?v=202610200114",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/exact-25-red-dress-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        }
+      ],
+      "thumb": "assets/exact-25/thumb.webp?v=202610200112"
+    },
+    {
       "id": "generated-1",
       "name": "Generated 1",
       "group": "generated",
