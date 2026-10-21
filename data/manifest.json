@@ -431,6 +431,180 @@
             }
           ],
           "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/exact-6-yoga-set-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "turtleneck",
+          "name": "Turtleneck",
+          "subtitle": "Black turtleneck \u00b7 trousers",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-6/turtleneck/lo/000.webp?v=202610190001",
+              "hi": "assets/exact-6/turtleneck/hi/000.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-6/turtleneck/lo/045.webp?v=202610190001",
+              "hi": "assets/exact-6/turtleneck/hi/045.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-6/turtleneck/lo/090.webp?v=202610190001",
+              "hi": "assets/exact-6/turtleneck/hi/090.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-6/turtleneck/lo/135.webp?v=202610190001",
+              "hi": "assets/exact-6/turtleneck/hi/135.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-6/turtleneck/lo/180.webp?v=202610190001",
+              "hi": "assets/exact-6/turtleneck/hi/180.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-6/turtleneck/lo/225.webp?v=202610190001",
+              "hi": "assets/exact-6/turtleneck/hi/225.webp?v=202610190001",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-6/turtleneck/lo/270.webp?v=202610190001",
+              "hi": "assets/exact-6/turtleneck/hi/270.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-6/turtleneck/lo/315.webp?v=202610190001",
+              "hi": "assets/exact-6/turtleneck/hi/315.webp?v=202610190001",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/generated-3-turtleneck-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "slip-dress",
+          "name": "Slip dress",
+          "subtitle": "Black slip dress \u00b7 sandals",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-6/slip-dress/lo/000.webp?v=202610190001",
+              "hi": "assets/exact-6/slip-dress/hi/000.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-6/slip-dress/lo/045.webp?v=202610190001",
+              "hi": "assets/exact-6/slip-dress/hi/045.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-6/slip-dress/lo/090.webp?v=202610190001",
+              "hi": "assets/exact-6/slip-dress/hi/090.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-6/slip-dress/lo/135.webp?v=202610190001",
+              "hi": "assets/exact-6/slip-dress/hi/135.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-6/slip-dress/lo/180.webp?v=202610190001",
+              "hi": "assets/exact-6/slip-dress/hi/180.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-6/slip-dress/lo/225.webp?v=202610190001",
+              "hi": "assets/exact-6/slip-dress/hi/225.webp?v=202610190001",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-6/slip-dress/lo/270.webp?v=202610190001",
+              "hi": "assets/exact-6/slip-dress/hi/270.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-6/slip-dress/lo/315.webp?v=202610190001",
+              "hi": "assets/exact-6/slip-dress/hi/315.webp?v=202610190001",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/generated-3-slip-dress-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "tank-shorts",
+          "name": "Tank & shorts",
+          "subtitle": "Black tank \u00b7 shorts \u00b7 sneakers",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-6/tank-shorts/lo/000.webp?v=202610190001",
+              "hi": "assets/exact-6/tank-shorts/hi/000.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-6/tank-shorts/lo/045.webp?v=202610190001",
+              "hi": "assets/exact-6/tank-shorts/hi/045.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-6/tank-shorts/lo/090.webp?v=202610190001",
+              "hi": "assets/exact-6/tank-shorts/hi/090.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-6/tank-shorts/lo/135.webp?v=202610190001",
+              "hi": "assets/exact-6/tank-shorts/hi/135.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-6/tank-shorts/lo/180.webp?v=202610190001",
+              "hi": "assets/exact-6/tank-shorts/hi/180.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-6/tank-shorts/lo/225.webp?v=202610190001",
+              "hi": "assets/exact-6/tank-shorts/hi/225.webp?v=202610190001",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-6/tank-shorts/lo/270.webp?v=202610190001",
+              "hi": "assets/exact-6/tank-shorts/hi/270.webp?v=202610190001",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-6/tank-shorts/lo/315.webp?v=202610190001",
+              "hi": "assets/exact-6/tank-shorts/hi/315.webp?v=202610190001",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/generated-3-tank-shorts-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         }
       ],
       "thumb": "assets/exact-6/thumb.webp?v=202610180224"
