@@ -2487,6 +2487,122 @@
             }
           ],
           "note": "Jordan's 6-view sheet (reference/exact-26-outfit-8-turnaround-6.jpg), registered to her base sheet (translation only). The bag hangs from her LEFT shoulder at every angle: 0/45/90/135/270 are sheet views 1/2/3/5/6 (exact pixels); 180 is sheet view 4 mirrored (the sheet's back view had the bag on her right shoulder); 225 and 315 are the mirrors of 135 and 45 edited with a free image edit (her own sheet as the only reference) to move the bag to her far (left) shoulder. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "outfit-9",
+          "name": "Outfit 9",
+          "subtitle": "Black halter top · ruched mini skirt · heels",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-26/outfit-9/lo/000.webp?v=202610211926",
+              "hi": "assets/exact-26/outfit-9/hi/000.webp?v=202610211926",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-26/outfit-9/lo/045.webp?v=202610211926",
+              "hi": "assets/exact-26/outfit-9/hi/045.webp?v=202610211926",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-26/outfit-9/lo/090.webp?v=202610211926",
+              "hi": "assets/exact-26/outfit-9/hi/090.webp?v=202610211926",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-26/outfit-9/lo/135.webp?v=202610211926",
+              "hi": "assets/exact-26/outfit-9/hi/135.webp?v=202610211926",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-26/outfit-9/lo/180.webp?v=202610211926",
+              "hi": "assets/exact-26/outfit-9/hi/180.webp?v=202610211926",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-26/outfit-9/lo/225.webp?v=202610211926",
+              "hi": "assets/exact-26/outfit-9/hi/225.webp?v=202610211926",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-26/outfit-9/lo/270.webp?v=202610211926",
+              "hi": "assets/exact-26/outfit-9/hi/270.webp?v=202610211926",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-26/outfit-9/lo/315.webp?v=202610211926",
+              "hi": "assets/exact-26/outfit-9/hi/315.webp?v=202610211926",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-9-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "outfit-10",
+          "name": "Outfit 10",
+          "subtitle": "Black sports bra · running shorts",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-26/outfit-10/lo/000.webp?v=202610211934",
+              "hi": "assets/exact-26/outfit-10/hi/000.webp?v=202610211934",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-26/outfit-10/lo/045.webp?v=202610211934",
+              "hi": "assets/exact-26/outfit-10/hi/045.webp?v=202610211934",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-26/outfit-10/lo/090.webp?v=202610211934",
+              "hi": "assets/exact-26/outfit-10/hi/090.webp?v=202610211934",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-26/outfit-10/lo/135.webp?v=202610211934",
+              "hi": "assets/exact-26/outfit-10/hi/135.webp?v=202610211934",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-26/outfit-10/lo/180.webp?v=202610211934",
+              "hi": "assets/exact-26/outfit-10/hi/180.webp?v=202610211934",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-26/outfit-10/lo/225.webp?v=202610211934",
+              "hi": "assets/exact-26/outfit-10/hi/225.webp?v=202610211934",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-26/outfit-10/lo/270.webp?v=202610211934",
+              "hi": "assets/exact-26/outfit-10/hi/270.webp?v=202610211934",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-26/outfit-10/lo/315.webp?v=202610211934",
+              "hi": "assets/exact-26/outfit-10/hi/315.webp?v=202610211934",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-10-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         }
       ],
       "thumb": "assets/exact-26/thumb.webp?v=202610211658"

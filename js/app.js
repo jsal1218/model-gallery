@@ -75,6 +75,7 @@
   function renderOutfits() {
     const box = $('ochips'), list = S.model.outfits; box.innerHTML = '';
     box.hidden = list.length < 2; box.classList.toggle('many', list.length >= 5); box.classList.toggle('wrap', list.length >= 6);   // 5+ chips: compact on phones so all fit
+    box.classList.toggle('lots', list.length >= 10); box.style.setProperty('--cols', Math.ceil(list.length / 2));   // 10+ chips: two rows exactly (see style.css)
     if (list.length < 2) return;
     list.forEach(o => {
       const b = document.createElement('button'), front = o.frames.find(f => f.angle === 0) || o.frames[0];
@@ -98,6 +99,8 @@
     S.outfit = S.model.outfits.find(o => o.id === id);
     S.frames = [...S.outfit.frames].sort((a, b) => a.angle - b.angle);
     document.querySelectorAll('.ochip').forEach(b => b.setAttribute('aria-checked', b.dataset.id === id));
+    { const box = $('ochips'), on = box.querySelector('.ochip[aria-checked="true"]');   // two-row chips that scroll: keep the selected one in view
+      if (on && box.classList.contains('lots') && box.scrollWidth > box.clientWidth) box.scrollLeft = Math.max(0, on.offsetLeft - (box.clientWidth - on.offsetWidth) / 2); }
     resetZoom(true);
     S.angle = mod(angle || 0); S.vel = 0; S.snapTo = null;
     $('metaLine').textContent = `${S.model.name} · ${S.outfit.name} · ${S.frames.length} angles`;
