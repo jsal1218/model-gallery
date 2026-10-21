@@ -28,30 +28,31 @@
       S.manifest = await res.json();
     } catch (e) { $('loaderText').textContent = 'Could not load manifest'; console.error(e); return; }
     const [h0, ho, ha] = location.hash.replace('#', '').split('/');
-    const hm = (S.manifest.aliases || {})[h0] || h0;   // retired ids (#model-2) map to their renumbered model
-    const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];  // unknown or removed ids (old Model 5; exact-1..4, 8, 11, 15, 16; photoreal-1/2 and #model-2 since the Photorealistic section was removed) → the first model
+    // #generated-3/<outfit> (Generated section removed 2026-10-21) opens Model 2, the same woman, in that outfit when she has it
+    const oa = S.manifest.models.find(m => m.id === (S.manifest.outfitAliases || {})[h0] && m.outfits.some(o => o.id === ho));
+    const hm = oa ? oa.id : (S.manifest.aliases || {})[h0] || h0;   // retired ids (#model-2) map to their renumbered model
+    const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];  // unknown or removed ids (old Model 5; exact-1..4, 8, 11, 15, 16; photoreal-1/2 and #model-2 since the Photorealistic section was removed; generated-1/2/3 since the Generated section was removed) → the first model
     renderModels();
-    await selectModel(model.id, ho, ha !== undefined ? +ha : 0);
+    const known = model.id === hm;   // a removed model's link opens Model 1 at her base front view, not a same-named outfit of hers
+    await selectModel(model.id, known ? ho : undefined, known && ha !== undefined ? +ha : 0);
     // warm the cache for the other models in the background
     setTimeout(() => S.manifest.models.forEach(m => m.outfits.forEach(o => o.frames.forEach(f => { const i = new Image(); i.src = f.lo; }))), 1500);
     requestAnimationFrame(tick);
   }
 
-  // main row = exact-reference models; group "generated" goes in the Generated row below it (the Photorealistic section was removed 2026-10-19)
+  // one row of models (Model 1-17). The Photorealistic section was removed 2026-10-19 and the Generated section 2026-10-21
   function renderModels() {
-    const box = $('models'), gbox = $('generated'); box.innerHTML = ''; gbox.innerHTML = '';
-    const has = (g) => S.manifest.models.some(m => m.group === g);
-    gbox.hidden = $('generatedH').hidden = !has('generated');
+    const box = $('models'); box.innerHTML = '';
     S.manifest.models.forEach(m => {
       const b = document.createElement('button');
       b.className = 'model'; b.type = 'button'; b.role = 'tab'; b.dataset.id = m.id;
       b.innerHTML = `<img src="${m.thumb}" alt=""><span><b>${m.name}</b><small>${m.descriptor}</small></span>`;
       b.addEventListener('click', () => selectModel(m.id));
-      (m.group === 'generated' ? gbox : box).appendChild(b);
+      box.appendChild(b);
     });
     const n = box.children.length, h = box.previousElementSibling; box.classList.toggle('many', n > 8);   // "Model · 10" so it is clear the row scrolls
     if (h && h.tagName === 'H2') h.innerHTML = `Model${n > 1 ? `<span class="count">· ${n}</span>` : ''}`;
-    [box, gbox].forEach(x => { if (!x.dataset.fade) { x.dataset.fade = 1; x.addEventListener('scroll', () => edgeFade(x), { passive: true }); } });
+    if (!box.dataset.fade) { box.dataset.fade = 1; box.addEventListener('scroll', () => edgeFade(box), { passive: true }); }
     edgeFades();
   }
   // soft edge fades on a scrolling row show there are more models off-screen (mobile only; desktop is a grid)
@@ -59,7 +60,7 @@
     const sc = x.scrollWidth > x.clientWidth + 1;
     x.classList.toggle('fade-l', sc && x.scrollLeft > 4); x.classList.toggle('fade-r', sc && x.scrollLeft + x.clientWidth < x.scrollWidth - 4);
   }
-  function edgeFades() { ['models', 'generated'].forEach(id => edgeFade($(id))); }
+  function edgeFades() { edgeFade($('models')); }
 
   // mobile switcher is a horizontal scroll row: bring the selected model into view (horizontal only, never scrolls the page)
   function revealModel(id) {
@@ -179,7 +180,7 @@
     const n = S.frames.length, refs = S.frames.filter(f => f.source === 'reference').length;
     $('note').textContent = n < 8
       ? `Preview set: ${n} photographed angles${refs ? ' (front & back reference)' : ''}. In-between angles show the nearest photographed view until the full turnaround frames are added.`
-      : `${n}-angle turnaround${refs ? `, ${refs} from ${S.model.source === 'generated' ? 'her generated 6-view sheet' : 'original reference photos'}` : ''}${S.model.outfits.length > 1 ? ` · ${S.model.outfits.length} outfits` : ''}. Zoom swaps in ${S.manifest.canvas.hi[1]}px frames.`;
+      : `${n}-angle turnaround${refs ? `, ${refs} from original reference photos` : ''}${S.model.outfits.length > 1 ? ` · ${S.model.outfits.length} outfits` : ''}. Zoom swaps in ${S.manifest.canvas.hi[1]}px frames.`;
   }
 
   /* ---------- motion loop ---------- */
