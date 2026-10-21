@@ -3,7 +3,7 @@
 // cache only as the offline fallback) so a new deploy is never served stale; images are cache-first in their own cache
 // (frame URLs carry ?v=, so a rebuilt frame is a new URL). skipWaiting + clients.claim, so a new version takes over at once;
 // js/update.js then reloads the page.
-const VERSION = '2026.10.21-072534-9d7e55b';
+const VERSION = '2026.10.21-142424-31fa89d';
 const CACHE = `mg-${VERSION}`, IMG = 'mg-img', IMG_MAX = 600;
 const SHELL = ['./', 'index.html', 'css/style.css', 'js/app.js', 'js/update.js', 'data/manifest.json', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-64.png'];
