@@ -2431,6 +2431,62 @@
             }
           ],
           "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-7-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "outfit-8",
+          "name": "Outfit 8",
+          "subtitle": "Dark grey cami · faded wide jeans · shoulder bag",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-26/outfit-8/lo/000.webp?v=202610211908",
+              "hi": "assets/exact-26/outfit-8/hi/000.webp?v=202610211908",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-26/outfit-8/lo/045.webp?v=202610211908",
+              "hi": "assets/exact-26/outfit-8/hi/045.webp?v=202610211908",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-26/outfit-8/lo/090.webp?v=202610211908",
+              "hi": "assets/exact-26/outfit-8/hi/090.webp?v=202610211908",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-26/outfit-8/lo/135.webp?v=202610211908",
+              "hi": "assets/exact-26/outfit-8/hi/135.webp?v=202610211908",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-26/outfit-8/lo/180.webp?v=202610211908",
+              "hi": "assets/exact-26/outfit-8/hi/180.webp?v=202610211908",
+              "source": "reference-mirrored"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-26/outfit-8/lo/225.webp?v=202610211908",
+              "hi": "assets/exact-26/outfit-8/hi/225.webp?v=202610211908",
+              "source": "generated-edit"
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-26/outfit-8/lo/270.webp?v=202610211908",
+              "hi": "assets/exact-26/outfit-8/hi/270.webp?v=202610211908",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-26/outfit-8/lo/315.webp?v=202610211908",
+              "hi": "assets/exact-26/outfit-8/hi/315.webp?v=202610211908",
+              "source": "generated-edit"
+            }
+          ],
+          "note": "Jordan's 6-view sheet (reference/exact-26-outfit-8-turnaround-6.jpg), registered to her base sheet (translation only). The bag hangs from her LEFT shoulder at every angle: 0/45/90/135/270 are sheet views 1/2/3/5/6 (exact pixels); 180 is sheet view 4 mirrored (the sheet's back view had the bag on her right shoulder); 225 and 315 are the mirrors of 135 and 45 edited with a free image edit (her own sheet as the only reference) to move the bag to her far (left) shoulder. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         }
       ],
       "thumb": "assets/exact-26/thumb.webp?v=202610211658"
