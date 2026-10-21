@@ -605,6 +605,64 @@
             }
           ],
           "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/generated-3-tank-shorts-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "usa-jersey",
+          "name": "USA jersey",
+          "subtitle": "USA home kit \u00b7 white jersey",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-6/usa-jersey/lo/000.webp?v=202610210240",
+              "hi": "assets/exact-6/usa-jersey/hi/000.webp?v=202610210240",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-6/usa-jersey/lo/045.webp?v=202610210240",
+              "hi": "assets/exact-6/usa-jersey/hi/045.webp?v=202610210240",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-6/usa-jersey/lo/090.webp?v=202610210240",
+              "hi": "assets/exact-6/usa-jersey/hi/090.webp?v=202610210240",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-6/usa-jersey/lo/135.webp?v=202610210240",
+              "hi": "assets/exact-6/usa-jersey/hi/135.webp?v=202610210240",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-6/usa-jersey/lo/180.webp?v=202610210240",
+              "hi": "assets/exact-6/usa-jersey/hi/180.webp?v=202610210240",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-6/usa-jersey/lo/225.webp?v=202610210240",
+              "hi": "assets/exact-6/usa-jersey/hi/225.webp?v=202610210240",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-6/usa-jersey/lo/270.webp?v=202610210240",
+              "hi": "assets/exact-6/usa-jersey/hi/270.webp?v=202610210240",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-6/usa-jersey/lo/315.webp?v=202610210240",
+              "hi": "assets/exact-6/usa-jersey/hi/315.webp?v=202610210240",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are an AI-generated 6-view sheet of a fictional model (reference/exact-6-usa-jersey-turnaround-6.png) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         }
       ],
       "thumb": "assets/exact-6/thumb.webp?v=202610180224"

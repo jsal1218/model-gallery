@@ -73,7 +73,7 @@
   // switching keeps the current angle (and auto-rotate), so you can change outfits and keep spinning
   function renderOutfits() {
     const box = $('ochips'), list = S.model.outfits; box.innerHTML = '';
-    box.hidden = list.length < 2; box.classList.toggle('many', list.length >= 5);   // 5+ chips: compact on phones so all fit
+    box.hidden = list.length < 2; box.classList.toggle('many', list.length >= 5); box.classList.toggle('wrap', list.length >= 6);   // 5+ chips: compact on phones so all fit
     if (list.length < 2) return;
     list.forEach(o => {
       const b = document.createElement('button'), front = o.frames.find(f => f.angle === 0) || o.frames[0];
