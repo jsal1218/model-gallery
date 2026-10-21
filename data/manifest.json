@@ -2257,6 +2257,180 @@
             }
           ],
           "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-4-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "outfit-5",
+          "name": "Outfit 5",
+          "subtitle": "Cream cami crop · grey wide sweatpants",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-26/outfit-5/lo/000.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-5/hi/000.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-26/outfit-5/lo/045.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-5/hi/045.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-26/outfit-5/lo/090.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-5/hi/090.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-26/outfit-5/lo/135.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-5/hi/135.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-26/outfit-5/lo/180.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-5/hi/180.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-26/outfit-5/lo/225.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-5/hi/225.webp?v=202610211658",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-26/outfit-5/lo/270.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-5/hi/270.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-26/outfit-5/lo/315.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-5/hi/315.webp?v=202610211658",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-5-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "outfit-6",
+          "name": "Outfit 6",
+          "subtitle": "Pale yellow tank crop · baggy jeans",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-26/outfit-6/lo/000.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-6/hi/000.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-26/outfit-6/lo/045.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-6/hi/045.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-26/outfit-6/lo/090.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-6/hi/090.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-26/outfit-6/lo/135.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-6/hi/135.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-26/outfit-6/lo/180.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-6/hi/180.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-26/outfit-6/lo/225.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-6/hi/225.webp?v=202610211658",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-26/outfit-6/lo/270.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-6/hi/270.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-26/outfit-6/lo/315.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-6/hi/315.webp?v=202610211658",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-6-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "outfit-7",
+          "name": "Outfit 7",
+          "subtitle": "White lace cami · black denim pleated mini",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-26/outfit-7/lo/000.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-7/hi/000.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-26/outfit-7/lo/045.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-7/hi/045.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-26/outfit-7/lo/090.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-7/hi/090.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-26/outfit-7/lo/135.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-7/hi/135.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-26/outfit-7/lo/180.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-7/hi/180.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-26/outfit-7/lo/225.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-7/hi/225.webp?v=202610211658",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-26/outfit-7/lo/270.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-7/hi/270.webp?v=202610211658",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-26/outfit-7/lo/315.webp?v=202610211658",
+              "hi": "assets/exact-26/outfit-7/hi/315.webp?v=202610211658",
+              "source": "reference-mirrored",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-7-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         }
       ],
       "thumb": "assets/exact-26/thumb.webp?v=202610211658"
