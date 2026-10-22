@@ -53,7 +53,8 @@
       // tap a model: select her (Base) and open her outfit gallery below the row; tap her again: close / reopen it
       b.addEventListener('click', async () => {
         if (S.model && S.model.id === m.id) { openOutfits(); return; }
-        await selectModel(m.id); openOutfits(true);
+        // Open now, not after her frames load: a delayed open would re-open the gallery after an outfit tap.
+        selectModel(m.id); openOutfits(true);
       });
       box.appendChild(b);
     });
@@ -93,7 +94,8 @@
       b.className = 'ocard'; b.type = 'button'; b.role = 'option'; b.dataset.id = o.id; b.title = o.name;
       b.setAttribute('aria-selected', S.outfit && S.outfit.id === o.id);
       b.innerHTML = `<img loading="lazy" decoding="async" src="${front.lo}" alt=""><b>${o.name}</b>`;
-      b.addEventListener('click', async () => {
+      b.addEventListener('click', async e => {
+        e.stopPropagation();
         openOutfits(false);
         const v = viewer.getBoundingClientRect(); if (v.top < 0) window.scrollTo({ top: Math.max(0, window.scrollY + v.top - 12), behavior: 'smooth' });
         if (!S.outfit || S.outfit.id !== o.id) await selectOutfit(o.id, S.angle);
