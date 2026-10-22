@@ -28,7 +28,7 @@
       S.manifest = await res.json();
     } catch (e) { $('loaderText').textContent = 'Could not load manifest'; console.error(e); return; }
     const [h0, ho, ha] = location.hash.replace('#', '').split('/');
-    // #generated-3/<outfit> (Generated section removed 2026-10-21) opens Model 2, the same woman, in that outfit when she has it
+    // #generated-3/<outfit> (Generated section removed 2026-10-21) opens Model 3 (exact-6), the same woman, in that outfit when she has it
     const oa = S.manifest.models.find(m => m.id === (S.manifest.outfitAliases || {})[h0] && m.outfits.some(o => o.id === ho));
     const hm = oa ? oa.id : (S.manifest.aliases || {})[h0] || h0;   // retired ids (#model-2) map to their renumbered model
     const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];  // unknown or removed ids (old Model 5; exact-1..4, 8, 11, 15, 16; photoreal-1/2 and #model-2 since the Photorealistic section was removed; generated-1/2/3 since the Generated section was removed) → the first model
