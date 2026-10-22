@@ -89,17 +89,22 @@
     const grid = $('ofGrid');
     if (grid.dataset.model === S.model.id) return;
     grid.dataset.model = S.model.id; grid.innerHTML = '';
-    S.model.outfits.forEach(o => {
-      const b = document.createElement('button'), front = o.frames.find(f => f.angle === 0) || o.frames[0];
-      b.className = 'ocard'; b.type = 'button'; b.role = 'option'; b.dataset.id = o.id; b.title = o.name;
+    // cards in her saved order (long-press drag in js/outfit-drag.js; saved per model in localStorage). Selection still
+    // defaults to her first manifest outfit (Base), whatever card comes first.
+    const D = window.OutfitDrag, all = S.model.outfits, key = 'outfitOrder:' + S.model.id, names = D.outfitNames(all);
+    let saved = null; try { saved = JSON.parse(localStorage.getItem(key)); } catch {}
+    D.orderOutfits(all, saved).forEach(o => {
+      const b = document.createElement('button'), front = o.frames.find(f => f.angle === 0) || o.frames[0], name = names.get(o.id);
+      b.className = 'ocard'; b.type = 'button'; b.role = 'option'; b.dataset.id = o.id; b.title = name;
       b.setAttribute('aria-selected', S.outfit && S.outfit.id === o.id);
-      b.innerHTML = `<img loading="lazy" decoding="async" src="${front.lo}" alt=""><b>${o.name}</b>`;
+      b.innerHTML = `<img loading="lazy" decoding="async" draggable="false" src="${front.lo}" alt=""><b>${name}</b>`;
       b.addEventListener('click', async e => {
         e.stopPropagation();   // the gallery stays open so outfits can be flipped through; no scroll (tap her model card to close it)
         if (!S.outfit || S.outfit.id !== o.id) await selectOutfit(o.id, S.angle);
       });
       grid.appendChild(b);
     });
+    D.sortableCards(grid, '.ocard', ids => { try { localStorage.setItem('outfitOrder:' + grid.dataset.model, JSON.stringify(ids)); } catch {} });
   }
   function openOutfits(open = $('ofGrid').hidden) {
     const grid = $('ofGrid'), card = S.model && document.querySelector(`.model[data-id="${S.model.id}"]`);

@@ -108,3 +108,7 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 
 /* Jordan: hide controls row, angle buttons, header and hint text */
 .controls,.quick,header.top,#hint{display:none!important}
+.ocard{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.ocard.lifted{position:relative;z-index:3;box-shadow:0 12px 26px rgba(0,0,0,.24);border-color:var(--ink);cursor:grabbing}
+.of-grid.sorting .ocard:not(.lifted){opacity:.8}
+.of-drop{position:absolute;width:3px;border-radius:2px;background:var(--ink);pointer-events:none;z-index:2}
