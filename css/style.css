@@ -79,20 +79,19 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 .outfit b{display:block;font-size:12.5px;margin-top:6px}.outfit small{display:block;font-size:10.5px;color:var(--muted)}
 .outfit[aria-current="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .outfit.soon{opacity:.55;cursor:default}.outfit.soon .ph{display:grid;place-items:center;background:#f3f0ea;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.of{margin:0}
-.of-btn{width:100%;display:flex;align-items:center;gap:8px;height:44px;padding:0 14px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);font:inherit;font-size:13px;letter-spacing:.02em;text-align:left;cursor:pointer}
-.of-btn svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.of-btn b{font-weight:600}.of-btn em{font-style:normal;color:var(--muted);margin-left:auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.of-btn .chev{width:16px;height:16px;transition:transform .2s}.of-btn[aria-expanded="true"] .chev{transform:rotate(180deg)}
-.of-btn[aria-expanded="true"]{border-color:var(--ink)}
-/* outfit cards: the same card as a model card in the main gallery (88px wide on phones, ~4 across), front view instead of a face, outfit name only */
-.of-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:8px;margin-top:8px;padding:10px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper)}
+/* model cards and outfit cards are the same card (2026-10-22): front view + name only, 78px wide x ~102px.
+   Her outfit gallery opens right under the model row, outlined like her selected card, with a notch under her card */
+.models .model,.models.many .model{flex:0 0 78px;width:78px;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:7px 4px 8px;min-width:0}
+.models .model img,.models.many .model img{width:100%;height:64px;border-radius:10px;object-fit:cover;object-position:50% 6%;background:#fff}
+.models .model b,.models.many .model b{max-width:100%;font-size:15px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.of-grid{position:relative;display:grid;grid-template-columns:repeat(auto-fill,minmax(74px,1fr));gap:6px;margin:-6px -8px 16px;padding:8px;border:1px solid var(--ink);border-radius:16px;background:#fbfaf7}
+.of-grid::before{content:"";position:absolute;top:-7px;left:calc(var(--notch,40px) - 6px);width:12px;height:12px;background:#fbfaf7;border-left:1px solid var(--ink);border-top:1px solid var(--ink);transform:rotate(45deg)}
 .of-grid[hidden]{display:none}
 .ocard{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;padding:7px 4px 8px;border-radius:14px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
-.ocard img{width:100%;height:var(--oc-img,73px);object-fit:cover;object-position:50% 6%;border-radius:10px;background:#fff;display:block}
+.ocard img{width:100%;height:64px;object-fit:cover;object-position:50% 6%;border-radius:10px;background:#fff;display:block}
 .ocard b{display:block;max-width:100%;font-family:var(--serif);font-weight:500;font-size:15px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ocard[aria-selected="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-@media (min-width:900px){.of-grid{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}}
+
 .note{margin-top:14px;font-size:11.5px;line-height:1.5;color:var(--muted)}
 .note:empty{display:none}
 @media (min-width:900px){
@@ -100,10 +99,8 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
   .layout{flex-direction:row;align-items:flex-start;padding:0 32px 28px;gap:24px}
   .viewer-wrap{flex:1}.viewer{height:calc(100vh - 190px);min-height:560px}
   .panel{width:330px;position:sticky;top:20px}
-  .models{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 16px;padding:0;overflow:visible}
-  .models .model,.models.many .model{width:auto;flex-direction:row;align-items:center;text-align:left;gap:8px;padding:7px}
-  .models .model img,.models.many .model img{width:40px;height:40px}
-  .models.many .model b{font-size:16px}
+  .models{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:8px;margin:0 0 16px;padding:0;overflow:visible}
+  .models .model,.models.many .model{width:auto}
   .models .model small{font-size:10px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
   .models.fade-l,.models.fade-r{-webkit-mask-image:none;mask-image:none}
   .models .model{width:auto}

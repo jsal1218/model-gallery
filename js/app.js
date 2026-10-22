@@ -46,9 +46,15 @@
     S.manifest.models.forEach(m => {
       const b = document.createElement('button');
       b.className = 'model'; b.type = 'button'; b.role = 'tab'; b.dataset.id = m.id;
-      b.innerHTML = `<img src="${m.thumb}" alt=""><span><b>${m.name}</b></span>`;   // name only (Jordan, 2026-10-21: no description on the cards)
-      b.title = m.name;
-      b.addEventListener('click', () => selectModel(m.id));
+      // same card as an outfit card: her Base front (0°) frame + name only (Jordan, 2026-10-22)
+      const base = m.outfits[0], front = base.frames.find(f => f.angle === 0) || base.frames[0];
+      b.innerHTML = `<img loading="lazy" decoding="async" src="${front.lo}" alt=""><b>${m.name}</b>`;
+      b.title = m.name; b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-controls', 'ofGrid');
+      // tap a model: select her (Base) and open her outfit gallery below the row; tap her again: close / reopen it
+      b.addEventListener('click', async () => {
+        if (S.model && S.model.id === m.id) { openOutfits(); return; }
+        await selectModel(m.id); openOutfits(true);
+      });
       box.appendChild(b);
     });
     const n = box.children.length, h = box.previousElementSibling; box.classList.toggle('many', n > 8);   // "Model · 10" so it is clear the row scrolls
@@ -71,19 +77,17 @@
     if (br.left < xr.left + padL || br.right > xr.right - padL) box.scrollTo({ left: box.scrollLeft + br.left - xr.left - padL, behavior: 'smooth' });
   }
 
-  // "Outfits" dropdown under the viewer (every model, even Base-only ones): a grid of outfit cards, each the size of a
-  // model card in the main gallery, showing that outfit's front (0°) frame and only its name. Cards are built the first
-  // time the dropdown opens (lazy images), picking one collapses it and shows that outfit in the 360 view (angle kept).
+  // her outfit gallery opens right below the model row when her card is tapped (attached to it: same card style, a notch
+  // under her card): every outfit's front (0°) frame + name, Base first. Built when it opens (lazy images). Picking an
+  // outfit closes it and shows that outfit in the 360 view (angle kept), scrolling her back into view on a phone.
   function renderOutfits() {
     $('ofGrid').innerHTML = ''; $('ofGrid').dataset.model = '';
-    $('ofCur').textContent = `${S.model.outfits.length} · Base`;
     openOutfits(false);
   }
   function buildOutfitCards() {
     const grid = $('ofGrid');
     if (grid.dataset.model === S.model.id) return;
     grid.dataset.model = S.model.id; grid.innerHTML = '';
-    const mc = document.querySelector('.model'); if (mc) grid.style.setProperty('--oc-img', Math.max(64, mc.offsetHeight - 38) + 'px');   // same height as a model card
     S.model.outfits.forEach(o => {
       const b = document.createElement('button'), front = o.frames.find(f => f.angle === 0) || o.frames[0];
       b.className = 'ocard'; b.type = 'button'; b.role = 'option'; b.dataset.id = o.id; b.title = o.name;
@@ -98,10 +102,16 @@
     });
   }
   function openOutfits(open = $('ofGrid').hidden) {
+    const grid = $('ofGrid'), card = S.model && document.querySelector(`.model[data-id="${S.model.id}"]`);
     if (open) buildOutfitCards();
-    $('ofGrid').hidden = !open; $('ofBtn').setAttribute('aria-expanded', open);
+    grid.hidden = !open;
+    document.querySelectorAll('.model').forEach(b => b.setAttribute('aria-expanded', open && b === card));
+    if (open && card) {   // notch under her card, so the gallery reads as hers
+      const cr = card.getBoundingClientRect(), gr = grid.getBoundingClientRect();
+      grid.style.setProperty('--notch', Math.min(gr.width - 18, Math.max(18, cr.left + cr.width / 2 - gr.left)) + 'px');
+    }
   }
-  $('ofBtn').addEventListener('click', () => openOutfits());
+  $('models').addEventListener('scroll', () => { if (!$('ofGrid').hidden) openOutfits(true); }, { passive: true });
 
   async function selectModel(id, outfitId, angle) {
     S.model = S.manifest.models.find(m => m.id === id);
@@ -115,7 +125,6 @@
     S.outfit = S.model.outfits.find(o => o.id === id);
     S.frames = [...S.outfit.frames].sort((a, b) => a.angle - b.angle);
     document.querySelectorAll('.ocard').forEach(b => b.setAttribute('aria-selected', b.dataset.id === id));
-    $('ofCur').textContent = `${S.model.outfits.length} · ${S.outfit.name}`;
     resetZoom(true);
     S.angle = mod(angle || 0); S.vel = 0; S.snapTo = null;
     $('metaLine').textContent = `${S.model.name} · ${S.outfit.name} · ${S.frames.length} angles`;
