@@ -4,7 +4,7 @@
 // - then the page reloads (the hash deep link, e.g. #exact-5/base/315, is kept). Loop guard: at most 2 auto-reloads per new
 //   version and 5 per minute; never for a worker whose version this page already runs.
 (function () {
-  const VERSION = '2026.10.22-034447-6007c85';
+  const VERSION = '2026.10.22-034722-09aef92';
   window.__mgVersion = VERSION;
   if (!('serviceWorker' in navigator) || !location.protocol.startsWith('http')) return;
   const sw = navigator.serviceWorker, LOOP_KEY = 'mg.swReloads';
