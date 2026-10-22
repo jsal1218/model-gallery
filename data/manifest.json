@@ -433,124 +433,8 @@
           "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-5-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         },
         {
-          "id": "outfit-6",
-          "name": "Outfit 6",
-          "subtitle": "Pale yellow tank crop · baggy jeans",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/exact-26/outfit-6/lo/000.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-6/hi/000.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/exact-26/outfit-6/lo/045.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-6/hi/045.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/exact-26/outfit-6/lo/090.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-6/hi/090.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/exact-26/outfit-6/lo/135.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-6/hi/135.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/exact-26/outfit-6/lo/180.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-6/hi/180.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/exact-26/outfit-6/lo/225.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-6/hi/225.webp?v=202610211658",
-              "source": "reference-mirrored",
-              "mirrorOf": 135
-            },
-            {
-              "angle": 270,
-              "lo": "assets/exact-26/outfit-6/lo/270.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-6/hi/270.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/exact-26/outfit-6/lo/315.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-6/hi/315.webp?v=202610211658",
-              "source": "reference-mirrored",
-              "mirrorOf": 45
-            }
-          ],
-          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-6-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        },
-        {
-          "id": "outfit-7",
-          "name": "Outfit 7",
-          "subtitle": "White lace cami · black denim pleated mini",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/exact-26/outfit-7/lo/000.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-7/hi/000.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/exact-26/outfit-7/lo/045.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-7/hi/045.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/exact-26/outfit-7/lo/090.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-7/hi/090.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/exact-26/outfit-7/lo/135.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-7/hi/135.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/exact-26/outfit-7/lo/180.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-7/hi/180.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/exact-26/outfit-7/lo/225.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-7/hi/225.webp?v=202610211658",
-              "source": "reference-mirrored",
-              "mirrorOf": 135
-            },
-            {
-              "angle": 270,
-              "lo": "assets/exact-26/outfit-7/lo/270.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-7/hi/270.webp?v=202610211658",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/exact-26/outfit-7/lo/315.webp?v=202610211658",
-              "hi": "assets/exact-26/outfit-7/hi/315.webp?v=202610211658",
-              "source": "reference-mirrored",
-              "mirrorOf": 45
-            }
-          ],
-          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-7-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        },
-        {
           "id": "outfit-8",
-          "name": "Outfit 8",
+          "name": "Outfit 6",
           "subtitle": "Dark grey cami · faded wide jeans · shoulder bag",
           "frames": [
             {
@@ -606,7 +490,7 @@
         },
         {
           "id": "outfit-9",
-          "name": "Outfit 9",
+          "name": "Outfit 7",
           "subtitle": "Black halter top · ruched mini skirt · heels",
           "frames": [
             {
@@ -664,7 +548,7 @@
         },
         {
           "id": "outfit-10",
-          "name": "Outfit 10",
+          "name": "Outfit 8",
           "subtitle": "Black sports bra · running shorts",
           "frames": [
             {
@@ -722,7 +606,7 @@
         },
         {
           "id": "outfit-11",
-          "name": "Outfit 11",
+          "name": "Outfit 9",
           "subtitle": "Red/black/white leather moto suit · boots",
           "frames": [
             {
@@ -780,7 +664,7 @@
         },
         {
           "id": "outfit-12",
-          "name": "Outfit 12",
+          "name": "Outfit 10",
           "subtitle": "Black pantsuit · white shirt · heels",
           "frames": [
             {
@@ -837,123 +721,8 @@
           "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-12-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
         },
         {
-          "id": "outfit-13",
-          "name": "Outfit 13",
-          "subtitle": "Chef whites · hat · apron · pinstripe pants",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/exact-26/outfit-13/lo/000.webp?v=202610211956",
-              "hi": "assets/exact-26/outfit-13/hi/000.webp?v=202610211956",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/exact-26/outfit-13/lo/045.webp?v=202610211956",
-              "hi": "assets/exact-26/outfit-13/hi/045.webp?v=202610211956",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/exact-26/outfit-13/lo/090.webp?v=202610211956",
-              "hi": "assets/exact-26/outfit-13/hi/090.webp?v=202610211956",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/exact-26/outfit-13/lo/135.webp?v=202610211956",
-              "hi": "assets/exact-26/outfit-13/hi/135.webp?v=202610211956",
-              "source": "reference"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/exact-26/outfit-13/lo/180.webp?v=202610211956",
-              "hi": "assets/exact-26/outfit-13/hi/180.webp?v=202610211956",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/exact-26/outfit-13/lo/225.webp?v=202610211956",
-              "hi": "assets/exact-26/outfit-13/hi/225.webp?v=202610211956",
-              "source": "reference-mirrored",
-              "mirrorOf": 135
-            },
-            {
-              "angle": 270,
-              "lo": "assets/exact-26/outfit-13/lo/270.webp?v=202610211956",
-              "hi": "assets/exact-26/outfit-13/hi/270.webp?v=202610211956",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/exact-26/outfit-13/lo/315.webp?v=202610211956",
-              "hi": "assets/exact-26/outfit-13/hi/315.webp?v=202610211956",
-              "source": "reference-mirrored",
-              "mirrorOf": 45
-            }
-          ],
-          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-13-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Registered by her face/hair and soles, not the hat top: the sheet's figure is ~2% smaller than her base sheet's, so it is scaled 1.022 (face on the front/profile views within ~3-11 hi px of the base; shoes level with her sneaker outfits). Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        },
-        {
-          "id": "outfit-14",
-          "name": "Outfit 14",
-          "subtitle": "Light blue satin short robe",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/exact-26/outfit-14/lo/000.webp?v=202610212306",
-              "hi": "assets/exact-26/outfit-14/hi/000.webp?v=202610212306",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/exact-26/outfit-14/lo/045.webp?v=202610212306",
-              "hi": "assets/exact-26/outfit-14/hi/045.webp?v=202610212306",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/exact-26/outfit-14/lo/090.webp?v=202610212306",
-              "hi": "assets/exact-26/outfit-14/hi/090.webp?v=202610212306",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/exact-26/outfit-14/lo/135.webp?v=202610212306",
-              "hi": "assets/exact-26/outfit-14/hi/135.webp?v=202610212306",
-              "source": "reference"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/exact-26/outfit-14/lo/180.webp?v=202610212306",
-              "hi": "assets/exact-26/outfit-14/hi/180.webp?v=202610212306",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/exact-26/outfit-14/lo/225.webp?v=202610212306",
-              "hi": "assets/exact-26/outfit-14/hi/225.webp?v=202610212306",
-              "source": "reference-mirrored",
-              "mirrorOf": 135
-            },
-            {
-              "angle": 270,
-              "lo": "assets/exact-26/outfit-14/lo/270.webp?v=202610212306",
-              "hi": "assets/exact-26/outfit-14/hi/270.webp?v=202610212306",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/exact-26/outfit-14/lo/315.webp?v=202610212330",
-              "hi": "assets/exact-26/outfit-14/hi/315.webp?v=202610212330",
-              "source": "reference-mirrored-edited"
-            }
-          ],
-          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-14-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        },
-        {
           "id": "outfit-15",
-          "name": "Outfit 15",
+          "name": "Outfit 11",
           "subtitle": "Black crop tank · pink satin shorts",
           "frames": [
             {
@@ -1011,7 +780,7 @@
         },
         {
           "id": "outfit-16",
-          "name": "Outfit 16",
+          "name": "Outfit 12",
           "subtitle": "Grey tie-dye oversized tee · grey shorts",
           "frames": [
             {
@@ -1569,7 +1338,7 @@
     }
   ],
   "aliases": {
-    "_note": "retired ids from before the first 2026-10-18 renumbering -> current ids. Removed models (old model-5; exact-1..4, 8, 11, 15, 16) have no alias and fall back to the first model. Ids are stable: the second renumbering (old Model 5, 6, 7, 9, 10, 12, 13, 14 -> Model 1-8) only changed names. The Photorealistic section (photoreal-1 = old model-2, photoreal-2) was removed on 2026-10-19; those ids and #model-2 now fall back to the first model. The Generated section (generated-1, -2, -3) was removed on 2026-10-21: those ids fall back to the first model, except #generated-3/<outfit>, which opens Model 2 (exact-6, the same woman) in that outfit when she has it (outfitAliases). On 2026-10-21 Models 9, 12, 14, 15, 16 and 17 (exact-17, 20, 22, 23, 24, 25) were removed (their links fall back to the first model) and the rest renumbered Model 9-12 by name only (exact-18, 19, 21, 26); ids, and so every #exact-N/<outfit>/<angle> link, are unchanged. On 2026-10-22 Models 1, 3, 4, 5, 9 and 10 (exact-5, 7, 9, 10, 18, 19) were removed (their links fall back to the first model) and the rest renumbered Model 1-6 by name only (exact-6, 12, 13, 14, 21, 26); ids and links unchanged. Later on 2026-10-22 Model 5 (exact-21) was removed too (its links fall back to the first model); exact-26 is now Model 5 (lineup Model 1-5 = exact-6, 12, 13, 14, 26). Reordered 2026-10-22 (Jordan): Model 1-5 = exact-12, 26, 6, 14, 13 (names follow the order; ids and links unchanged); removed or unknown ids fall back to the new Model 1 (exact-12)."
+    "_note": "retired ids from before the first 2026-10-18 renumbering -> current ids. Removed models (old model-5; exact-1..4, 8, 11, 15, 16) have no alias and fall back to the first model. Ids are stable: the second renumbering (old Model 5, 6, 7, 9, 10, 12, 13, 14 -> Model 1-8) only changed names. The Photorealistic section (photoreal-1 = old model-2, photoreal-2) was removed on 2026-10-19; those ids and #model-2 now fall back to the first model. The Generated section (generated-1, -2, -3) was removed on 2026-10-21: those ids fall back to the first model, except #generated-3/<outfit>, which opens Model 2 (exact-6, the same woman) in that outfit when she has it (outfitAliases). On 2026-10-21 Models 9, 12, 14, 15, 16 and 17 (exact-17, 20, 22, 23, 24, 25) were removed (their links fall back to the first model) and the rest renumbered Model 9-12 by name only (exact-18, 19, 21, 26); ids, and so every #exact-N/<outfit>/<angle> link, are unchanged. On 2026-10-22 Models 1, 3, 4, 5, 9 and 10 (exact-5, 7, 9, 10, 18, 19) were removed (their links fall back to the first model) and the rest renumbered Model 1-6 by name only (exact-6, 12, 13, 14, 21, 26); ids and links unchanged. Later on 2026-10-22 Model 5 (exact-21) was removed too (its links fall back to the first model); exact-26 is now Model 5 (lineup Model 1-5 = exact-6, 12, 13, 14, 26). Reordered 2026-10-22 (Jordan): Model 1-5 = exact-12, 26, 6, 14, 13 (names follow the order; ids and links unchanged); removed or unknown ids fall back to the new Model 1 (exact-12). 2026-10-22: Model 2 (exact-26) lost Outfit 6, 7, 13, 14 (ids outfit-6, -7, -13, -14; their links open her Base); the rest were renumbered by name only, Outfit 1-12 (ids unchanged, so old links open the same outfit)."
   },
   "outfitAliases": {
     "_note": "removed id -> model that keeps its outfits; used only when the link names an outfit that model has",
