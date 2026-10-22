@@ -1257,51 +1257,51 @@
           "frames": [
             {
               "angle": 0,
-              "lo": "assets/exact-6/slip-dress/lo/000.webp?v=202610190001",
-              "hi": "assets/exact-6/slip-dress/hi/000.webp?v=202610190001",
+              "lo": "assets/exact-6/slip-dress/lo/000.webp?v=202610220630",
+              "hi": "assets/exact-6/slip-dress/hi/000.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 45,
-              "lo": "assets/exact-6/slip-dress/lo/045.webp?v=202610190001",
-              "hi": "assets/exact-6/slip-dress/hi/045.webp?v=202610190001",
+              "lo": "assets/exact-6/slip-dress/lo/045.webp?v=202610220630",
+              "hi": "assets/exact-6/slip-dress/hi/045.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 90,
-              "lo": "assets/exact-6/slip-dress/lo/090.webp?v=202610190001",
-              "hi": "assets/exact-6/slip-dress/hi/090.webp?v=202610190001",
+              "lo": "assets/exact-6/slip-dress/lo/090.webp?v=202610220630",
+              "hi": "assets/exact-6/slip-dress/hi/090.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 135,
-              "lo": "assets/exact-6/slip-dress/lo/135.webp?v=202610190001",
-              "hi": "assets/exact-6/slip-dress/hi/135.webp?v=202610190001",
+              "lo": "assets/exact-6/slip-dress/lo/135.webp?v=202610220630",
+              "hi": "assets/exact-6/slip-dress/hi/135.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 180,
-              "lo": "assets/exact-6/slip-dress/lo/180.webp?v=202610190001",
-              "hi": "assets/exact-6/slip-dress/hi/180.webp?v=202610190001",
+              "lo": "assets/exact-6/slip-dress/lo/180.webp?v=202610220630",
+              "hi": "assets/exact-6/slip-dress/hi/180.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 225,
-              "lo": "assets/exact-6/slip-dress/lo/225.webp?v=202610190001",
-              "hi": "assets/exact-6/slip-dress/hi/225.webp?v=202610190001",
+              "lo": "assets/exact-6/slip-dress/lo/225.webp?v=202610220630",
+              "hi": "assets/exact-6/slip-dress/hi/225.webp?v=202610220630",
               "source": "reference-mirrored",
               "mirrorOf": 135
             },
             {
               "angle": 270,
-              "lo": "assets/exact-6/slip-dress/lo/270.webp?v=202610190001",
-              "hi": "assets/exact-6/slip-dress/hi/270.webp?v=202610190001",
+              "lo": "assets/exact-6/slip-dress/lo/270.webp?v=202610220630",
+              "hi": "assets/exact-6/slip-dress/hi/270.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 315,
-              "lo": "assets/exact-6/slip-dress/lo/315.webp?v=202610190001",
-              "hi": "assets/exact-6/slip-dress/hi/315.webp?v=202610190001",
+              "lo": "assets/exact-6/slip-dress/lo/315.webp?v=202610220630",
+              "hi": "assets/exact-6/slip-dress/hi/315.webp?v=202610220630",
               "source": "reference-mirrored",
               "mirrorOf": 45
             }
@@ -1315,51 +1315,51 @@
           "frames": [
             {
               "angle": 0,
-              "lo": "assets/exact-6/tank-shorts/lo/000.webp?v=202610190001",
-              "hi": "assets/exact-6/tank-shorts/hi/000.webp?v=202610190001",
+              "lo": "assets/exact-6/tank-shorts/lo/000.webp?v=202610220630",
+              "hi": "assets/exact-6/tank-shorts/hi/000.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 45,
-              "lo": "assets/exact-6/tank-shorts/lo/045.webp?v=202610190001",
-              "hi": "assets/exact-6/tank-shorts/hi/045.webp?v=202610190001",
+              "lo": "assets/exact-6/tank-shorts/lo/045.webp?v=202610220630",
+              "hi": "assets/exact-6/tank-shorts/hi/045.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 90,
-              "lo": "assets/exact-6/tank-shorts/lo/090.webp?v=202610190001",
-              "hi": "assets/exact-6/tank-shorts/hi/090.webp?v=202610190001",
+              "lo": "assets/exact-6/tank-shorts/lo/090.webp?v=202610220630",
+              "hi": "assets/exact-6/tank-shorts/hi/090.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 135,
-              "lo": "assets/exact-6/tank-shorts/lo/135.webp?v=202610190001",
-              "hi": "assets/exact-6/tank-shorts/hi/135.webp?v=202610190001",
+              "lo": "assets/exact-6/tank-shorts/lo/135.webp?v=202610220630",
+              "hi": "assets/exact-6/tank-shorts/hi/135.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 180,
-              "lo": "assets/exact-6/tank-shorts/lo/180.webp?v=202610190001",
-              "hi": "assets/exact-6/tank-shorts/hi/180.webp?v=202610190001",
+              "lo": "assets/exact-6/tank-shorts/lo/180.webp?v=202610220630",
+              "hi": "assets/exact-6/tank-shorts/hi/180.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 225,
-              "lo": "assets/exact-6/tank-shorts/lo/225.webp?v=202610190001",
-              "hi": "assets/exact-6/tank-shorts/hi/225.webp?v=202610190001",
+              "lo": "assets/exact-6/tank-shorts/lo/225.webp?v=202610220630",
+              "hi": "assets/exact-6/tank-shorts/hi/225.webp?v=202610220630",
               "source": "reference-mirrored",
               "mirrorOf": 135
             },
             {
               "angle": 270,
-              "lo": "assets/exact-6/tank-shorts/lo/270.webp?v=202610190001",
-              "hi": "assets/exact-6/tank-shorts/hi/270.webp?v=202610190001",
+              "lo": "assets/exact-6/tank-shorts/lo/270.webp?v=202610220630",
+              "hi": "assets/exact-6/tank-shorts/hi/270.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 315,
-              "lo": "assets/exact-6/tank-shorts/lo/315.webp?v=202610190001",
-              "hi": "assets/exact-6/tank-shorts/hi/315.webp?v=202610190001",
+              "lo": "assets/exact-6/tank-shorts/lo/315.webp?v=202610220630",
+              "hi": "assets/exact-6/tank-shorts/hi/315.webp?v=202610220630",
               "source": "reference-mirrored",
               "mirrorOf": 45
             }
@@ -1373,51 +1373,51 @@
           "frames": [
             {
               "angle": 0,
-              "lo": "assets/exact-6/usa-jersey/lo/000.webp?v=202610210240",
-              "hi": "assets/exact-6/usa-jersey/hi/000.webp?v=202610210240",
+              "lo": "assets/exact-6/usa-jersey/lo/000.webp?v=202610220630",
+              "hi": "assets/exact-6/usa-jersey/hi/000.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 45,
-              "lo": "assets/exact-6/usa-jersey/lo/045.webp?v=202610210240",
-              "hi": "assets/exact-6/usa-jersey/hi/045.webp?v=202610210240",
+              "lo": "assets/exact-6/usa-jersey/lo/045.webp?v=202610220630",
+              "hi": "assets/exact-6/usa-jersey/hi/045.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 90,
-              "lo": "assets/exact-6/usa-jersey/lo/090.webp?v=202610210240",
-              "hi": "assets/exact-6/usa-jersey/hi/090.webp?v=202610210240",
+              "lo": "assets/exact-6/usa-jersey/lo/090.webp?v=202610220630",
+              "hi": "assets/exact-6/usa-jersey/hi/090.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 135,
-              "lo": "assets/exact-6/usa-jersey/lo/135.webp?v=202610210240",
-              "hi": "assets/exact-6/usa-jersey/hi/135.webp?v=202610210240",
+              "lo": "assets/exact-6/usa-jersey/lo/135.webp?v=202610220630",
+              "hi": "assets/exact-6/usa-jersey/hi/135.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 180,
-              "lo": "assets/exact-6/usa-jersey/lo/180.webp?v=202610210240",
-              "hi": "assets/exact-6/usa-jersey/hi/180.webp?v=202610210240",
+              "lo": "assets/exact-6/usa-jersey/lo/180.webp?v=202610220630",
+              "hi": "assets/exact-6/usa-jersey/hi/180.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 225,
-              "lo": "assets/exact-6/usa-jersey/lo/225.webp?v=202610210240",
-              "hi": "assets/exact-6/usa-jersey/hi/225.webp?v=202610210240",
+              "lo": "assets/exact-6/usa-jersey/lo/225.webp?v=202610220630",
+              "hi": "assets/exact-6/usa-jersey/hi/225.webp?v=202610220630",
               "source": "reference-mirrored",
               "mirrorOf": 135
             },
             {
               "angle": 270,
-              "lo": "assets/exact-6/usa-jersey/lo/270.webp?v=202610210240",
-              "hi": "assets/exact-6/usa-jersey/hi/270.webp?v=202610210240",
+              "lo": "assets/exact-6/usa-jersey/lo/270.webp?v=202610220630",
+              "hi": "assets/exact-6/usa-jersey/hi/270.webp?v=202610220630",
               "source": "reference"
             },
             {
               "angle": 315,
-              "lo": "assets/exact-6/usa-jersey/lo/315.webp?v=202610210240",
-              "hi": "assets/exact-6/usa-jersey/hi/315.webp?v=202610210240",
+              "lo": "assets/exact-6/usa-jersey/lo/315.webp?v=202610220630",
+              "hi": "assets/exact-6/usa-jersey/hi/315.webp?v=202610220630",
               "source": "reference-mirrored",
               "mirrorOf": 45
             }
