@@ -12,75 +12,8 @@
   },
   "models": [
     {
-      "id": "exact-12",
-      "name": "Model 1",
-      "group": "exact",
-      "descriptor": "Black high bun · tan · slim",
-      "outfits": [
-        {
-          "id": "base",
-          "name": "Base",
-          "subtitle": "Grey crop set",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/exact-12/base/lo/000.webp?v=202610180304",
-              "hi": "assets/exact-12/base/hi/000.webp?v=202610180304",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/exact-12/base/lo/045.webp?v=202610180304",
-              "hi": "assets/exact-12/base/hi/045.webp?v=202610180304",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/exact-12/base/lo/090.webp?v=202610180304",
-              "hi": "assets/exact-12/base/hi/090.webp?v=202610180304",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/exact-12/base/lo/135.webp?v=202610180304",
-              "hi": "assets/exact-12/base/hi/135.webp?v=202610180304",
-              "source": "reference"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/exact-12/base/lo/180.webp?v=202610180304",
-              "hi": "assets/exact-12/base/hi/180.webp?v=202610180304",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/exact-12/base/lo/225.webp?v=202610180304",
-              "hi": "assets/exact-12/base/hi/225.webp?v=202610180304",
-              "source": "reference-mirrored",
-              "mirrorOf": 135
-            },
-            {
-              "angle": 270,
-              "lo": "assets/exact-12/base/lo/270.webp?v=202610180304",
-              "hi": "assets/exact-12/base/hi/270.webp?v=202610180304",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/exact-12/base/lo/315.webp?v=202610180304",
-              "hi": "assets/exact-12/base/hi/315.webp?v=202610180304",
-              "source": "reference-mirrored",
-              "mirrorOf": 45
-            }
-          ],
-          "note": "All 8 frames are Jordan's exact reference turnaround pixels (reference/exact-12-turnaround-6.jpg), no AI generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        }
-      ],
-      "thumb": "assets/exact-12/thumb.webp?v=202610180304"
-    },
-    {
       "id": "exact-26",
-      "name": "Model 2",
+      "name": "Model 1",
       "group": "exact",
       "descriptor": "Wavy blonde hair · fair · curvy",
       "outfits": [
@@ -841,7 +774,7 @@
     },
     {
       "id": "exact-6",
-      "name": "Model 3",
+      "name": "Model 2",
       "group": "exact",
       "descriptor": "Pink hair · fair · curvy",
       "outfits": [
@@ -1198,7 +1131,7 @@
     },
     {
       "id": "exact-14",
-      "name": "Model 4",
+      "name": "Model 3",
       "group": "exact",
       "descriptor": "Curly high puff · deep brown · curvy",
       "outfits": [
@@ -1265,7 +1198,7 @@
     },
     {
       "id": "exact-13",
-      "name": "Model 5",
+      "name": "Model 4",
       "group": "exact",
       "descriptor": "Wavy black braids · tan · full-figured",
       "outfits": [
@@ -1338,7 +1271,7 @@
     }
   ],
   "aliases": {
-    "_note": "retired ids from before the first 2026-10-18 renumbering -> current ids. Removed models (old model-5; exact-1..4, 8, 11, 15, 16) have no alias and fall back to the first model. Ids are stable: the second renumbering (old Model 5, 6, 7, 9, 10, 12, 13, 14 -> Model 1-8) only changed names. The Photorealistic section (photoreal-1 = old model-2, photoreal-2) was removed on 2026-10-19; those ids and #model-2 now fall back to the first model. The Generated section (generated-1, -2, -3) was removed on 2026-10-21: those ids fall back to the first model, except #generated-3/<outfit>, which opens Model 2 (exact-6, the same woman) in that outfit when she has it (outfitAliases). On 2026-10-21 Models 9, 12, 14, 15, 16 and 17 (exact-17, 20, 22, 23, 24, 25) were removed (their links fall back to the first model) and the rest renumbered Model 9-12 by name only (exact-18, 19, 21, 26); ids, and so every #exact-N/<outfit>/<angle> link, are unchanged. On 2026-10-22 Models 1, 3, 4, 5, 9 and 10 (exact-5, 7, 9, 10, 18, 19) were removed (their links fall back to the first model) and the rest renumbered Model 1-6 by name only (exact-6, 12, 13, 14, 21, 26); ids and links unchanged. Later on 2026-10-22 Model 5 (exact-21) was removed too (its links fall back to the first model); exact-26 is now Model 5 (lineup Model 1-5 = exact-6, 12, 13, 14, 26). Reordered 2026-10-22 (Jordan): Model 1-5 = exact-12, 26, 6, 14, 13 (names follow the order; ids and links unchanged); removed or unknown ids fall back to the new Model 1 (exact-12). 2026-10-22: Model 2 (exact-26) lost Outfit 6, 7, 13, 14 (ids outfit-6, -7, -13, -14; their links open her Base); the rest were renumbered by name only, Outfit 1-12 (ids unchanged, so old links open the same outfit)."
+    "_note": "retired ids from before the first 2026-10-18 renumbering -> current ids. Removed models (old model-5; exact-1..4, 8, 11, 15, 16) have no alias and fall back to the first model. Ids are stable: the second renumbering (old Model 5, 6, 7, 9, 10, 12, 13, 14 -> Model 1-8) only changed names. The Photorealistic section (photoreal-1 = old model-2, photoreal-2) was removed on 2026-10-19; those ids and #model-2 now fall back to the first model. The Generated section (generated-1, -2, -3) was removed on 2026-10-21: those ids fall back to the first model, except #generated-3/<outfit>, which opens Model 2 (exact-6, the same woman) in that outfit when she has it (outfitAliases). On 2026-10-21 Models 9, 12, 14, 15, 16 and 17 (exact-17, 20, 22, 23, 24, 25) were removed (their links fall back to the first model) and the rest renumbered Model 9-12 by name only (exact-18, 19, 21, 26); ids, and so every #exact-N/<outfit>/<angle> link, are unchanged. On 2026-10-22 Models 1, 3, 4, 5, 9 and 10 (exact-5, 7, 9, 10, 18, 19) were removed (their links fall back to the first model) and the rest renumbered Model 1-6 by name only (exact-6, 12, 13, 14, 21, 26); ids and links unchanged. Later on 2026-10-22 Model 5 (exact-21) was removed too (its links fall back to the first model); exact-26 is now Model 5 (lineup Model 1-5 = exact-6, 12, 13, 14, 26). Reordered 2026-10-22 (Jordan): Model 1-5 = exact-12, 26, 6, 14, 13 (names follow the order; ids and links unchanged); removed or unknown ids fall back to the new Model 1 (exact-12). 2026-10-22: Model 2 (exact-26) lost Outfit 6, 7, 13, 14 (ids outfit-6, -7, -13, -14; their links open her Base); the rest were renumbered by name only, Outfit 1-12 (ids unchanged, so old links open the same outfit). Later 2026-10-22: Model 1 (exact-12) removed; renumbered Model 1-4 = exact-26, exact-6, exact-14, exact-13. No link or a link to a removed model opens the new Model 1 (exact-26)."
   },
   "outfitAliases": {
     "_note": "removed id -> model that keeps its outfits; used only when the link names an outfit that model has",
