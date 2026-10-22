@@ -40,7 +40,7 @@
     requestAnimationFrame(tick);
   }
 
-  // one row of models (Model 1-6). The Photorealistic section was removed 2026-10-19 and the Generated section 2026-10-21
+  // one row of models (Model 1-5). The Photorealistic section was removed 2026-10-19 and the Generated section 2026-10-21
   function renderModels() {
     const box = $('models'); box.innerHTML = '';
     S.manifest.models.forEach(m => {
