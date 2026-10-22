@@ -46,7 +46,8 @@
     S.manifest.models.forEach(m => {
       const b = document.createElement('button');
       b.className = 'model'; b.type = 'button'; b.role = 'tab'; b.dataset.id = m.id;
-      b.innerHTML = `<img src="${m.thumb}" alt=""><span><b>${m.name}</b><small>${m.descriptor}</small></span>`;
+      b.innerHTML = `<img src="${m.thumb}" alt=""><span><b>${m.name}</b></span>`;   // name only (Jordan, 2026-10-21: no description on the cards)
+      b.title = m.name;
       b.addEventListener('click', () => selectModel(m.id));
       box.appendChild(b);
     });
@@ -70,22 +71,37 @@
     if (br.left < xr.left + padL || br.right > xr.right - padL) box.scrollTo({ left: box.scrollLeft + br.left - xr.left - padL, behavior: 'smooth' });
   }
 
-  // outfit chips sit on the viewer itself (small swatch + name) and only appear for models with more than one outfit;
-  // switching keeps the current angle (and auto-rotate), so you can change outfits and keep spinning
+  // "Outfits" dropdown under the viewer (every model, even Base-only ones): a grid of outfit cards, each the size of a
+  // model card in the main gallery, showing that outfit's front (0°) frame and only its name. Cards are built the first
+  // time the dropdown opens (lazy images), picking one collapses it and shows that outfit in the 360 view (angle kept).
   function renderOutfits() {
-    const box = $('ochips'), list = S.model.outfits; box.innerHTML = '';
-    box.hidden = list.length < 2; box.classList.toggle('many', list.length >= 5); box.classList.toggle('wrap', list.length >= 6);   // 5+ chips: compact on phones so all fit
-    box.classList.toggle('lots', list.length >= 10); box.style.setProperty('--cols', Math.ceil(list.length / 2));   // 10+ chips: two rows exactly (see style.css)
-    if (list.length < 2) return;
-    list.forEach(o => {
+    $('ofGrid').innerHTML = ''; $('ofGrid').dataset.model = '';
+    $('ofCur').textContent = `${S.model.outfits.length} · Base`;
+    openOutfits(false);
+  }
+  function buildOutfitCards() {
+    const grid = $('ofGrid');
+    if (grid.dataset.model === S.model.id) return;
+    grid.dataset.model = S.model.id; grid.innerHTML = '';
+    const mc = document.querySelector('.model'); if (mc) grid.style.setProperty('--oc-img', Math.max(64, mc.offsetHeight - 38) + 'px');   // same height as a model card
+    S.model.outfits.forEach(o => {
       const b = document.createElement('button'), front = o.frames.find(f => f.angle === 0) || o.frames[0];
-      b.className = 'ochip'; b.type = 'button'; b.role = 'radio'; b.dataset.id = o.id; b.title = `${o.name} · ${o.subtitle}`;
-      b.innerHTML = `<i style="background-image:url('${front.lo}')"></i><span>${o.name}</span>`;
-      b.addEventListener('pointerdown', (e) => e.stopPropagation());
-      b.addEventListener('click', (e) => { e.stopPropagation(); if (S.outfit && S.outfit.id !== o.id) selectOutfit(o.id, S.angle); });
-      box.appendChild(b);
+      b.className = 'ocard'; b.type = 'button'; b.role = 'option'; b.dataset.id = o.id; b.title = o.name;
+      b.setAttribute('aria-selected', S.outfit && S.outfit.id === o.id);
+      b.innerHTML = `<img loading="lazy" decoding="async" src="${front.lo}" alt=""><b>${o.name}</b>`;
+      b.addEventListener('click', async () => {
+        openOutfits(false);
+        const v = viewer.getBoundingClientRect(); if (v.top < 0) window.scrollTo({ top: Math.max(0, window.scrollY + v.top - 12), behavior: 'smooth' });
+        if (!S.outfit || S.outfit.id !== o.id) await selectOutfit(o.id, S.angle);
+      });
+      grid.appendChild(b);
     });
   }
+  function openOutfits(open = $('ofGrid').hidden) {
+    if (open) buildOutfitCards();
+    $('ofGrid').hidden = !open; $('ofBtn').setAttribute('aria-expanded', open);
+  }
+  $('ofBtn').addEventListener('click', () => openOutfits());
 
   async function selectModel(id, outfitId, angle) {
     S.model = S.manifest.models.find(m => m.id === id);
@@ -98,9 +114,8 @@
   async function selectOutfit(id, angle) {
     S.outfit = S.model.outfits.find(o => o.id === id);
     S.frames = [...S.outfit.frames].sort((a, b) => a.angle - b.angle);
-    document.querySelectorAll('.ochip').forEach(b => b.setAttribute('aria-checked', b.dataset.id === id));
-    { const box = $('ochips'), on = box.querySelector('.ochip[aria-checked="true"]');   // two-row chips that scroll: keep the selected one in view
-      if (on && box.classList.contains('lots') && box.scrollWidth > box.clientWidth) box.scrollLeft = Math.max(0, on.offsetLeft - (box.clientWidth - on.offsetWidth) / 2); }
+    document.querySelectorAll('.ocard').forEach(b => b.setAttribute('aria-selected', b.dataset.id === id));
+    $('ofCur').textContent = `${S.model.outfits.length} · ${S.outfit.name}`;
     resetZoom(true);
     S.angle = mod(angle || 0); S.vel = 0; S.snapTo = null;
     $('metaLine').textContent = `${S.model.name} · ${S.outfit.name} · ${S.frames.length} angles`;

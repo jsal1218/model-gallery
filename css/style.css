@@ -79,16 +79,20 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 .outfit b{display:block;font-size:12.5px;margin-top:6px}.outfit small{display:block;font-size:10.5px;color:var(--muted)}
 .outfit[aria-current="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .outfit.soon{opacity:.55;cursor:default}.outfit.soon .ph{display:grid;place-items:center;background:#f3f0ea;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.ochips{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:2;display:flex;gap:4px;padding:3px;max-width:calc(100% - 16px);overflow-x:auto;scrollbar-width:none;
-  background:rgba(251,250,247,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:99px}
-.ochips::-webkit-scrollbar{display:none}
-.ochip{flex:none;display:flex;align-items:center;gap:5px;height:28px;padding:0 9px 0 3px;border:0;border-radius:99px;background:transparent;font-size:11px;letter-spacing:.02em;color:var(--ink);white-space:nowrap}
-.ochip i{width:22px;height:22px;border-radius:50%;flex:none;background:#f0ede7 50% 40%/auto 520% no-repeat;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
-.ochip[aria-checked="true"]{background:var(--ink);color:var(--bg)}
-@media (max-width:440px){.ochips{gap:2px;max-width:calc(100% - 12px)}.ochip{gap:4px;padding:0 7px 0 3px;font-size:10.5px;letter-spacing:0}.ochip i{width:20px;height:20px}}
-@media (max-width:440px){.ochips.many{gap:1px;padding:2px;max-width:calc(100% - 8px)}.ochips.many .ochip{gap:3px;height:26px;padding:0 6px 0 2px;font-size:10px;letter-spacing:-.01em}.ochips.many .ochip i{width:17px;height:17px}.ochips.many .ochip:not([aria-checked="true"]) i{display:none}.ochips.many .ochip:not([aria-checked="true"]){padding:0 7px}}
-@media (max-width:440px){.ochips.wrap{left:4px;right:4px;transform:none;margin:0 auto;width:fit-content;max-width:none;flex-wrap:wrap;justify-content:center;row-gap:2px;overflow:visible;border-radius:16px}.viewer:has(.ochips.wrap:not([hidden])) .stage img{height:calc(100% - 46px)}}   /* 6+ chips: two centred rows on phones, nothing hidden */
-@media (max-width:440px){.ochips.wrap.lots{display:grid;grid-template-columns:repeat(var(--cols),max-content);justify-content:start;max-width:calc(100% - 8px);overflow-x:auto;overscroll-behavior-x:contain}.ochips.wrap.lots .ochip:not([aria-checked="true"]){padding:0 5px}.ochips.wrap.lots .ochip{gap:0;padding:0 4px!important;font-size:9.5px;letter-spacing:-.02em}.ochips.wrap.lots .ochip i{display:none!important}}   /* 10+ chips: exactly two rows (ceil(n/2) per row) on phones, scrolling sideways if they ever overflow, so a third row never covers her */
+.of{margin:0}
+.of-btn{width:100%;display:flex;align-items:center;gap:8px;height:44px;padding:0 14px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--ink);font:inherit;font-size:13px;letter-spacing:.02em;text-align:left;cursor:pointer}
+.of-btn svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.of-btn b{font-weight:600}.of-btn em{font-style:normal;color:var(--muted);margin-left:auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.of-btn .chev{width:16px;height:16px;transition:transform .2s}.of-btn[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.of-btn[aria-expanded="true"]{border-color:var(--ink)}
+/* outfit cards: the same card as a model card in the main gallery (88px wide on phones, ~4 across), front view instead of a face, outfit name only */
+.of-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:8px;margin-top:8px;padding:10px;border:1px solid var(--line);border-radius:var(--r);background:var(--paper)}
+.of-grid[hidden]{display:none}
+.ocard{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;padding:7px 4px 8px;border-radius:14px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.ocard img{width:100%;height:var(--oc-img,73px);object-fit:cover;object-position:50% 6%;border-radius:10px;background:#fff;display:block}
+.ocard b{display:block;max-width:100%;font-family:var(--serif);font-weight:500;font-size:15px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ocard[aria-selected="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+@media (min-width:900px){.of-grid{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}}
 .note{margin-top:14px;font-size:11.5px;line-height:1.5;color:var(--muted)}
 .note:empty{display:none}
 @media (min-width:900px){
