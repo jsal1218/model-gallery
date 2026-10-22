@@ -40,7 +40,7 @@
     requestAnimationFrame(tick);
   }
 
-  // one row of models (Model 1-17). The Photorealistic section was removed 2026-10-19 and the Generated section 2026-10-21
+  // one row of models (Model 1-6). The Photorealistic section was removed 2026-10-19 and the Generated section 2026-10-21
   function renderModels() {
     const box = $('models'); box.innerHTML = '';
     S.manifest.models.forEach(m => {
@@ -130,7 +130,7 @@
     resetZoom(true);
     S.angle = mod(angle || 0); S.vel = 0; S.snapTo = null;
     $('metaLine').textContent = `${S.model.name} · ${S.outfit.name} · ${S.frames.length} angles`;
-    buildDial(); buildQuick(); setNote();
+    buildDial(); buildQuick();
     await preload(S.frames);
     render(true);
     updateHash();
@@ -204,12 +204,6 @@
       b.addEventListener('click', () => { stopAuto(); resetZoom(); goTo(a); });
       box.appendChild(b);
     });
-  }
-  function setNote() {
-    const n = S.frames.length, refs = S.frames.filter(f => f.source === 'reference').length;
-    $('note').textContent = n < 8
-      ? `Preview set: ${n} photographed angles${refs ? ' (front & back reference)' : ''}. In-between angles show the nearest photographed view until the full turnaround frames are added.`
-      : `${n}-angle turnaround${refs ? `, ${refs} from original reference photos` : ''}${S.model.outfits.length > 1 ? ` · ${S.model.outfits.length} outfits` : ''}. Zoom swaps in ${S.manifest.canvas.hi[1]}px frames.`;
   }
 
   /* ---------- motion loop ---------- */
