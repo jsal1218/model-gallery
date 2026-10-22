@@ -1070,75 +1070,8 @@
       "thumb": "assets/exact-14/thumb.webp?v=202610180304"
     },
     {
-      "id": "exact-17",
-      "name": "Model 9",
-      "group": "exact",
-      "descriptor": "Short wavy bob · tan · athletic",
-      "outfits": [
-        {
-          "id": "base",
-          "name": "Base",
-          "subtitle": "Grey crop set",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/exact-17/base/lo/000.webp?v=202610180638",
-              "hi": "assets/exact-17/base/hi/000.webp?v=202610180638",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/exact-17/base/lo/045.webp?v=202610180638",
-              "hi": "assets/exact-17/base/hi/045.webp?v=202610180638",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/exact-17/base/lo/090.webp?v=202610180638",
-              "hi": "assets/exact-17/base/hi/090.webp?v=202610180638",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/exact-17/base/lo/135.webp?v=202610180638",
-              "hi": "assets/exact-17/base/hi/135.webp?v=202610180638",
-              "source": "reference"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/exact-17/base/lo/180.webp?v=202610180638",
-              "hi": "assets/exact-17/base/hi/180.webp?v=202610180638",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/exact-17/base/lo/225.webp?v=202610180638",
-              "hi": "assets/exact-17/base/hi/225.webp?v=202610180638",
-              "source": "reference-mirrored",
-              "mirrorOf": 135
-            },
-            {
-              "angle": 270,
-              "lo": "assets/exact-17/base/lo/270.webp?v=202610180638",
-              "hi": "assets/exact-17/base/hi/270.webp?v=202610180638",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/exact-17/base/lo/315.webp?v=202610180638",
-              "hi": "assets/exact-17/base/hi/315.webp?v=202610180638",
-              "source": "reference-mirrored",
-              "mirrorOf": 45
-            }
-          ],
-          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-17-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        }
-      ],
-      "thumb": "assets/exact-17/thumb.webp?v=202610180638"
-    },
-    {
       "id": "exact-18",
-      "name": "Model 10",
+      "name": "Model 9",
       "group": "exact",
       "descriptor": "Long curly red hair · fair · slim",
       "outfits": [
@@ -1205,7 +1138,7 @@
     },
     {
       "id": "exact-19",
-      "name": "Model 11",
+      "name": "Model 10",
       "group": "exact",
       "descriptor": "Long copper hair · half-cyborg · curvy",
       "outfits": [
@@ -1271,75 +1204,8 @@
       "thumb": "assets/exact-19/thumb.webp?v=202610181342"
     },
     {
-      "id": "exact-20",
-      "name": "Model 12",
-      "group": "exact",
-      "descriptor": "Blonde bob · half-cyborg · curvy",
-      "outfits": [
-        {
-          "id": "base",
-          "name": "Base",
-          "subtitle": "Black top · flared pants",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/exact-20/base/lo/000.webp?v=202610181342",
-              "hi": "assets/exact-20/base/hi/000.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/exact-20/base/lo/045.webp?v=202610181342",
-              "hi": "assets/exact-20/base/hi/045.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/exact-20/base/lo/090.webp?v=202610181342",
-              "hi": "assets/exact-20/base/hi/090.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/exact-20/base/lo/135.webp?v=202610181342",
-              "hi": "assets/exact-20/base/hi/135.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 180,
-              "lo": "assets/exact-20/base/lo/180.webp?v=202610181342",
-              "hi": "assets/exact-20/base/hi/180.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/exact-20/base/lo/225.webp?v=202610181342",
-              "hi": "assets/exact-20/base/hi/225.webp?v=202610181342",
-              "source": "reference-mirrored",
-              "mirrorOf": 135
-            },
-            {
-              "angle": 270,
-              "lo": "assets/exact-20/base/lo/270.webp?v=202610181342",
-              "hi": "assets/exact-20/base/hi/270.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/exact-20/base/lo/315.webp?v=202610181342",
-              "hi": "assets/exact-20/base/hi/315.webp?v=202610181342",
-              "source": "reference-mirrored",
-              "mirrorOf": 45
-            }
-          ],
-          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-20-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        }
-      ],
-      "thumb": "assets/exact-20/thumb.webp?v=202610181342"
-    },
-    {
       "id": "exact-21",
-      "name": "Model 13",
+      "name": "Model 11",
       "group": "exact",
       "descriptor": "Long wavy brown hair · fair · slim",
       "outfits": [
@@ -1521,75 +1387,8 @@
       "thumb": "assets/exact-21/thumb.webp?v=202610181342"
     },
     {
-      "id": "exact-22",
-      "name": "Model 14",
-      "group": "exact",
-      "descriptor": "Brown cap · white tee",
-      "outfits": [
-        {
-          "id": "base",
-          "name": "Base",
-          "subtitle": "White graphic tee · black shorts",
-          "frames": [
-            {
-              "angle": 0,
-              "lo": "assets/exact-22/base/lo/000.webp?v=202610181342",
-              "hi": "assets/exact-22/base/hi/000.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 45,
-              "lo": "assets/exact-22/base/lo/045.webp?v=202610181342",
-              "hi": "assets/exact-22/base/hi/045.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 90,
-              "lo": "assets/exact-22/base/lo/090.webp?v=202610181342",
-              "hi": "assets/exact-22/base/hi/090.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 135,
-              "lo": "assets/exact-22/base/lo/135.webp?v=202610181342",
-              "hi": "assets/exact-22/base/hi/135.webp?v=202610181342",
-              "source": "reference-mirrored",
-              "mirrorOf": 225
-            },
-            {
-              "angle": 180,
-              "lo": "assets/exact-22/base/lo/180.webp?v=202610181342",
-              "hi": "assets/exact-22/base/hi/180.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 225,
-              "lo": "assets/exact-22/base/lo/225.webp?v=202610181342",
-              "hi": "assets/exact-22/base/hi/225.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 270,
-              "lo": "assets/exact-22/base/lo/270.webp?v=202610181342",
-              "hi": "assets/exact-22/base/hi/270.webp?v=202610181342",
-              "source": "reference"
-            },
-            {
-              "angle": 315,
-              "lo": "assets/exact-22/base/lo/315.webp?v=202610181342",
-              "hi": "assets/exact-22/base/hi/315.webp?v=202610181342",
-              "source": "reference-mirrored",
-              "mirrorOf": 45
-            }
-          ],
-          "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-22-turnaround-6.jpg) pixels, no further generation. 135 and 315 are horizontal mirrors of 225 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
-        }
-      ],
-      "thumb": "assets/exact-22/thumb.webp?v=202610181342"
-    },
-    {
       "id": "exact-23",
-      "name": "Model 15",
+      "name": "Model 12",
       "group": "exact",
       "descriptor": "Curly brown hair · tan · curvy",
       "outfits": [
@@ -1656,7 +1455,7 @@
     },
     {
       "id": "exact-24",
-      "name": "Model 16",
+      "name": "Model 13",
       "group": "exact",
       "descriptor": "Burgundy-pink hair · glasses · fair · curvy",
       "outfits": [
@@ -1723,7 +1522,7 @@
     },
     {
       "id": "exact-25",
-      "name": "Model 17",
+      "name": "Model 14",
       "group": "exact",
       "descriptor": "Platinum straight hair · fair · curvy",
       "outfits": [
@@ -1964,7 +1763,7 @@
     },
     {
       "id": "exact-26",
-      "name": "Model 18",
+      "name": "Model 15",
       "group": "exact",
       "descriptor": "Wavy blonde hair · fair · curvy",
       "outfits": [
@@ -2962,7 +2761,7 @@
     }
   ],
   "aliases": {
-    "_note": "retired ids from before the first 2026-10-18 renumbering -> current ids. Removed models (old model-5; exact-1..4, 8, 11, 15, 16) have no alias and fall back to the first model. Ids are stable: the second renumbering (old Model 5, 6, 7, 9, 10, 12, 13, 14 -> Model 1-8) only changed names. The Photorealistic section (photoreal-1 = old model-2, photoreal-2) was removed on 2026-10-19; those ids and #model-2 now fall back to the first model. The Generated section (generated-1, -2, -3) was removed on 2026-10-21: those ids fall back to the first model, except #generated-3/<outfit>, which opens Model 2 (exact-6, the same woman) in that outfit when she has it (outfitAliases)."
+    "_note": "retired ids from before the first 2026-10-18 renumbering -> current ids. Removed models (old model-5; exact-1..4, 8, 11, 15, 16) have no alias and fall back to the first model. Ids are stable: the second renumbering (old Model 5, 6, 7, 9, 10, 12, 13, 14 -> Model 1-8) only changed names. The Photorealistic section (photoreal-1 = old model-2, photoreal-2) was removed on 2026-10-19; those ids and #model-2 now fall back to the first model. The Generated section (generated-1, -2, -3) was removed on 2026-10-21: those ids fall back to the first model, except #generated-3/<outfit>, which opens Model 2 (exact-6, the same woman) in that outfit when she has it (outfitAliases). On 2026-10-21 Models 9, 12 and 14 (exact-17, exact-20, exact-22) were removed (their links fall back to the first model) and the rest renumbered Model 9-15 by name only (exact-18, 19, 21, 23, 24, 25, 26); ids, and so every #exact-N/<outfit>/<angle> link, are unchanged."
   },
   "outfitAliases": {
     "_note": "removed id -> model that keeps its outfits; used only when the link names an outfit that model has",
