@@ -1326,8 +1326,8 @@
       "name": "Model 5",
       "group": "exact",
       "descriptor": "Cream crackle-glaze ceramic head bust",
-      "cardPos": "50% 25%",
-      "thumb": "assets/exact-27/thumb.webp?v=202610292241",
+      "cardPos": "50% 36%",
+      "thumb": "assets/exact-27/thumb.webp?v=202610292324",
       "outfits": [
         {
           "id": "base",
@@ -1336,57 +1336,57 @@
           "frames": [
             {
               "angle": 0,
-              "lo": "assets/exact-27/base/lo/000.webp?v=202610292241",
-              "hi": "assets/exact-27/base/hi/000.webp?v=202610292241",
+              "lo": "assets/exact-27/base/lo/000.webp?v=202610292324",
+              "hi": "assets/exact-27/base/hi/000.webp?v=202610292324",
               "source": "reference"
             },
             {
               "angle": 45,
-              "lo": "assets/exact-27/base/lo/045.webp?v=202610292241",
-              "hi": "assets/exact-27/base/hi/045.webp?v=202610292241",
+              "lo": "assets/exact-27/base/lo/045.webp?v=202610292324",
+              "hi": "assets/exact-27/base/hi/045.webp?v=202610292324",
               "source": "reference-mirrored",
               "mirrorOf": 315
             },
             {
               "angle": 90,
-              "lo": "assets/exact-27/base/lo/090.webp?v=202610292241",
-              "hi": "assets/exact-27/base/hi/090.webp?v=202610292241",
+              "lo": "assets/exact-27/base/lo/090.webp?v=202610292324",
+              "hi": "assets/exact-27/base/hi/090.webp?v=202610292324",
               "source": "reference-mirrored",
               "mirrorOf": 270
             },
             {
               "angle": 135,
-              "lo": "assets/exact-27/base/lo/135.webp?v=202610292241",
-              "hi": "assets/exact-27/base/hi/135.webp?v=202610292241",
+              "lo": "assets/exact-27/base/lo/135.webp?v=202610292324",
+              "hi": "assets/exact-27/base/hi/135.webp?v=202610292324",
               "source": "generated"
             },
             {
               "angle": 180,
-              "lo": "assets/exact-27/base/lo/180.webp?v=202610292241",
-              "hi": "assets/exact-27/base/hi/180.webp?v=202610292241",
+              "lo": "assets/exact-27/base/lo/180.webp?v=202610292324",
+              "hi": "assets/exact-27/base/hi/180.webp?v=202610292324",
               "source": "reference"
             },
             {
               "angle": 225,
-              "lo": "assets/exact-27/base/lo/225.webp?v=202610292241",
-              "hi": "assets/exact-27/base/hi/225.webp?v=202610292241",
+              "lo": "assets/exact-27/base/lo/225.webp?v=202610292324",
+              "hi": "assets/exact-27/base/hi/225.webp?v=202610292324",
               "source": "generated-mirrored",
               "mirrorOf": 135
             },
             {
               "angle": 270,
-              "lo": "assets/exact-27/base/lo/270.webp?v=202610292241",
-              "hi": "assets/exact-27/base/hi/270.webp?v=202610292241",
+              "lo": "assets/exact-27/base/lo/270.webp?v=202610292324",
+              "hi": "assets/exact-27/base/hi/270.webp?v=202610292324",
               "source": "reference"
             },
             {
               "angle": 315,
-              "lo": "assets/exact-27/base/lo/315.webp?v=202610292241",
-              "hi": "assets/exact-27/base/hi/315.webp?v=202610292241",
+              "lo": "assets/exact-27/base/lo/315.webp?v=202610292324",
+              "hi": "assets/exact-27/base/hi/315.webp?v=202610292324",
               "source": "reference"
             }
           ],
-          "note": "From Jordan's 6-view sheet (reference/new-head/sheet.jpg). Real views: 0 = view 1 (front), 315 = view 2 (3/4), 270 = view 3 (profile), 180 = view 6 (back). 45 and 90 are horizontal mirrors of 315 and 270 (bald, symmetric bust). The sheet has no back-3/4 view and no mirror can make one, so 135 is an AI-generated back-3/4 (free image generation from the sheet, checked against the sheet for head shape) and 225 is its mirror. Every frame is scaled to the same head height with the same neck-base line and centre. Upscaled for zoom with Lanczos + light unsharp (Real-ESRGAN unavailable). Sheet views 4 and 5 (another 3/4 and profile) are not used."
+          "note": "From Jordan's 6-view sheet (reference/new-head/sheet.jpg). Real views: 0 = view 1 (front), 315 = view 2 (3/4), 270 = view 3 (profile), 180 = view 6 (back). 45 and 90 are horizontal mirrors of 315 and 270 (bald, symmetric bust). The sheet has no back-3/4 view and no mirror can make one, so 135 is an AI-generated back-3/4 (free image generation from the sheet, checked against the sheet for head shape) and 225 is its mirror. Every frame is scaled to the same head height (85% of the first build, 2026-10-29 11:23 PM, Jordan) with the same neck-base line and centre. Upscaled for zoom with Lanczos + light unsharp (Real-ESRGAN unavailable). Sheet views 4 and 5 (another 3/4 and profile) are not used."
         }
       ]
     }
