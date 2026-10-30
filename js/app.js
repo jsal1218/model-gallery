@@ -31,12 +31,10 @@
     // #generated-3/<outfit> (Generated section removed 2026-10-21) opens Model 3 (exact-6), the same woman, in that outfit when she has it
     const oa = S.manifest.models.find(m => m.id === (S.manifest.outfitAliases || {})[h0] && m.outfits.some(o => o.id === ho));
     const hm = oa ? oa.id : (S.manifest.aliases || {})[h0] || h0;   // retired ids (#model-2) map to their renumbered model
-    const sheetLink = (S.manifest.sheets || []).find(s => s.id === hm);
     const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];  // unknown or removed ids (old Model 5; exact-1..4, 8, 11, 15, 16; photoreal-1/2 and #model-2 since the Photorealistic section was removed; generated-1/2/3 since the Generated section was removed) → the first model
     renderModels();
     const known = model.id === hm;   // a removed model's link opens Model 1 at her base front view, not a same-named outfit of hers
     await selectModel(model.id, known ? ho : undefined, known && ha !== undefined ? +ha : 0);
-    if (sheetLink) showSheet(sheetLink.id);
     // warm the cache for the other models in the background
     setTimeout(() => S.manifest.models.forEach(m => m.outfits.forEach(o => o.frames.forEach(f => { const i = new Image(); i.src = f.lo; }))), 1500);
     requestAnimationFrame(tick);
@@ -51,23 +49,14 @@
       // same card as an outfit card: her Base front (0°) frame + name only (Jordan, 2026-10-22)
       const base = m.outfits[0], front = base.frames.find(f => f.angle === 0) || base.frames[0];
       b.innerHTML = `<img loading="lazy" decoding="async" src="${front.lo}" alt=""><b>${m.name}</b>`;
+      if (m.cardPos) b.querySelector('img').style.objectPosition = m.cardPos;   // e.g. Model 5, a head bust: frame the face, not the empty top
       b.title = m.name; b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-controls', 'ofGrid');
       // tap a model: select her (Base) and open her outfit gallery below the row; tap her again: close / reopen it
       b.addEventListener('click', async () => {
-        if (S.sheet) { hideSheet(); selectModel(m.id); openOutfits(true); return; }   // leaving a sheet model: back to the 360
         if (S.model && S.model.id === m.id) { openOutfits(); return; }
         // Open now, not after her frames load: a delayed open would re-open the gallery after an outfit tap.
         selectModel(m.id); openOutfits(true);
       });
-      box.appendChild(b);
-    });
-    // sheet-only models (manifest "sheets", e.g. Model 5 = the ceramic head, 2026-10-29): the card shows a thumbnail; tapping
-    // it shows the whole sheet image large over the viewer (tap / double-tap to zoom, scroll to pan). No 360, no outfits.
-    (S.manifest.sheets || []).forEach(sh => {
-      const b = document.createElement('button');
-      b.className = 'model sheet-card'; b.type = 'button'; b.role = 'tab'; b.dataset.id = sh.id; b.dataset.sheet = '1'; b.title = sh.name;
-      b.innerHTML = `<img loading="lazy" decoding="async" src="${sh.thumb}" alt=""><b>${sh.name}</b>`;
-      b.addEventListener('click', () => showSheet(sh.id));
       box.appendChild(b);
     });
     const n = box.children.length, h = box.previousElementSibling; box.classList.toggle('many', n > 8);   // "Model · 10" so it is clear the row scrolls
@@ -110,6 +99,7 @@
       b.className = 'ocard'; b.type = 'button'; b.role = 'option'; b.dataset.id = o.id; b.title = name;
       b.setAttribute('aria-selected', S.outfit && S.outfit.id === o.id);
       b.innerHTML = `<img loading="lazy" decoding="async" draggable="false" src="${front.lo}" alt=""><b>${name}</b>`;
+      if (S.model.cardPos) b.querySelector('img').style.objectPosition = S.model.cardPos;
       b.addEventListener('click', async e => {
         e.stopPropagation();   // the gallery stays open so outfits can be flipped through; no scroll (tap her model card to close it)
         if (!S.outfit || S.outfit.id !== o.id) await selectOutfit(o.id, S.angle);
@@ -363,7 +353,6 @@
   }
   document.addEventListener('keydown', (e) => {
     if (e.target.closest && e.target.closest('input,textarea')) return;
-    if (S.sheet) return;
     if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
     else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
     else if (e.key === ' ' && document.activeElement === viewer) { e.preventDefault(); toggleAuto(); }
@@ -380,32 +369,8 @@
 
   let hintTimer = setTimeout(hideHint, 6000);
   function hideHint() { $('hint').classList.add('gone'); clearTimeout(hintTimer); }
-  function showSheet(id) {
-    const sh = (S.manifest.sheets || []).find(s => s.id === id); if (!sh) return;
-    S.sheet = sh; stopAuto(); openOutfits(false);
-    document.querySelectorAll('.model').forEach(b => { b.setAttribute('aria-selected', b.dataset.id === id); b.setAttribute('aria-expanded', 'false'); });
-    revealModel(id);
-    const box = $('sheetView'), img = $('sheetImg');
-    if (img.getAttribute('src') !== sh.image) img.src = sh.image;
-    img.alt = sh.name; box.classList.remove('zoomed'); box.hidden = false; box.scrollTo(0, 0);
-    document.body.classList.add('sheet-mode');
-    $('metaLine').textContent = `${sh.name} · full sheet`;
-    history.replaceState(null, '', `#${sh.id}`);
-  }
-  function hideSheet() {
-    S.sheet = null; $('sheetView').hidden = true; $('sheetView').classList.remove('zoomed'); document.body.classList.remove('sheet-mode');
-  }
-  // tap / double-tap the sheet: zoom 2.5x at that point (scroll or drag to pan), tap again to fit
-  $('sheetView').addEventListener('click', (e) => {
-    const box = $('sheetView'), img = $('sheetImg'), r = img.getBoundingClientRect();
-    if (box.classList.contains('zoomed')) { box.classList.remove('zoomed'); box.scrollTo(0, 0); return; }
-    const fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
-    box.classList.add('zoomed');
-    requestAnimationFrame(() => { const r2 = img.getBoundingClientRect(), b = box.getBoundingClientRect();
-      box.scrollTo(fx * r2.width - b.width / 2, fy * r2.height - b.height / 2); });
-  });
   function updateHash() {
-    if (!S.model || S.sheet) return;
+    if (!S.model) return;
     history.replaceState(null, '', `#${S.model.id}/${S.outfit.id}/${Math.round(mod(S.snapTo ?? S.angle))}`);
   }
   window.atelier = S;  // exposed for testing

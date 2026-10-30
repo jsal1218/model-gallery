@@ -1320,6 +1320,75 @@
         }
       ],
       "thumb": "assets/exact-13/thumb.webp?v=202610180304"
+    },
+    {
+      "id": "exact-27",
+      "name": "Model 5",
+      "group": "exact",
+      "descriptor": "Cream crackle-glaze ceramic head bust",
+      "cardPos": "50% 25%",
+      "thumb": "assets/exact-27/thumb.webp?v=202610292241",
+      "outfits": [
+        {
+          "id": "base",
+          "name": "Base",
+          "subtitle": "Cream crackle-glaze ceramic bust",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-27/base/lo/000.webp?v=202610292241",
+              "hi": "assets/exact-27/base/hi/000.webp?v=202610292241",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-27/base/lo/045.webp?v=202610292241",
+              "hi": "assets/exact-27/base/hi/045.webp?v=202610292241",
+              "source": "reference-mirrored",
+              "mirrorOf": 315
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-27/base/lo/090.webp?v=202610292241",
+              "hi": "assets/exact-27/base/hi/090.webp?v=202610292241",
+              "source": "reference-mirrored",
+              "mirrorOf": 270
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-27/base/lo/135.webp?v=202610292241",
+              "hi": "assets/exact-27/base/hi/135.webp?v=202610292241",
+              "source": "generated"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-27/base/lo/180.webp?v=202610292241",
+              "hi": "assets/exact-27/base/hi/180.webp?v=202610292241",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-27/base/lo/225.webp?v=202610292241",
+              "hi": "assets/exact-27/base/hi/225.webp?v=202610292241",
+              "source": "generated-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-27/base/lo/270.webp?v=202610292241",
+              "hi": "assets/exact-27/base/hi/270.webp?v=202610292241",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-27/base/lo/315.webp?v=202610292241",
+              "hi": "assets/exact-27/base/hi/315.webp?v=202610292241",
+              "source": "reference"
+            }
+          ],
+          "note": "From Jordan's 6-view sheet (reference/new-head/sheet.jpg). Real views: 0 = view 1 (front), 315 = view 2 (3/4), 270 = view 3 (profile), 180 = view 6 (back). 45 and 90 are horizontal mirrors of 315 and 270 (bald, symmetric bust). The sheet has no back-3/4 view and no mirror can make one, so 135 is an AI-generated back-3/4 (free image generation from the sheet, checked against the sheet for head shape) and 225 is its mirror. Every frame is scaled to the same head height with the same neck-base line and centre. Upscaled for zoom with Lanczos + light unsharp (Real-ESRGAN unavailable). Sheet views 4 and 5 (another 3/4 and profile) are not used."
+        }
+      ]
     }
   ],
   "groups": [
@@ -1329,24 +1398,10 @@
     }
   ],
   "aliases": {
-    "_note": "retired ids from before the first 2026-10-18 renumbering -> current ids. Removed models (old model-5; exact-1..4, 8, 11, 15, 16) have no alias and fall back to the first model. Ids are stable: the second renumbering (old Model 5, 6, 7, 9, 10, 12, 13, 14 -> Model 1-8) only changed names. The Photorealistic section (photoreal-1 = old model-2, photoreal-2) was removed on 2026-10-19; those ids and #model-2 now fall back to the first model. The Generated section (generated-1, -2, -3) was removed on 2026-10-21: those ids fall back to the first model, except #generated-3/<outfit>, which opens Model 2 (exact-6, the same woman) in that outfit when she has it (outfitAliases). On 2026-10-21 Models 9, 12, 14, 15, 16 and 17 (exact-17, 20, 22, 23, 24, 25) were removed (their links fall back to the first model) and the rest renumbered Model 9-12 by name only (exact-18, 19, 21, 26); ids, and so every #exact-N/<outfit>/<angle> link, are unchanged. On 2026-10-22 Models 1, 3, 4, 5, 9 and 10 (exact-5, 7, 9, 10, 18, 19) were removed (their links fall back to the first model) and the rest renumbered Model 1-6 by name only (exact-6, 12, 13, 14, 21, 26); ids and links unchanged. Later on 2026-10-22 Model 5 (exact-21) was removed too (its links fall back to the first model); exact-26 is now Model 5 (lineup Model 1-5 = exact-6, 12, 13, 14, 26). Reordered 2026-10-22 (Jordan): Model 1-5 = exact-12, 26, 6, 14, 13 (names follow the order; ids and links unchanged); removed or unknown ids fall back to the new Model 1 (exact-12). 2026-10-22: Model 2 (exact-26) lost Outfit 6, 7, 13, 14 (ids outfit-6, -7, -13, -14; their links open her Base); the rest were renumbered by name only, Outfit 1-12 (ids unchanged, so old links open the same outfit). Later 2026-10-22: Model 1 (exact-12) removed; renumbered Model 1-4 = exact-26, exact-6, exact-14, exact-13. No link or a link to a removed model opens the new Model 1 (exact-26). 2026-10-29: Model 5 (exact-27, ceramic head bust) is a sheet-only model under 'sheets': its card shows the full 6-view sheet, no 360 or outfits."
+    "_note": "retired ids from before the first 2026-10-18 renumbering -> current ids. Removed models (old model-5; exact-1..4, 8, 11, 15, 16) have no alias and fall back to the first model. Ids are stable: the second renumbering (old Model 5, 6, 7, 9, 10, 12, 13, 14 -> Model 1-8) only changed names. The Photorealistic section (photoreal-1 = old model-2, photoreal-2) was removed on 2026-10-19; those ids and #model-2 now fall back to the first model. The Generated section (generated-1, -2, -3) was removed on 2026-10-21: those ids fall back to the first model, except #generated-3/<outfit>, which opens Model 2 (exact-6, the same woman) in that outfit when she has it (outfitAliases). On 2026-10-21 Models 9, 12, 14, 15, 16 and 17 (exact-17, 20, 22, 23, 24, 25) were removed (their links fall back to the first model) and the rest renumbered Model 9-12 by name only (exact-18, 19, 21, 26); ids, and so every #exact-N/<outfit>/<angle> link, are unchanged. On 2026-10-22 Models 1, 3, 4, 5, 9 and 10 (exact-5, 7, 9, 10, 18, 19) were removed (their links fall back to the first model) and the rest renumbered Model 1-6 by name only (exact-6, 12, 13, 14, 21, 26); ids and links unchanged. Later on 2026-10-22 Model 5 (exact-21) was removed too (its links fall back to the first model); exact-26 is now Model 5 (lineup Model 1-5 = exact-6, 12, 13, 14, 26). Reordered 2026-10-22 (Jordan): Model 1-5 = exact-12, 26, 6, 14, 13 (names follow the order; ids and links unchanged); removed or unknown ids fall back to the new Model 1 (exact-12). 2026-10-22: Model 2 (exact-26) lost Outfit 6, 7, 13, 14 (ids outfit-6, -7, -13, -14; their links open her Base); the rest were renumbered by name only, Outfit 1-12 (ids unchanged, so old links open the same outfit). Later 2026-10-22: Model 1 (exact-12) removed; renumbered Model 1-4 = exact-26, exact-6, exact-14, exact-13. No link or a link to a removed model opens the new Model 1 (exact-26). 2026-10-29: Model 5 (exact-27) is a ceramic head bust, a normal 360 model with only Base (no outfits)."
   },
   "outfitAliases": {
     "_note": "removed id -> model that keeps its outfits; used only when the link names an outfit that model has",
     "generated-3": "exact-6"
-  },
-  "sheets": [
-    {
-      "id": "exact-27",
-      "name": "Model 5",
-      "descriptor": "Cream crackle-glaze ceramic head bust · 6-view sheet",
-      "image": "assets/exact-27/sheet.jpg?v=202610292220",
-      "thumb": "assets/exact-27/thumb.webp?v=202610292220",
-      "size": [
-        1500,
-        1000
-      ],
-      "note": "Jordan's 6-view sheet shown as is (one image, no 360 frames, no outfits), 2026-10-29. Listed under 'sheets' so apps that only know 'models' ignore it."
-    }
-  ]
+  }
 }
