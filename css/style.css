@@ -112,3 +112,10 @@ svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-l
 .ocard.lifted{position:relative;z-index:3;box-shadow:0 12px 26px rgba(0,0,0,.24);border-color:var(--ink);cursor:grabbing}
 .of-grid.sorting .ocard:not(.lifted){opacity:.8}
 .of-drop{position:absolute;width:4px;margin-left:-.5px;border-radius:2px;background:var(--ink);box-shadow:0 0 0 2px #fff;pointer-events:none;z-index:4}
+.sheet-view{position:absolute;inset:0;z-index:6;background:#fff;overflow:auto;display:flex;align-items:center;justify-content:center;cursor:zoom-in;touch-action:pan-x pan-y pinch-zoom;-webkit-overflow-scrolling:touch}
+.sheet-view[hidden]{display:none}
+.sheet-view img{display:block;width:100%;height:auto;max-height:100%;object-fit:contain;user-select:none;-webkit-user-select:none}
+.sheet-view.zoomed{display:block;cursor:zoom-out}
+.sheet-view.zoomed img{width:250%;max-height:none;max-width:none}
+body.sheet-mode .controls,body.sheet-mode .quick,body.sheet-mode #hint,body.sheet-mode #zoomBadge{visibility:hidden}
+.sheet-card img{object-position:50% 30%}
