@@ -768,6 +768,64 @@
             }
           ],
           "note": "All 8 frames are Jordan's exact reference turnaround (reference/exact-26-outfit-16-turnaround-6.jpg) pixels, no further generation. 225 and 315 are horizontal mirrors of 135 and 45. Upscaled for zoom with Real-ESRGAN x4plus blended 35/65 with Lanczos."
+        },
+        {
+          "id": "usa-jersey",
+          "name": "USA jersey",
+          "subtitle": "USA home kit · white jersey",
+          "frames": [
+            {
+              "angle": 0,
+              "lo": "assets/exact-26/usa-jersey/lo/000.webp?v=202610292229",
+              "hi": "assets/exact-26/usa-jersey/hi/000.webp?v=202610292229",
+              "source": "reference"
+            },
+            {
+              "angle": 45,
+              "lo": "assets/exact-26/usa-jersey/lo/045.webp?v=202610292229",
+              "hi": "assets/exact-26/usa-jersey/hi/045.webp?v=202610292229",
+              "source": "reference"
+            },
+            {
+              "angle": 90,
+              "lo": "assets/exact-26/usa-jersey/lo/090.webp?v=202610292229",
+              "hi": "assets/exact-26/usa-jersey/hi/090.webp?v=202610292229",
+              "source": "reference"
+            },
+            {
+              "angle": 135,
+              "lo": "assets/exact-26/usa-jersey/lo/135.webp?v=202610292229",
+              "hi": "assets/exact-26/usa-jersey/hi/135.webp?v=202610292229",
+              "source": "reference"
+            },
+            {
+              "angle": 180,
+              "lo": "assets/exact-26/usa-jersey/lo/180.webp?v=202610292229",
+              "hi": "assets/exact-26/usa-jersey/hi/180.webp?v=202610292229",
+              "source": "reference"
+            },
+            {
+              "angle": 225,
+              "lo": "assets/exact-26/usa-jersey/lo/225.webp?v=202610292229",
+              "hi": "assets/exact-26/usa-jersey/hi/225.webp?v=202610292229",
+              "source": "reference-mirrored",
+              "mirrorOf": 135
+            },
+            {
+              "angle": 270,
+              "lo": "assets/exact-26/usa-jersey/lo/270.webp?v=202610292229",
+              "hi": "assets/exact-26/usa-jersey/hi/270.webp?v=202610292229",
+              "source": "reference"
+            },
+            {
+              "angle": 315,
+              "lo": "assets/exact-26/usa-jersey/lo/315.webp?v=202610292229",
+              "hi": "assets/exact-26/usa-jersey/hi/315.webp?v=202610292229",
+              "source": "reference-mirrored-edited",
+              "mirrorOf": 45
+            }
+          ],
+          "note": "AI-generated 6-view sheet (reference/exact-26-usa-jersey-turnaround-6.png), made with free image generation from Model 1's own base sheet to dress her in the Model 2 USA kit, barefoot; face, hair and body checked against her base. 0/45/90/135/180/270 are that sheet's pixels; 225 is a horizontal mirror of 135. 315 is a mirror of 45 with the kit corrected by hand-compositing (chest crest moved to her left chest and un-mirrored, hem tag to her left hip, shorts crest to her right thigh); her face, hair and body pixels in 315 are the unedited mirror. Aligned to the base frames (per-view registration, within about 2 lo px; same feet line). Upscaled for zoom with Lanczos x4 + light unsharp (Real-ESRGAN unavailable on the build box)."
         }
       ],
       "thumb": "assets/exact-26/thumb.webp?v=202610211658"
