@@ -52,6 +52,8 @@ const STORAGE_KEY = 'avata-measure-profiles';
 const FORMAT = 1;
 const TEST_PROFILE_ID = 'test-male-5ft6-130';
 const TEST_PROFILE_URL = 'data/profiles/test-male-5ft6-130.json';
+const MODEL1_PROFILE_ID = 'model1-exact-26-5ft6-130';
+const MODEL1_PROFILE_URL = 'data/profiles/model1-exact-26-5ft6-130.json';
 const DEFAULTS_URL = 'data/profiles/jordan-default.json';
 
 /** Body points of measure, US units. `kind` is 'ftin' | 'lb' | 'in'. */
@@ -496,7 +498,7 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
           <button type="button" class="pill" id="msImp">${I.up}<span>Import</span></button>
           <input type="file" id="msFile" accept=".json,application/json" hidden>
         </div>
-        <p class="ms-links"><button type="button" class="ms-link" id="msNew">New profile</button> · <button type="button" class="ms-link" id="msFillDef">Fill defaults</button> · <button type="button" class="ms-link" id="msLoadTest">Load test profile</button>${state.profiles.length > 1 ? ` · <button type="button" class="ms-link" id="msDel">Delete this profile</button>` : ''}</p>
+        <p class="ms-links"><button type="button" class="ms-link" id="msNew">New profile</button> · <button type="button" class="ms-link" id="msFillDef">Fill defaults</button> · <button type="button" class="ms-link" id="msLoadTest">Load test profile</button> · <button type="button" class="ms-link" id="msLoadModel1">Load Model 1 profile</button>${state.profiles.length > 1 ? ` · <button type="button" class="ms-link" id="msDel">Delete this profile</button>` : ''}</p>
       </section>
       ${fitNote(p)}
 
@@ -530,7 +532,12 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
   function fitNote(p) {
     const model = (p.modelId === 'exact-28' || p.id === TEST_PROFILE_ID)
       ? `<a class="ms-link" id="msFitLink" href="#exact-28/base/0">Model 6</a> (exact-28).`
-      : (p.modelId ? esc(p.modelId) + '.' : '');
+      : ((p.modelId === 'exact-26' || p.id === MODEL1_PROFILE_ID)
+        ? `<a class="ms-link" id="msFitLink" href="#exact-26/base/0">Model 1</a> (exact-26).`
+        : (p.modelId ? esc(p.modelId) + '.' : ''));
+    if (p.id === MODEL1_PROFILE_ID) {
+      return `<div class="ms-fit" id="msFit"><b>${esc(p.name)}</b> is the female fit-model profile for ${model} Height 5 ft 6 in and weight 130 lb follow the stated build; every value, including those two, is a <span class="ms-flag est">est.</span> from standard curvy-female proportions (about a US 8 / size M). Loading this profile does not change Jordan.</div>`;
+    }
     if (p.id === TEST_PROFILE_ID) {
       return `<div class="ms-fit" id="msFit"><b>${esc(p.name)}</b> is a test fixture. ${model} Height 5 ft 6 in and weight 130 lb are <span class="ms-flag given">given</span>, as are the reference chino’s finished waist (31 in) and outseam (35 in). All other body measures are <span class="ms-flag est">est.</span> from slim-male proportions. Loading this profile does not change Jordan.</div>`;
     }
@@ -613,6 +620,7 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
       toast('New profile started.');
     };
     $('#msLoadTest', rootEl).onclick = () => loadTestProfile(rootEl);
+    $('#msLoadModel1', rootEl).onclick = () => loadNamedProfile(MODEL1_PROFILE_URL, MODEL1_PROFILE_ID, 'Model 1, 5’6" 130 lb loaded. Jordan was left as is.', rootEl);
     $('#msFillDef', rootEl).onclick = () => fillDefaults(rootEl);
     $('#msFitLink', rootEl)?.addEventListener('click', ev => {
       ev.preventDefault();
@@ -784,13 +792,13 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
     }
   }
 
-  async function loadTestProfile(rootEl) {
+  async function loadNamedProfile(url, expectedId, okMsg, rootEl) {
     try {
-      const res = await fetch(TEST_PROFILE_URL, { cache: 'no-cache' });
-      if (!res.ok) throw new Error('Could not load the test profile file.');
+      const res = await fetch(url, { cache: 'no-cache' });
+      if (!res.ok) throw new Error('Could not load the profile file.');
       const data = fromImportJson(await res.text());
-      const built = data.profiles.find(x => x.id === TEST_PROFILE_ID) || data.profiles[0];
-      if (!built) throw new Error('The test profile file has no profile in it.');
+      const built = (expectedId && data.profiles.find(x => x.id === expectedId)) || data.profiles[0];
+      if (!built) throw new Error('The profile file has no profile in it.');
       const i = state.profiles.findIndex(x => x.id === built.id);
       if (i >= 0) state.profiles[i] = { ...built };
       else state.profiles.push({ ...built });
@@ -798,10 +806,14 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
       persist();
       renderMeasure(rootEl || root);
       refreshEntry();
-      toast('Test male 5’6" 130 lb loaded. Jordan was left as is.');
+      toast(okMsg);
     } catch (e) {
-      toast(e.message || 'Could not load the test profile.');
+      toast(e.message || 'Could not load the profile.');
     }
+  }
+
+  async function loadTestProfile(rootEl) {
+    return loadNamedProfile(TEST_PROFILE_URL, TEST_PROFILE_ID, 'Test male 5’6" 130 lb loaded. Jordan was left as is.', rootEl);
   }
 
   function open(opts = {}) {

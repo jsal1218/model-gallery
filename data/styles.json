@@ -1,6 +1,29 @@
 {
   "styles": [
     {
+      "id": "AVA-001",
+      "name": "Tank & Short Set",
+      "kind": "set",
+      "techpack": "AVA-001 Tank & Short Set technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "L",
+      "colors": [
+        "Black"
+      ],
+      "defaultColor": "Black",
+      "fitModel": "Gallery Model 2 (exact-6), US 12–14 / L, 5 ft 3 in. First proto in size L.",
+      "units": "in"
+    },
+    {
       "id": "AVA-002",
       "name": "Slim 5-Pocket Chino",
       "kind": "chino",
@@ -27,10 +50,10 @@
       "units": "in"
     },
     {
-      "id": "AVA-001",
-      "name": "Tank & Short Set",
+      "id": "AVA-003",
+      "name": "Grey Crop Set",
       "kind": "set",
-      "techpack": "AVA-001 Tank & Short Set technical package",
+      "techpack": "AVA-003 Grey Crop Set technical package",
       "season": "SS27 Prototype",
       "sizes": [
         "XS",
@@ -41,13 +64,365 @@
       ],
       "sizePrefix": "",
       "sizeLabel": "US size",
-      "baseSize": "L",
+      "baseSize": "M",
+      "colors": [
+        "Mid Grey"
+      ],
+      "defaultColor": "Mid Grey",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "base",
+      "outfitLabel": "Base",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-004",
+      "name": "Pink Zip Hoodie Crop & Flare Pant",
+      "kind": "set",
+      "techpack": "AVA-004 Pink Zip Hoodie Crop & Flare Pant technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "Dusty Pink"
+      ],
+      "defaultColor": "Dusty Pink",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-1",
+      "outfitLabel": "Outfit 1",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-005",
+      "name": "Brown Halter Crop & Short",
+      "kind": "set",
+      "techpack": "AVA-005 Brown Halter Crop & Short technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "Chocolate Brown"
+      ],
+      "defaultColor": "Chocolate Brown",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-2",
+      "outfitLabel": "Outfit 2",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-006",
+      "name": "Cream Long-Sleeve Crop & Cargo Jean",
+      "kind": "set",
+      "techpack": "AVA-006 Cream Long-Sleeve Crop & Cargo Jean technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "Cream",
+        "Dark Brown Cargo"
+      ],
+      "defaultColor": "Cream",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-3",
+      "outfitLabel": "Outfit 3",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-007",
+      "name": "White Halter Top & Denim Cargo Jort",
+      "kind": "set",
+      "techpack": "AVA-007 White Halter Top & Denim Cargo Jort technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "Off White",
+        "Light Wash Denim"
+      ],
+      "defaultColor": "Off White",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-4",
+      "outfitLabel": "Outfit 4",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-008",
+      "name": "Cream Cami Crop & Wide Sweatpant",
+      "kind": "set",
+      "techpack": "AVA-008 Cream Cami Crop & Wide Sweatpant technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "Cream",
+        "Heather Grey"
+      ],
+      "defaultColor": "Cream",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-5",
+      "outfitLabel": "Outfit 5",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-009",
+      "name": "Dark Grey Cami & Faded Wide Jean",
+      "kind": "set",
+      "techpack": "AVA-009 Dark Grey Cami & Faded Wide Jean technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "Charcoal",
+        "Faded Blue-Grey Denim"
+      ],
+      "defaultColor": "Charcoal",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-8",
+      "outfitLabel": "Outfit 6",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-010",
+      "name": "Black Halter & Ruched Mini Skirt",
+      "kind": "set",
+      "techpack": "AVA-010 Black Halter & Ruched Mini Skirt technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
       "colors": [
         "Black"
       ],
       "defaultColor": "Black",
-      "fitModel": "Gallery Model 2 (exact-6), US 12\u201314 / L, 5 ft 3 in. First proto in size L.",
-      "units": "in"
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-9",
+      "outfitLabel": "Outfit 7",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-011",
+      "name": "Black Sports Bra & Running Short",
+      "kind": "set",
+      "techpack": "AVA-011 Black Sports Bra & Running Short technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "Black"
+      ],
+      "defaultColor": "Black",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-10",
+      "outfitLabel": "Outfit 8",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-012",
+      "name": "Leather Moto Suit",
+      "kind": "suit",
+      "techpack": "AVA-012 Leather Moto Suit technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "Black",
+        "Racing Red",
+        "Off White"
+      ],
+      "defaultColor": "Black / Racing Red / Off White",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-11",
+      "outfitLabel": "Outfit 9",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-013",
+      "name": "Black Pantsuit & White Shirt",
+      "kind": "suit",
+      "techpack": "AVA-013 Black Pantsuit & White Shirt technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "Black",
+        "White"
+      ],
+      "defaultColor": "Black",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-12",
+      "outfitLabel": "Outfit 10",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-014",
+      "name": "Black Crop Tank & Pink Satin Short",
+      "kind": "set",
+      "techpack": "AVA-014 Black Crop Tank & Pink Satin Short technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "Black",
+        "Dusty Rose"
+      ],
+      "defaultColor": "Black",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-15",
+      "outfitLabel": "Outfit 11",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-015",
+      "name": "Grey Tie-Dye Tee & Short",
+      "kind": "set",
+      "techpack": "AVA-015 Grey Tie-Dye Tee & Short technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "Grey Tie-Dye",
+        "Light Grey"
+      ],
+      "defaultColor": "Grey Tie-Dye",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "outfit-16",
+      "outfitLabel": "Outfit 12",
+      "collection": "Model 1"
+    },
+    {
+      "id": "AVA-016",
+      "name": "USA Home Kit",
+      "kind": "jersey",
+      "techpack": "AVA-016 USA Home Kit technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "M",
+      "colors": [
+        "White",
+        "Navy",
+        "Red"
+      ],
+      "defaultColor": "White",
+      "fitModel": "Model 1 (exact-26), 5 ft 6 in / 130 lb curvy female, all measures EST. First proto in size M.",
+      "units": "in",
+      "outfitId": "usa-jersey",
+      "outfitLabel": "USA jersey",
+      "collection": "Model 1"
     }
   ]
 }

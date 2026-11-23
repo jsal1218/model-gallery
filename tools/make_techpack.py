@@ -12,6 +12,8 @@ Example (run from the model-gallery repo root):
 The profile is the same JSON the Measure screen exports (app: avata-measure).
 Garment types currently implemented: chino, pant, pants, 5-pocket (all produce
 a men's slim 5-pocket chino, graded from the profile's base waist and outseam).
+Outfit packs: use --style AVA-003 (or later) or --all-model1 to build Model 1's looks
+(sets, tops, pants, skirts, jerseys, suits, …) from a fit-model profile and gallery frames.
 Every inferred value is marked EST. in the pack.
 """
 from __future__ import annotations
@@ -160,10 +162,10 @@ def find_subject(im: Image.Image):
     return min(xs), min(ys), max(xs), max(ys)
 
 
-def prep_frames(assets: Path, model_id: str, out_dir: Path, angles=None):
+def prep_frames(assets: Path, model_id: str, out_dir: Path, angles=None, outfit='base'):
     """Copy/convert hi frames to JPEG in out_dir. Returns {angle: path}."""
     angles = angles or (0, 45, 90, 135, 180, 225, 270, 315)
-    src_dir = assets / model_id / 'base' / 'hi'
+    src_dir = assets / model_id / (outfit or 'base') / 'hi'
     if not src_dir.is_dir():
         # allow a flat folder of 000.webp etc.
         src_dir = assets
@@ -837,11 +839,24 @@ def make_previews(pdf: Path, dest_dir: Path, names):
 
 
 def run(args):
-    prof = load_profile(args.profile)
+    chino_types = {'chino', 'pant', 'pants', '5-pocket', '5pocket', 'slimchino', 'chino-pant'}
+    style = (getattr(args, 'style', '') or '').strip()
     garment = (args.garment or 'chino').lower().replace('_', '-').replace(' ', '')
-    if garment not in {'chino', 'pant', 'pants', '5-pocket', '5pocket', 'slimchino', 'chino-pant'}:
-        raise SystemExit(f'Unsupported garment type {args.garment!r}. Use chino (or pant / 5-pocket).')
-    style = args.style or 'AVA-002'
+    use_outfit = (
+        bool(getattr(args, 'all_model1', False))
+        or bool(getattr(args, 'combine', False))
+        or bool(getattr(args, 'outfit', ''))
+        or (style and style != 'AVA-002')
+        or (garment not in chino_types)
+    )
+    if use_outfit:
+        import outfit_techpack
+        return outfit_techpack.run(args)
+
+    prof = load_profile(args.profile)
+    if not args.out:
+        raise SystemExit('--out is required for a single chino pack')
+    style = style or 'AVA-002'
     model_id = args.model or prof.get('modelId') or 'exact-28'
     assets = Path(args.assets) if args.assets else (REPO / 'assets')
     out_pdf = Path(args.out)
@@ -931,16 +946,20 @@ def run(args):
 def main(argv=None):
     ap = argparse.ArgumentParser(description='Generate a supplier tech-pack PDF from an Avata measurement profile.')
     ap.add_argument('--profile', required=True, help='Path to an avata-measure JSON export')
-    ap.add_argument('--garment', default='chino', help='Garment type: chino | pant | 5-pocket')
-    ap.add_argument('--out', required=True, help='Output PDF path')
+    ap.add_argument('--garment', default='chino', help='Garment type: chino | pant | 5-pocket, or an outfit kind (set, jersey, suit, …)')
+    ap.add_argument('--out', default='', help='Output PDF path (required unless --all-model1)')
     ap.add_argument('--previews', default='', help='Directory for PNG page previews (optional)')
     ap.add_argument('--assets', default='', help='Gallery assets root (default: <repo>/assets)')
     ap.add_argument('--model', default='', help='Fit-model id (default: profile modelId or exact-28)')
-    ap.add_argument('--style', default='AVA-002', help='Style number (default AVA-002)')
+    ap.add_argument('--style', default='', help='Style number (AVA-002 chino default; AVA-003+ for Model 1 outfits)')
+    ap.add_argument('--outfit', default='', help='Gallery outfit id (e.g. outfit-1, base, usa-jersey)')
+    ap.add_argument('--all-model1', action='store_true', help='Build a tech pack for every Model 1 look and a combined PDF/zip')
+    ap.add_argument('--combine', default='', help='Write a combined PDF of the Model 1 packs to this path')
     ap.add_argument('--build-dir', default='', help='Working directory for HTML/images')
     ap.add_argument('--clean', action='store_true', help='Clear the build directory first')
     args = ap.parse_args(argv)
-    return run(args)
+    run(args)
+    return 0
 
 
 if __name__ == '__main__':
