@@ -1,0 +1,113 @@
+{
+  "app": "avata-measure",
+  "format": 1,
+  "kind": "defaults",
+  "exportedAt": "2026-11-23T17:20:00Z",
+  "activeId": "jordan-default",
+  "profiles": [
+    {
+      "id": "jordan-default",
+      "name": "Jordan",
+      "modelId": "exact-28",
+      "updatedAt": 1795450000000,
+      "given": [],
+      "estimated": [
+        "height",
+        "weight",
+        "neck",
+        "shoulder",
+        "chest",
+        "waist",
+        "highHip",
+        "hip",
+        "sleeve",
+        "arm",
+        "bicep",
+        "wrist",
+        "torso",
+        "back",
+        "frontRise",
+        "backRise",
+        "inseam",
+        "outseam",
+        "thigh",
+        "knee",
+        "calf",
+        "ankle"
+      ],
+      "defaults": [
+        "height",
+        "weight",
+        "neck",
+        "shoulder",
+        "chest",
+        "waist",
+        "highHip",
+        "hip",
+        "sleeve",
+        "arm",
+        "bicep",
+        "wrist",
+        "torso",
+        "back",
+        "frontRise",
+        "backRise",
+        "inseam",
+        "outseam",
+        "thigh",
+        "knee",
+        "calf",
+        "ankle"
+      ],
+      "notes": "Starting numbers for Jordan\u2019s default measurement profile, copied from the 5 ft 6 in / 130 lb slim-male test build (linked to gallery Model 6, exact-28). EVERY value is a default and an estimate, including height, weight, the reference chino\u2019s finished waist (31 in) and outseam (35 in), and all other body and garment measures. They are here so the form is not blank; Jordan should replace them with his own tape measures. Fill defaults on the Measure screen only writes empty fields and will not overwrite numbers already entered.",
+      "values": {
+        "height": 66,
+        "weight": 130,
+        "neck": 14.5,
+        "shoulder": 16.75,
+        "chest": 36.5,
+        "waist": 30,
+        "highHip": 32.75,
+        "hip": 36.5,
+        "sleeve": 23,
+        "arm": 31.5,
+        "bicep": 12,
+        "wrist": 6.5,
+        "torso": 17,
+        "back": 16.5,
+        "frontRise": 10.25,
+        "backRise": 14.75,
+        "inseam": 29.5,
+        "outseam": 39,
+        "thigh": 20.75,
+        "knee": 14.25,
+        "calf": 13.25,
+        "ankle": 8.75
+      },
+      "garments": [
+        {
+          "type": "slim chino (reference pair)",
+          "waistWidth": 15.5,
+          "waistFinished": 31,
+          "length": 35,
+          "inseam": 25.25,
+          "given": [],
+          "estimated": [
+            "type",
+            "waistWidth",
+            "waistFinished",
+            "length",
+            "inseam"
+          ],
+          "defaults": [
+            "type",
+            "waistWidth",
+            "waistFinished",
+            "length",
+            "inseam"
+          ]
+        }
+      ]
+    }
+  ]
+}

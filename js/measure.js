@@ -52,6 +52,7 @@ const STORAGE_KEY = 'avata-measure-profiles';
 const FORMAT = 1;
 const TEST_PROFILE_ID = 'test-male-5ft6-130';
 const TEST_PROFILE_URL = 'data/profiles/test-male-5ft6-130.json';
+const DEFAULTS_URL = 'data/profiles/jordan-default.json';
 
 /** Body points of measure, US units. `kind` is 'ftin' | 'lb' | 'in'. */
 const MEASURES = [
@@ -215,6 +216,7 @@ function normalizeState(data) {
     if (p.modelId) out.modelId = String(p.modelId);
     if (Array.isArray(p.given)) out.given = p.given.map(String);
     if (Array.isArray(p.estimated)) out.estimated = p.estimated.map(String);
+    if (Array.isArray(p.defaults)) out.defaults = p.defaults.map(String);
     if (p.notes) out.notes = String(p.notes);
     return out;
   }).filter(Boolean);
@@ -494,7 +496,7 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
           <button type="button" class="pill" id="msImp">${I.up}<span>Import</span></button>
           <input type="file" id="msFile" accept=".json,application/json" hidden>
         </div>
-        <p class="ms-links"><button type="button" class="ms-link" id="msNew">New profile</button> · <button type="button" class="ms-link" id="msLoadTest">Load test profile</button>${state.profiles.length > 1 ? ` · <button type="button" class="ms-link" id="msDel">Delete this profile</button>` : ''}</p>
+        <p class="ms-links"><button type="button" class="ms-link" id="msNew">New profile</button> · <button type="button" class="ms-link" id="msFillDef">Fill defaults</button> · <button type="button" class="ms-link" id="msLoadTest">Load test profile</button>${state.profiles.length > 1 ? ` · <button type="button" class="ms-link" id="msDel">Delete this profile</button>` : ''}</p>
       </section>
       ${fitNote(p)}
 
@@ -518,25 +520,31 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
     bindMeasure(v);
   }
 
-  function sourceBadge(id, given, estimated) {
+  function sourceBadge(id, given, estimated, defaults) {
+    if ((defaults || []).includes(id)) return ' <span class="ms-flag default">default</span> <span class="ms-flag est">est.</span>';
     if ((given || []).includes(id)) return ' <span class="ms-flag given">given</span>';
     if ((estimated || []).includes(id)) return ' <span class="ms-flag est">est.</span>';
     return '';
   }
 
   function fitNote(p) {
-    if (p.id !== TEST_PROFILE_ID && !p.modelId) return '';
-    const model = p.modelId === 'exact-28' || p.id === TEST_PROFILE_ID
-      ? `<a class="ms-link" id="msFitLink" href="#exact-28/base/0">Model 6</a> (exact-28), the same build.`
-      : (p.modelId ? esc(p.modelId) : '');
-    return `<div class="ms-fit" id="msFit"><b>${esc(p.name)}</b> is a test fixture. ${model} Height 5 ft 6 in and weight 130 lb are <span class="ms-flag given">given</span>, as are the reference chino’s finished waist (31 in) and outseam (35 in). All other body measures are <span class="ms-flag est">est.</span> from slim-male proportions. Loading this profile does not change Jordan.</div>`;
+    const model = (p.modelId === 'exact-28' || p.id === TEST_PROFILE_ID)
+      ? `<a class="ms-link" id="msFitLink" href="#exact-28/base/0">Model 6</a> (exact-28).`
+      : (p.modelId ? esc(p.modelId) + '.' : '');
+    if (p.id === TEST_PROFILE_ID) {
+      return `<div class="ms-fit" id="msFit"><b>${esc(p.name)}</b> is a test fixture. ${model} Height 5 ft 6 in and weight 130 lb are <span class="ms-flag given">given</span>, as are the reference chino’s finished waist (31 in) and outseam (35 in). All other body measures are <span class="ms-flag est">est.</span> from slim-male proportions. Loading this profile does not change Jordan.</div>`;
+    }
+    if ((p.defaults || []).length) {
+      return `<div class="ms-fit" id="msFit">Starting numbers for <b>${esc(p.name)}</b> match the 5 ft 6 in / 130 lb slim-male build. ${model} Every filled default is a <span class="ms-flag default">default</span> / <span class="ms-flag est">est.</span> for you to replace with a tape measure. <b>Fill defaults</b> only writes empty fields — numbers you already typed are not changed.</div>`;
+    }
+    return '';
   }
 
   function measureCard(m, profile) {
     const values = profile.values || {};
     const v = values[m.id];
     const warning = m.kind === 'ftin' ? warnValue('height', v, 'in') : warnValue(m.id, v, m.kind);
-    const flag = sourceBadge(m.id, profile.given, profile.estimated);
+    const flag = sourceBadge(m.id, profile.given, profile.estimated, profile.defaults);
     let field;
     if (m.kind === 'ftin') {
       const { ft, inch } = splitHeight(v);
@@ -559,11 +567,11 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
   }
 
   function garmentCard(g = {}, i) {
-    const finished = g.waistFinished ? `<p class="ms-how">Finished waist (circumference): <b>${esc(g.waistFinished)} in</b>${sourceBadge('waistFinished', g.given, g.estimated)}. Flat width below is half of that.</p>` : '';
+    const finished = g.waistFinished ? `<p class="ms-how">Finished waist (circumference): <b>${esc(g.waistFinished)} in</b>${sourceBadge('waistFinished', g.given, g.estimated, g.defaults)}. Flat width below is half of that.</p>` : '';
     const fields = GARMENT_FIELDS.map(f => {
       if (f.kind === 'text') return `<label class="ms-field"><span>${esc(f.label)}</span><input type="text" data-g="${i}" data-gf="type" value="${esc(g.type || '')}" placeholder="${esc(f.placeholder)}"></label>${finished}`;
       const warn = warnValue(f.id === 'sleeve' ? 'gSleeve' : f.id === 'inseam' ? 'gInseam' : f.id, g[f.id], 'in');
-      const flag = sourceBadge(f.id === 'length' ? 'length' : f.id, g.given, g.estimated);
+      const flag = sourceBadge(f.id === 'length' ? 'length' : f.id, g.given, g.estimated, g.defaults);
       return `<label class="ms-field"><span>${esc(f.label)} (in)${flag}</span>
         <input type="number" inputmode="decimal" min="0" step="0.25" data-g="${i}" data-gf="${f.id}" value="${g[f.id] ?? ''}" placeholder="in" aria-label="${esc(f.label)} in inches">
         <p class="ms-how">${esc(f.how)}</p>
@@ -605,6 +613,7 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
       toast('New profile started.');
     };
     $('#msLoadTest', rootEl).onclick = () => loadTestProfile(rootEl);
+    $('#msFillDef', rootEl).onclick = () => fillDefaults(rootEl);
     $('#msFitLink', rootEl)?.addEventListener('click', ev => {
       ev.preventDefault();
       close({ fromHash: true });
@@ -717,6 +726,64 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
     if (el) el.textContent = `${fmtFilled(sum)}${sum.garments ? ` · ${sum.garments} garment${sum.garments > 1 ? 's' : ''}` : ''}`;
   }
 
+  function isEmptyVal(v) { return v === '' || v == null; }
+
+  async function fetchProfileJson(url) {
+    const res = await fetch(url, { cache: 'no-cache' });
+    if (!res.ok) throw new Error('Could not load ' + url);
+    return fromImportJson(await res.text());
+  }
+
+  async function fillDefaults(rootEl) {
+    try {
+      const data = await fetchProfileJson(DEFAULTS_URL);
+      const src = data.profiles[0];
+      if (!src) throw new Error('The defaults file has no profile in it.');
+      const p = activeProfile(state);
+      p.defaults = Array.isArray(p.defaults) ? p.defaults.slice() : [];
+      p.estimated = Array.isArray(p.estimated) ? p.estimated.slice() : [];
+      let n = 0;
+      const mark = (key) => {
+        if (!p.defaults.includes(key)) p.defaults.push(key);
+        if (!p.estimated.includes(key)) p.estimated.push(key);
+        if (Array.isArray(p.given)) p.given = p.given.filter(x => x !== key);
+      };
+      Object.entries(src.values || {}).forEach(([k, v]) => {
+        if (isEmptyVal(p.values[k])) {
+          p.values[k] = v;
+          mark(k);
+          n++;
+        }
+      });
+      const sg = (src.garments || [])[0];
+      if (sg) {
+        if (!p.garments.length) p.garments.push({});
+        const g = p.garments[0];
+        g.defaults = Array.isArray(g.defaults) ? g.defaults.slice() : [];
+        g.estimated = Array.isArray(g.estimated) ? g.estimated.slice() : [];
+        const gmark = (key) => {
+          if (!g.defaults.includes(key)) g.defaults.push(key);
+          if (!g.estimated.includes(key)) g.estimated.push(key);
+          if (Array.isArray(g.given)) g.given = g.given.filter(x => x !== key);
+        };
+        ['type', 'waistWidth', 'waistFinished', 'length', 'inseam', 'chestWidth', 'sleeve'].forEach(k => {
+          if (sg[k] == null || sg[k] === '') return;
+          if (isEmptyVal(g[k])) { g[k] = sg[k]; gmark(k); n++; }
+        });
+      }
+      if (!p.modelId && src.modelId) p.modelId = src.modelId;
+      p.updatedAt = Date.now();
+      persist();
+      renderMeasure(rootEl || root);
+      refreshEntry();
+      toast(n
+        ? `Filled ${n} empty field${n > 1 ? 's' : ''} with defaults (all estimates). Existing numbers were kept.`
+        : 'Nothing was empty — your numbers were left as is.');
+    } catch (e) {
+      toast(e.message || 'Could not load the default numbers.');
+    }
+  }
+
   async function loadTestProfile(rootEl) {
     try {
       const res = await fetch(TEST_PROFILE_URL, { cache: 'no-cache' });
@@ -738,6 +805,7 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
   }
 
   function open(opts = {}) {
+    if (window.Order && Order.isOpen()) Order.close({ fromHash: true });
     root = measureView();
     if (!openFlag) lastFocus = document.activeElement;
     openFlag = true;
@@ -755,6 +823,8 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
     document.body.classList.remove('measure-open');
     const el = $('#measureView');
     if (el) el.hidden = true;
+    const toasts = $('#msToasts');
+    if (toasts) toasts.replaceChildren();
     refreshEntry();
     if (!opts.fromHash && isMeasureHash()) {
       if (typeof onClose === 'function') onClose();

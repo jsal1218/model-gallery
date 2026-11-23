@@ -172,3 +172,20 @@ body.measure-open #measureView{display:block}
 .ms-flag.est{border:1px solid var(--gold);color:var(--gold)}
 .ms-fit{margin:0 0 14px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r);background:#fff;font-size:13px;line-height:1.45}
 .ms-fit .ms-flag{vertical-align:1px}
+
+.ms-flag.default{border:1px solid var(--muted);color:var(--muted)}
+body.order-open{background:var(--bg)}
+body.order-open .layout,body.measure-open .layout{display:none}
+body.order-open #orderView{display:block}
+#orderView{display:none;box-sizing:border-box;max-width:640px;margin:0 auto;padding:0 16px calc(36px + env(safe-area-inset-bottom))}
+#orderView textarea{width:100%;min-height:88px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:10px 12px;font:inherit;color:var(--ink);resize:vertical}
+#orderView textarea:focus{outline:none;border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+#orderView select{width:100%;height:44px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:0 12px;font:inherit;color:var(--ink);appearance:none}
+#orderView a.pill{text-decoration:none;display:inline-flex;align-items:center;gap:7px;color:inherit}
+.po-sizes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.po-sz input{text-align:center;font-variant-numeric:tabular-nums}
+.po-sz .n{color:var(--muted);font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-left:4px}
+.po-check{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.45;margin:4px 0 12px}
+.po-check input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--ink)}
+.po-total{margin:0;font-size:16px;font-family:var(--serif)}
+.po-total .muted{font-family:var(--sans);font-size:13px;color:var(--muted)}

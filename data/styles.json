@@ -1,0 +1,53 @@
+{
+  "styles": [
+    {
+      "id": "AVA-002",
+      "name": "Slim 5-Pocket Chino",
+      "kind": "chino",
+      "techpack": "AVA-002 Slim 5-Pocket Chino technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "36"
+      ],
+      "sizePrefix": "W",
+      "sizeLabel": "US waist",
+      "baseSize": "31",
+      "colors": [
+        "Mid Grey"
+      ],
+      "defaultColor": "Mid Grey",
+      "fitModel": "5 ft 6 in / 130 lb slim male (Model 6, exact-28). Base size W31, outseam 35 in (ankle length).",
+      "units": "in"
+    },
+    {
+      "id": "AVA-001",
+      "name": "Tank & Short Set",
+      "kind": "set",
+      "techpack": "AVA-001 Tank & Short Set technical package",
+      "season": "SS27 Prototype",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "sizePrefix": "",
+      "sizeLabel": "US size",
+      "baseSize": "L",
+      "colors": [
+        "Black"
+      ],
+      "defaultColor": "Black",
+      "fitModel": "Gallery Model 2 (exact-6), US 12\u201314 / L, 5 ft 3 in. First proto in size L.",
+      "units": "in"
+    }
+  ]
+}

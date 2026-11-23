@@ -28,15 +28,16 @@
       S.manifest = await res.json();
     } catch (e) { $('loaderText').textContent = 'Could not load manifest'; console.error(e); return; }
     const wantMeasure = window.Measure && Measure.isMeasureHash();
+    const wantOrder = window.Order && Order.isOrderHash();
     const [h0, ho, ha] = location.hash.replace('#', '').split('/');
     // #generated-3/<outfit> (Generated section removed 2026-10-21) opens Model 3 (exact-6), the same woman, in that outfit when she has it
     const oa = S.manifest.models.find(m => m.id === (S.manifest.outfitAliases || {})[h0] && m.outfits.some(o => o.id === ho));
-    // #measure is the measurement-profile screen, not a model id
-    const hm = wantMeasure ? null : (oa ? oa.id : (S.manifest.aliases || {})[h0] || h0);
+    // #measure and #order are app screens, not model ids
+    const hm = (wantMeasure || wantOrder) ? null : (oa ? oa.id : (S.manifest.aliases || {})[h0] || h0);
     const model = (hm && S.manifest.models.find(m => m.id === hm)) || S.manifest.models[0];
     renderModels();
-    const known = !wantMeasure && model.id === hm;   // a removed model's link opens Model 1 at her base front view, not a same-named outfit of hers
-    holdHash = wantMeasure;
+    const known = !(wantMeasure || wantOrder) && model.id === hm;   // a removed model's link opens Model 1 at her base front view, not a same-named outfit of hers
+    holdHash = wantMeasure || wantOrder;
     await selectModel(model.id, known ? ho : undefined, known && ha !== undefined ? +ha : 0);
     holdHash = false;
     // warm the cache for the other models in the background
@@ -46,6 +47,11 @@
       Measure.mountEntry(document.querySelector('.panel'));
       Measure.bind({ onClose: () => updateHash() });
       if (wantMeasure) Measure.open({ fromHash: true });
+    }
+    if (window.Order) {
+      Order.mountEntry(document.querySelector('.panel'));
+      Order.bind({ onClose: () => updateHash() });
+      if (wantOrder) Order.open({ fromHash: true });
     }
   }
 
@@ -382,11 +388,13 @@
   function updateHash() {
     if (!S.model || holdHash) return;
     if (window.Measure && Measure.isOpen()) return;
+    if (window.Order && Order.isOpen()) return;
     history.replaceState(null, '', `#${S.model.id}/${S.outfit.id}/${Math.round(mod(S.snapTo ?? S.angle))}`);
   }
   window.addEventListener('hashchange', () => {
     if (!S.manifest) return;
     if (window.Measure && Measure.isMeasureHash()) return;
+    if (window.Order && Order.isOrderHash()) return;
     const [h0, ho, ha] = location.hash.replace('#', '').split('/');
     if (!h0) return;
     const oa = S.manifest.models.find(m => m.id === (S.manifest.outfitAliases || {})[h0] && m.outfits.some(o => o.id === ho));
