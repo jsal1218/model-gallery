@@ -27,17 +27,26 @@
       const res = await fetch('data/manifest.json', { cache: 'no-cache' });
       S.manifest = await res.json();
     } catch (e) { $('loaderText').textContent = 'Could not load manifest'; console.error(e); return; }
+    const wantMeasure = window.Measure && Measure.isMeasureHash();
     const [h0, ho, ha] = location.hash.replace('#', '').split('/');
     // #generated-3/<outfit> (Generated section removed 2026-10-21) opens Model 3 (exact-6), the same woman, in that outfit when she has it
     const oa = S.manifest.models.find(m => m.id === (S.manifest.outfitAliases || {})[h0] && m.outfits.some(o => o.id === ho));
-    const hm = oa ? oa.id : (S.manifest.aliases || {})[h0] || h0;   // retired ids (#model-2) map to their renumbered model
-    const model = S.manifest.models.find(m => m.id === hm) || S.manifest.models[0];  // unknown or removed ids (old Model 5; exact-1..4, 8, 11, 15, 16; photoreal-1/2 and #model-2 since the Photorealistic section was removed; generated-1/2/3 since the Generated section was removed) → the first model
+    // #measure is the measurement-profile screen, not a model id
+    const hm = wantMeasure ? null : (oa ? oa.id : (S.manifest.aliases || {})[h0] || h0);
+    const model = (hm && S.manifest.models.find(m => m.id === hm)) || S.manifest.models[0];
     renderModels();
-    const known = model.id === hm;   // a removed model's link opens Model 1 at her base front view, not a same-named outfit of hers
+    const known = !wantMeasure && model.id === hm;   // a removed model's link opens Model 1 at her base front view, not a same-named outfit of hers
+    holdHash = wantMeasure;
     await selectModel(model.id, known ? ho : undefined, known && ha !== undefined ? +ha : 0);
+    holdHash = false;
     // warm the cache for the other models in the background
     setTimeout(() => S.manifest.models.forEach(m => m.outfits.forEach(o => o.frames.forEach(f => { const i = new Image(); i.src = f.lo; }))), 1500);
     requestAnimationFrame(tick);
+    if (window.Measure) {
+      Measure.mountEntry(document.querySelector('.panel'));
+      Measure.bind({ onClose: () => updateHash() });
+      if (wantMeasure) Measure.open({ fromHash: true });
+    }
   }
 
   // one row of models (Model 1-5). The Photorealistic section was removed 2026-10-19 and the Generated section 2026-10-21
@@ -369,8 +378,10 @@
 
   let hintTimer = setTimeout(hideHint, 6000);
   function hideHint() { $('hint').classList.add('gone'); clearTimeout(hintTimer); }
+  let holdHash = false;
   function updateHash() {
-    if (!S.model) return;
+    if (!S.model || holdHash) return;
+    if (window.Measure && Measure.isOpen()) return;
     history.replaceState(null, '', `#${S.model.id}/${S.outfit.id}/${Math.round(mod(S.snapTo ?? S.angle))}`);
   }
   window.atelier = S;  // exposed for testing
