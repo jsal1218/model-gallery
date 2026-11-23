@@ -50,6 +50,8 @@
 
 const STORAGE_KEY = 'avata-measure-profiles';
 const FORMAT = 1;
+const TEST_PROFILE_ID = 'test-male-5ft6-130';
+const TEST_PROFILE_URL = 'data/profiles/test-male-5ft6-130.json';
 
 /** Body points of measure, US units. `kind` is 'ftin' | 'lb' | 'in'. */
 const MEASURES = [
@@ -202,13 +204,20 @@ function loadState(storage) {
 function normalizeState(data) {
   if (!data || typeof data !== 'object') return defaultState();
   let profiles = Array.isArray(data.profiles) ? data.profiles : (data.name || data.values ? [data] : []);
-  profiles = profiles.map(p => ({
-    id: String(p.id || uid()),
-    name: String(p.name || '').trim() || 'Jordan',
-    values: p.values && typeof p.values === 'object' ? { ...p.values } : {},
-    garments: Array.isArray(p.garments) ? p.garments.slice(0, 3).map(g => ({ ...g })) : [],
-    updatedAt: Number(p.updatedAt) || Date.now(),
-  })).filter(Boolean);
+  profiles = profiles.map(p => {
+    const out = {
+      id: String(p.id || uid()),
+      name: String(p.name || '').trim() || 'Jordan',
+      values: p.values && typeof p.values === 'object' ? { ...p.values } : {},
+      garments: Array.isArray(p.garments) ? p.garments.slice(0, 3).map(g => ({ ...g })) : [],
+      updatedAt: Number(p.updatedAt) || Date.now(),
+    };
+    if (p.modelId) out.modelId = String(p.modelId);
+    if (Array.isArray(p.given)) out.given = p.given.map(String);
+    if (Array.isArray(p.estimated)) out.estimated = p.estimated.map(String);
+    if (p.notes) out.notes = String(p.notes);
+    return out;
+  }).filter(Boolean);
   if (!profiles.length) return defaultState();
   const activeId = profiles.some(p => p.id === data.activeId) ? data.activeId : profiles[0].id;
   return { format: FORMAT, activeId, profiles };
@@ -485,13 +494,14 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
           <button type="button" class="pill" id="msImp">${I.up}<span>Import</span></button>
           <input type="file" id="msFile" accept=".json,application/json" hidden>
         </div>
-        <p class="ms-links"><button type="button" class="ms-link" id="msNew">New profile</button>${state.profiles.length > 1 ? ` · <button type="button" class="ms-link" id="msDel">Delete this profile</button>` : ''}</p>
+        <p class="ms-links"><button type="button" class="ms-link" id="msNew">New profile</button> · <button type="button" class="ms-link" id="msLoadTest">Load test profile</button>${state.profiles.length > 1 ? ` · <button type="button" class="ms-link" id="msDel">Delete this profile</button>` : ''}</p>
       </section>
+      ${fitNote(p)}
 
       <div class="ms-tips"><b>Before you start.</b> Wear fitted underwear or a thin base layer. Use a soft (not rigid) tape. Get a helper for the back, shoulders and anything that wraps around. Stand relaxed, feet together, looking ahead — don’t suck in. Measure twice and use the average.</div>
 
       <p class="ms-kicker">Body</p>
-      ${MEASURES.map(m => measureCard(m, p.values)).join('')}
+      ${MEASURES.map(m => measureCard(m, p)).join('')}
 
       <p class="ms-kicker" style="margin-top:6px">Garments that fit <span>optional</span></p>
       <p class="ms-lede">Measure 1 to 3 garments that already fit you well, laid flat and unstretched. Widths are fold-to-fold (half the circumference). These help later when a tech pack or avatar needs a known fit.</p>
@@ -508,9 +518,25 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
     bindMeasure(v);
   }
 
-  function measureCard(m, values) {
+  function sourceBadge(id, given, estimated) {
+    if ((given || []).includes(id)) return ' <span class="ms-flag given">given</span>';
+    if ((estimated || []).includes(id)) return ' <span class="ms-flag est">est.</span>';
+    return '';
+  }
+
+  function fitNote(p) {
+    if (p.id !== TEST_PROFILE_ID && !p.modelId) return '';
+    const model = p.modelId === 'exact-28' || p.id === TEST_PROFILE_ID
+      ? `<a class="ms-link" id="msFitLink" href="#exact-28/base/0">Model 6</a> (exact-28), the same build.`
+      : (p.modelId ? esc(p.modelId) : '');
+    return `<div class="ms-fit" id="msFit"><b>${esc(p.name)}</b> is a test fixture. ${model} Height 5 ft 6 in and weight 130 lb are <span class="ms-flag given">given</span>, as are the reference chino’s finished waist (31 in) and outseam (35 in). All other body measures are <span class="ms-flag est">est.</span> from slim-male proportions. Loading this profile does not change Jordan.</div>`;
+  }
+
+  function measureCard(m, profile) {
+    const values = profile.values || {};
     const v = values[m.id];
     const warning = m.kind === 'ftin' ? warnValue('height', v, 'in') : warnValue(m.id, v, m.kind);
+    const flag = sourceBadge(m.id, profile.given, profile.estimated);
     let field;
     if (m.kind === 'ftin') {
       const { ft, inch } = splitHeight(v);
@@ -524,7 +550,7 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
       field = `<label class="ms-field"><span>Inches</span><input type="number" inputmode="decimal" min="0" step="0.25" data-k="${m.id}" value="${v ?? ''}" placeholder="in" aria-label="${esc(m.label)} in inches"></label>`;
     }
     return `<section class="ms-box ms-card" data-measure="${m.id}" id="ms-${m.id}">
-      <p class="ms-kicker">${esc(m.label)} <span>${m.view} view</span></p>
+      <p class="ms-kicker">${esc(m.label)}${flag} <span>${m.view} view</span></p>
       <div class="ms-diag">${diagramFor(m.id)}</div>
       ${field}
       <p class="ms-how">${esc(m.how)}</p>
@@ -533,10 +559,12 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
   }
 
   function garmentCard(g = {}, i) {
+    const finished = g.waistFinished ? `<p class="ms-how">Finished waist (circumference): <b>${esc(g.waistFinished)} in</b>${sourceBadge('waistFinished', g.given, g.estimated)}. Flat width below is half of that.</p>` : '';
     const fields = GARMENT_FIELDS.map(f => {
-      if (f.kind === 'text') return `<label class="ms-field"><span>${esc(f.label)}</span><input type="text" data-g="${i}" data-gf="type" value="${esc(g.type || '')}" placeholder="${esc(f.placeholder)}"></label>`;
+      if (f.kind === 'text') return `<label class="ms-field"><span>${esc(f.label)}</span><input type="text" data-g="${i}" data-gf="type" value="${esc(g.type || '')}" placeholder="${esc(f.placeholder)}"></label>${finished}`;
       const warn = warnValue(f.id === 'sleeve' ? 'gSleeve' : f.id === 'inseam' ? 'gInseam' : f.id, g[f.id], 'in');
-      return `<label class="ms-field"><span>${esc(f.label)} (in)</span>
+      const flag = sourceBadge(f.id === 'length' ? 'length' : f.id, g.given, g.estimated);
+      return `<label class="ms-field"><span>${esc(f.label)} (in)${flag}</span>
         <input type="number" inputmode="decimal" min="0" step="0.25" data-g="${i}" data-gf="${f.id}" value="${g[f.id] ?? ''}" placeholder="in" aria-label="${esc(f.label)} in inches">
         <p class="ms-how">${esc(f.how)}</p>
         <p class="ms-warn" ${warn ? '' : 'hidden'} data-gw="${i}-${f.id}">${esc(warn)}</p>
@@ -576,6 +604,12 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
       renderMeasure(rootEl);
       toast('New profile started.');
     };
+    $('#msLoadTest', rootEl).onclick = () => loadTestProfile(rootEl);
+    $('#msFitLink', rootEl)?.addEventListener('click', ev => {
+      ev.preventDefault();
+      close({ fromHash: true });
+      location.hash = 'exact-28/base/0';
+    });
     $('#msDel', rootEl)?.addEventListener('click', () => {
       if (state.profiles.length < 2) return;
       if (!confirm(`Delete the profile “${p().name}”? This cannot be undone.`)) return;
@@ -681,6 +715,26 @@ const garmentDiagrams = { top: garmentTopSvg, pants: garmentPantSvg };
     const sum = profileSummary(state);
     const el = $('#msMeta', rootEl);
     if (el) el.textContent = `${fmtFilled(sum)}${sum.garments ? ` · ${sum.garments} garment${sum.garments > 1 ? 's' : ''}` : ''}`;
+  }
+
+  async function loadTestProfile(rootEl) {
+    try {
+      const res = await fetch(TEST_PROFILE_URL, { cache: 'no-cache' });
+      if (!res.ok) throw new Error('Could not load the test profile file.');
+      const data = fromImportJson(await res.text());
+      const built = data.profiles.find(x => x.id === TEST_PROFILE_ID) || data.profiles[0];
+      if (!built) throw new Error('The test profile file has no profile in it.');
+      const i = state.profiles.findIndex(x => x.id === built.id);
+      if (i >= 0) state.profiles[i] = { ...built };
+      else state.profiles.push({ ...built });
+      state.activeId = built.id;
+      persist();
+      renderMeasure(rootEl || root);
+      refreshEntry();
+      toast('Test male 5’6" 130 lb loaded. Jordan was left as is.');
+    } catch (e) {
+      toast(e.message || 'Could not load the test profile.');
+    }
   }
 
   function open(opts = {}) {

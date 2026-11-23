@@ -384,6 +384,20 @@
     if (window.Measure && Measure.isOpen()) return;
     history.replaceState(null, '', `#${S.model.id}/${S.outfit.id}/${Math.round(mod(S.snapTo ?? S.angle))}`);
   }
+  window.addEventListener('hashchange', () => {
+    if (!S.manifest) return;
+    if (window.Measure && Measure.isMeasureHash()) return;
+    const [h0, ho, ha] = location.hash.replace('#', '').split('/');
+    if (!h0) return;
+    const oa = S.manifest.models.find(m => m.id === (S.manifest.outfitAliases || {})[h0] && m.outfits.some(o => o.id === ho));
+    const hm = oa ? oa.id : (S.manifest.aliases || {})[h0] || h0;
+    const model = S.manifest.models.find(m => m.id === hm);
+    if (!model) return;
+    const outfitId = model.outfits.some(o => o.id === ho) ? ho : (S.outfit && S.model && S.model.id === model.id ? S.outfit.id : model.outfits[0].id);
+    const ang = ha !== undefined && ha !== '' && !Number.isNaN(+ha) ? +ha : (S.model && S.model.id === model.id ? S.angle : 0);
+    if (!S.model || S.model.id !== model.id || (S.outfit && S.outfit.id !== outfitId)) selectModel(model.id, outfitId, ang);
+  });
+
   window.atelier = S;  // exposed for testing
   init();
 })();

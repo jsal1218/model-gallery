@@ -1,0 +1,57 @@
+{
+  "app": "avata-measure",
+  "format": 1,
+  "exportedAt": "2026-11-23T13:15:00Z",
+  "activeId": "test-male-5ft6-130",
+  "profiles": [
+    {
+      "id": "test-male-5ft6-130",
+      "name": "Test male 5’6\" 130 lb",
+      "modelId": "exact-28",
+      "updatedAt": 1795440000000,
+      "given": ["height", "weight"],
+      "estimated": [
+        "neck", "shoulder", "chest", "waist", "highHip", "hip",
+        "sleeve", "arm", "bicep", "wrist", "torso", "back",
+        "frontRise", "backRise", "inseam", "outseam",
+        "thigh", "knee", "calf", "ankle"
+      ],
+      "notes": "Test fixture for a slim adult male, 5 ft 6 in and 130 lb, linked to gallery Model 6 (exact-28), the same stated build. GIVEN: height 66 in (5 ft 6 in), weight 130 lb, and a reference pair of slim chinos with a finished waist of 31 in and a total length (outseam) of 35 in. All other body measures are ESTIMATED from slim-male anthropometric proportions consistent with that height, weight and garment. Body waist is 30 in (about 1 in of ease under the 31 in garment waist). Floor inseam is 29.5 in and floor outseam is 39 in. The 35 in garment outseam with a mid-rise front rise of 10.25 in gives a garment inseam of 25.25 in — an ankle-length chino, about 4 in above the floor on this body. (A 29–30 in garment inseam plus a 10–10.5 in rise would describe a full-length pant of about 40 in outseam, which would conflict with the given 35 in length.) Flat garment waist width is 15.5 in (half of the given 31 in circumference).",
+      "values": {
+        "height": 66,
+        "weight": 130,
+        "neck": 14.5,
+        "shoulder": 16.75,
+        "chest": 36.5,
+        "waist": 30,
+        "highHip": 32.75,
+        "hip": 36.5,
+        "sleeve": 23,
+        "arm": 31.5,
+        "bicep": 12,
+        "wrist": 6.5,
+        "torso": 17,
+        "back": 16.5,
+        "frontRise": 10.25,
+        "backRise": 14.75,
+        "inseam": 29.5,
+        "outseam": 39,
+        "thigh": 20.75,
+        "knee": 14.25,
+        "calf": 13.25,
+        "ankle": 8.75
+      },
+      "garments": [
+        {
+          "type": "slim chino (reference pair)",
+          "waistWidth": 15.5,
+          "waistFinished": 31,
+          "length": 35,
+          "inseam": 25.25,
+          "given": ["waistFinished", "length"],
+          "estimated": ["waistWidth", "inseam"]
+        }
+      ]
+    }
+  ]
+}

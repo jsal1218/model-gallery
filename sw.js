@@ -3,9 +3,9 @@
 // cache only as the offline fallback) so a new deploy is never served stale; images are cache-first in their own cache
 // (frame URLs carry ?v=, so a rebuilt frame is a new URL). skipWaiting + clients.claim, so a new version takes over at once;
 // js/update.js then reloads the page.
-const VERSION = '2026.11.23-124734-a97908a';
+const VERSION = '2026.11.23-131705-d1aa7b9';
 const CACHE = `mg-${VERSION}`, IMG = 'mg-img', IMG_MAX = 600;
-const SHELL = ['./', 'index.html', 'css/style.css', 'js/app.js', 'js/outfit-drag.js', 'js/measure.js', 'js/update.js', 'data/manifest.json', 'manifest.webmanifest',
+const SHELL = ['./', 'index.html', 'css/style.css', 'js/app.js', 'js/outfit-drag.js', 'js/measure.js', 'js/update.js', 'data/manifest.json', 'data/profiles/test-male-5ft6-130.json', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-64.png'];
 // cache:'reload' bypasses the HTTP cache (GitHub Pages sends max-age=600) so a new version never precaches old files
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' }))))); });
